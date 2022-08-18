@@ -1,4 +1,4 @@
-## Welcome to my Pages
+## Huanran Chen
 
 I'm a undergraduate in mcislab, Beijing Institude of Technology. I'm also a Research Intern in Peking university. 
 
