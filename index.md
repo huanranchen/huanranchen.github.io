@@ -39,5 +39,5 @@ mail:
 huanranchen@bit.edu.cn
 
 ### my photo
-![image](https://github.com/huanranchen/huanranchen.github.io/blob/main/images/profile.jpg)
+![image](https://huanranchen.github.io/images/profile.jpg)
 
