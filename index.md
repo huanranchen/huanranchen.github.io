@@ -13,7 +13,7 @@ I'm interested in adversarial attack & defense, representation learning, self-su
 
 2022.4.28 transfer learning, representation learning.
 
-2022.6.15 Research intern In Peking university. Doing research on adversarial attack and adversarial training.
+2022.6.15 Research Intern in Peking university. Doing research on adversarial attack && defense.
 
 
 ### Papers
@@ -38,3 +38,6 @@ I'm interested in adversarial attack & defense, representation learning, self-su
 mail: 
 huanranchen@bit.edu.cn
 
+
+### My photos
+<img src="https://huanranchen.github.io/images/profile.jpg" width="224" height="384" alt="Huanran Chen"/><br/>
