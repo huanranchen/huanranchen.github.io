@@ -38,3 +38,6 @@ I'm interested in adversarial attack & defense, representation learning, self-su
 mail: 
 huanranchen@bit.edu.cn
 
+### my photo
+![image](https://github.com/huanranchen/huanranchen.github.io/blob/main/images/profile.jpg)
+
