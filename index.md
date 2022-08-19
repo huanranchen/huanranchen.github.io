@@ -40,4 +40,4 @@ huanranchen@bit.edu.cn
 
 
 ### My photos
-<img src="https://huanranchen.github.io/images/profile.jpg" width="224" height="384" alt="Huanran Chen"/><br/>
+<img src="https://huanranchen.github.io/images/profile.jpg" width="256" height="342" alt="Huanran Chen"/><br/>
