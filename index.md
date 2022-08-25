@@ -18,7 +18,7 @@ I'm interested in adversarial attack & defense, representation learning, self-su
 
 ### Papers
 
-2022 ECCV Workshop: **Bootstrap Generalization Ability from Loss Landscape Perspective**
+**Bootstrap Generalization Ability from Loss Landscape Perspective** 2022 ECCV Workshop
 
 
 ### Papers in progress
