@@ -21,18 +21,6 @@ I'm interested in adversarial attack & defense, representation learning, self-su
 **Bootstrap Generalization Ability from Loss Landscape Perspective** 2022 ECCV Workshop
 
 
-### Papers in progress
-
-2023 IJCAI about knowledge distillation
-
-2023 CVPR about adversarial attack
-
-2023 CVPR about DG
-
-2023 ---- about a new backbone
-
-2023 ICASSP about a kind of normalization
-
 ### Support or Contact
 
 mail: 
