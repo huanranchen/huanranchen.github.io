@@ -20,7 +20,7 @@ I'm interested in adversarial attack & defense, representation learning, self-su
 
 **Bootstrap Generalization Ability from Loss Landscape Perspective** 2022 ECCV Workshop
 
-***Huanran Chen1*** , Shitong Shao2 , Ziyi Wang1 , Zirui Shang1 , Jin Chen1 , Xiaofeng Ji1 , and Xinxiao Wu1 B
+***Huanran Chen*** , Shitong Shao , Ziyi Wang , Zirui Shang , Jin Chen , Xiaofeng Ji , and Xinxiao Wu
 
 
 ### Support or Contact
