@@ -22,8 +22,10 @@ I'm interested in Trustworthy ML, diffusion models.
 
 # 🔥 News
 - None
+
+
 # 📝 Research Publications
-(\*: Equal Contribution;)
+(\*: Equal Contribution; ${}^\dagger$: Corresponding Author)
 
 
 ## Robust Classification via a Single Diffusion Model
@@ -52,30 +54,22 @@ Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu
 
 
 
+# 📖 Internships
+- *2022.11 - present*, Research Intern at TSAIL, Tsinghua University.    Advised by Prof. Jun Zhu  
+- *2022.06 - 2022.11*, Research Intern at VDIG, Wangxuan Institute, Peking University.     Advised by Prof. Yongtao Wang    
+- *2022.03 - present*, Research Intern at MCISLAB, Beijing Institute of Technology.    Advised by Prof. Xinxiao Wu    
+
+
+
 # 💡 Patents
-## An image classification method based on fair and robust neural networks *(patent pending)*
-Yisen Wang and **Zeming Wei**
-- [[publish announcement](http://epub.cnipa.gov.cn/patent/CN116091838A)]
+## None
+
 
 # 💻 Projects
 
-## Using Z3 for Formal Modeling and Verification of FNN Global Robustness
-- Course project for ''Techniques and Methods for Programming'' 
-- Propose a complete specification and implementation of FNN Global Robustness verification utilizing the SMT solver Z3
-- One paper accepted by SEKE 2023
-- [[pdf](https://arxiv.org/pdf/2304.10558.pdf)] [[arxiv](https://arxiv.org/abs/2304.10558.pdf)] [[code](https://github.com/weizeming/Z3_for_Verification_of_FNN_Global_Robustness)]
+## Adversarial Attacks package
+- [[code](https://github.com/huanranchen/AdversarialAttacks)]
 
-# 🎖 Honors and Awards
-- **First prize**, Chinese Mathematics Competitions for College Students (Beijing Division), *2022*
-- **Merit Student**, Peking University, *2022*
-- **Huatai Science and Technology Scholarship**, Peking University, *2022*
-- **Award for Contributon in Student Organizations**, Peking University, *2021*
-- **Yang Fuqing & Wang Yangyuan Academician Scholarship**, Peking Univeristy, *2021*
-
-# 📖 Educations
-- *2021.06 - present*, Undergraduate Student, School of Mathematical Sciences, Peking University
-- *2020.09 - 2021.06*, Undergraduate Student, College of Engineering, Peking University
-- *2017.09 - 2020.06*, Senior High School Student, Beijing No.4 High School
 
 # 💼 Academic Service
-- Conference Reviewer: NeurIPS 2023
+- None
