@@ -41,11 +41,11 @@ Shitong Shao, Xu Dai, Shouyi Yin, Lujun Li, **Huanran Chen**, Yang Hu
 - [[arviv](https://arxiv.org/abs/2303.09105)]
 
 ## T-SEA: Transfer-based Self-Ensemble Attack on Object Detection
-Hao Huang\*, Ziyan Chen\*, ** Huanran Chen\* **, Yongtao Wang, Kevin Zhang           
+Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang           
 - [[CVPR2023](https://openaccess.thecvf.com/content/CVPR2023/html/Huang_T-SEA_Transfer-Based_Self-Ensemble_Attack_on_Object_Detection_CVPR_2023_paper.html)]
 
 ## Bootstrap Generalization Ability from Loss Landscape Perspective
-**Huanran Chen**, Shitong Shao, Ziyi Wang , Zirui Shang , Jin Chen ,Xiaofeng Ji ,Xinxiao Wu   
+**Huanran Chen**, Shitong Shao, Ziyi Wang, Zirui Shang, Jin Chen, Xiaofeng Ji, Xinxiao Wu   
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
 
 ## Learning What You Should Learn
