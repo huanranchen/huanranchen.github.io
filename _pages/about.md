@@ -17,38 +17,40 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a second-year undergraduate student in School of Mathematical Sciences, Peking University.
-I am interested in improve the trustworthiness of Machine Learning, specifically focus on adversarial robustness and explanability.
+I'm a sophomore undergraduate from TSAIL.        
+I'm interested in Trustworthy ML, diffusion models.        
 
 # 🔥 News
-- *2023.05*: &nbsp;🎙 I gave a talk on our CVPR paper in **Safe & Responsible AI workshop** (ICLR 2023 social event) at Tsinghua University.
-- *2023.02*: &nbsp;🎉 1 Paper (as first author) accepted by **CVPR 2023**
-- *2022.12*: &nbsp;🏆 Won **First prize** in Chinese Mathematics Competitions for College Students (Beijing Division), and qualified for the finals
-
+- None
 # 📝 Research Publications
-(\*: Equal Contribution; ${}^\dagger$: Corresponding Author)
+(\*: Equal Contribution;)
 
 
-## CFA: Class-wise Calibrated Fair Adversarial Training (CVPR 2023)
-**Zeming Wei**, Yifei Wang, Yiwen Guo, Yisen Wang${}^\dagger$
-- Theoretically and empirically investigate the preference of different classes for adversarial configurations in Adversarial Training (AT)
-- Propose a CFA framework which customizes specific training configurations for each class automatically
-- CFA improves both overall robustness and fairness, and can be easily incorporated into other AT variants
-- [[pdf](https://openaccess.thecvf.com/content/CVPR2023/papers/Wei_CFA_Class-Wise_Calibrated_Fair_Adversarial_Training_CVPR_2023_paper.pdf)] [[arviv](https://arxiv.org/abs/2303.14460)] [[code](https://github.com/PKU-ML/CFA)]
+## Robust Classification via a Single Diffusion Model
+**Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Xiao Yang, Chengqi Duan, Hang Su, Jun Zhu            
+-  [[arviv](https://arxiv.org/abs/2305.15241)]
 
-## Extracting Weighted Finite Automata from Recurrent Neural Networks for Natural Languages (ICFEM 2022)
-**Zeming Wei**, Xiyue Zhang, Meng Sun${}^\dagger$
-- Identify the transition sparsity and the context dependency problem in WFA extraction from RNNs in natural language tasks
-- Propose an extraction approach which complement the missing rules and enhance the context-aware ability
-- Our extraction framework is scalable to natural language tasks and of better extration precision
-- [[pdf](https://arxiv.org/pdf/2206.14621)] [[arviv](https://arxiv.org/abs/2206.14621)] [[code](https://github.com/weizeming/Extract_WFA_from_RNN_for_NL)]
+## Catch-Up Distillation: You Only Need to Train Once for Accelerating Sampling
+Shitong Shao, Xu Dai, Shouyi Yin, Lujun Li, **Huanran Chen**, Yang Hu         
+- [[arviv](https://arxiv.org/abs/2305.10769)]
 
-## On the Relation between Sharpness-Aware Minimization and Adversarial Robustness
-**Zeming Wei${}^\dagger$\***, Jingyu Zhu\*, Yihao Zhang\*
-- Propose a novel understanding of Sharpness-Aware Minimization (SAM) in the context of adversarial robustness
-- Prove that SAM can be viewed as specific feature perturbations which improve adversarial robustness
-- Experiment demonstrates that only utilizing SAM can achieve superior adversarial robustness compared to standard training, which is an unexpected benefit
-- [[pdf](https://arxiv.org/pdf/2305.05392v1.pdf)] [[arxiv](https://arxiv.org/abs/2305.05392v1)] [[code](https://github.com/weizeming/SAM_AT)]
+## Rethinking Model Ensemble in Transfer-based Adversarial Attacks
+**Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
+- [[arviv](https://arxiv.org/abs/2303.09105)]
+
+## T-SEA: Transfer-based Self-Ensemble Attack on Object Detection
+Hao Huang\*, Ziyan Chen\*, ** Huanran Chen\* **, Yongtao Wang, Kevin Zhang           
+- [[CVPR2023](https://openaccess.thecvf.com/content/CVPR2023/html/Huang_T-SEA_Transfer-Based_Self-Ensemble_Attack_on_Object_Detection_CVPR_2023_paper.html)]
+
+## Bootstrap Generalization Ability from Loss Landscape Perspective
+**Huanran Chen**, Shitong Shao, Ziyi Wang , Zirui Shang , Jin Chen ,Xiaofeng Ji ,Xinxiao Wu   
+- [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
+
+## Learning What You Should Learn
+Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu      
+- [[IJCAI2023](https://arxiv.org/abs/2212.05422)]
+
+
 
 # 💡 Patents
 ## An image classification method based on fair and robust neural networks *(patent pending)*

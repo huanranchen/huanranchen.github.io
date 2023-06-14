@@ -6,13 +6,13 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Zeming Wei"
-description              : "Undergraduate student in School of Mathematical Sciences, Peking University"
-repository               : "weizeming/weizeming.github.io"
+title                    : "Huanran Chen"
+description              : "Research Intern at Tsinghua SAIL Group"
+repository               : "huanranchen/huanranchen.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
-google_analytics_id      :  "Kyn1zdQAAAAJ" # get google_analytics_id from https://analytics.google.com/analytics/
+google_analytics_id      :  "QYsKXccAAAAj" # get google_analytics_id from https://analytics.google.com/analytics/
 
 # SEO Related
 google_site_verification :  "google-site-verification=6ScN9LPyidMwUPPTabtPI3BbJQyuiaCmyPcQ2J7Edoo"
@@ -21,23 +21,23 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Zeming Wei"
-  avatar           : "images/android-chrome-512x512.png"
-  bio              : "Peking University"
+  name             : "Huanran Chen"
+  avatar           : "images/avatar.png"
+  bio              : "Research Intern, Tsinghua University"
   location         : "Beijing, China"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=Kyn1zdQAAAAJ"
-  email            : "Thomas@weizeming.com"
-  researchgate     : "https://www.researchgate.net/profile/Zeming-Wei-3"
-  uri              : "http://weizeming.com"
+  googlescholar    : "https://scholar.google.com/citations?user=QYsKXccAAAAj"
+  email            : "huanran_chen@outlook.com"
+  researchgate     : "https://www.researchgate.net/profile/Huanran-Chen"
+  uri              : "http://huanranchen.github.io"
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         :
   foursquare       :
-  github           : "weizeming"
+  github           : "huanranchen"
   google_plus      :
   keybase          :
   instagram        :
@@ -51,7 +51,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "weizeming25"
+  twitter          : "AndrewC77200404"
   vine             :
   weibo            :
   xing             :
