@@ -30,15 +30,15 @@ I'm interested in Trustworthy ML, diffusion models.
 
 ## Robust Classification via a Single Diffusion Model
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Xiao Yang, Chengqi Duan, Hang Su, Jun Zhu            
--  [[arviv](https://arxiv.org/abs/2305.15241)]
+-  [[arxiv](https://arxiv.org/abs/2305.15241)]
 
 ## Catch-Up Distillation: You Only Need to Train Once for Accelerating Sampling
 Shitong Shao, Xu Dai, Shouyi Yin, Lujun Li, **Huanran Chen**, Yang Hu         
-- [[arviv](https://arxiv.org/abs/2305.10769)]
+- [[arxiv](https://arxiv.org/abs/2305.10769)]
 
 ## Rethinking Model Ensemble in Transfer-based Adversarial Attacks
 **Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
-- [[arviv](https://arxiv.org/abs/2303.09105)]
+- [[arxiv](https://arxiv.org/abs/2303.09105)]
 
 ## T-SEA: Transfer-based Self-Ensemble Attack on Object Detection
 Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang           
