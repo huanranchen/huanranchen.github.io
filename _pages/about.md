@@ -40,6 +40,10 @@ Shitong Shao, Xu Dai, Shouyi Yin, Lujun Li, **Huanran Chen**, Yang Hu
 **Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
 - [[arxiv](https://arxiv.org/abs/2303.09105)]
 
+## Learning What You Should Learn
+Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu      
+- [[IJCAI2023 oral](https://arxiv.org/abs/2212.05422)]
+
 ## T-SEA: Transfer-based Self-Ensemble Attack on Object Detection
 Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang           
 - [[CVPR2023](https://openaccess.thecvf.com/content/CVPR2023/html/Huang_T-SEA_Transfer-Based_Self-Ensemble_Attack_on_Object_Detection_CVPR_2023_paper.html)]
@@ -48,9 +52,6 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 **Huanran Chen**, Shitong Shao, Ziyi Wang, Zirui Shang, Jin Chen, Xiaofeng Ji, Xinxiao Wu   
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
 
-## Learning What You Should Learn
-Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu      
-- [[IJCAI2023](https://arxiv.org/abs/2212.05422)]
 
 
 
@@ -69,6 +70,12 @@ Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu
 
 ## Adversarial Attacks package
 - [[code](https://github.com/huanranchen/AdversarialAttacks)]
+
+## Adversarial Attacks on Object Detection
+- [[code](https://github.com/VDIGPKU/T-SEA)]
+
+## Landscape Visualization
+- [[code](https://github.com/huanranchen/Visualize-Loss-Landscape)]
 
 
 # 💼 Academic Service
