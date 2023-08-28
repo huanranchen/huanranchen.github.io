@@ -17,15 +17,17 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I'm a sophomore undergraduate from TSAIL.        
+I'm a junior year undergraduate from TSAIL.        
 I'm interested in Trustworthy ML, diffusion models.        
 
 # 🔥 News
 - None
 
 
-# 📝 Research Publications
+# 📝 Selected Publications
 (\*: Equal Contribution; ${}^\dagger$: Corresponding Author)
+
+Please refer to my [[google scholar](https://scholar.google.com/citations?user=QYsKXccAAAAJ&hl=en)] for full publication list.
 
 
 ## Robust Classification via a Single Diffusion Model
@@ -40,7 +42,7 @@ Shitong Shao, Xu Dai, Shouyi Yin, Lujun Li, **Huanran Chen**, Yang Hu
 **Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
 - [[arxiv](https://arxiv.org/abs/2303.09105)]
 
-## Learning What You Should Learn
+## Teach What You Should Teach: A Data-based Distillation Method.
 Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu      
 - [[IJCAI2023 oral](https://arxiv.org/abs/2212.05422)]
 
@@ -51,6 +53,7 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 ## Bootstrap Generalization Ability from Loss Landscape Perspective
 **Huanran Chen**, Shitong Shao, Ziyi Wang, Zirui Shang, Jin Chen, Xiaofeng Ji, Xinxiao Wu   
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
+
 
 
 
