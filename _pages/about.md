@@ -29,6 +29,9 @@ I'm interested in Trustworthy ML, diffusion models.
 
 Please refer to my [[google scholar](https://scholar.google.com/citations?user=QYsKXccAAAAJ&hl=en)] for full publication list.
 
+## How Robust is Google's Bard to Adversarial Image Attacks?
+Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, Jun Zhu
+-  [[NeurIPS Workshop](https://arxiv.org/abs/2309.11751)]
 
 ## Robust Classification via a Single Diffusion Model
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Xiao Yang, Chengqi Duan, Hang Su, Jun Zhu            
@@ -44,7 +47,7 @@ Shitong Shao, Xu Dai, Shouyi Yin, Lujun Li, **Huanran Chen**, Yang Hu
 
 ## Teach What You Should Teach: A Data-based Distillation Method.
 Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu      
-- [[IJCAI2023 oral](https://arxiv.org/abs/2212.05422)]
+- [[IJCAI2023 Oral](https://arxiv.org/abs/2212.05422)]
 
 ## T-SEA: Transfer-based Self-Ensemble Attack on Object Detection
 Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang           
@@ -54,7 +57,16 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 **Huanran Chen**, Shitong Shao, Ziyi Wang, Zirui Shang, Jin Chen, Xiaofeng Ji, Xinxiao Wu   
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
 
+## AFN: Adaptive Fusion Normalization via Encoder-Decoder Framework
+Zikai Zhou, **Huanran Chen${}^\dagger$**
+- [[arxiv](https://arxiv.org/abs/2308.03321)]
 
+## Enhancing Adversarial Attacks: The Similar Target Method
+Shuo Zhang, Ziruo Wang, Zikai Zhou, **Huanran Chen${}^\dagger$**
+- [[arxiv](https://arxiv.org/abs/2308.10743)]
+
+## Knowledge Distillation via Flow Matching
+Shitong Shao, Zhiqiang Shen, Linrui Gong, Huanran Chen
 
 
 
@@ -74,6 +86,9 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 ## Adversarial Attacks package
 - [[code](https://github.com/huanranchen/AdversarialAttacks)]
 
+## Attacks on GPT-4 and Bard
+- [[code](https://github.com/thu-ml/Attack-Bard)]
+
 ## Adversarial Attacks on Object Detection
 - [[code](https://github.com/VDIGPKU/T-SEA)]
 
@@ -82,4 +97,24 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 
 
 # 💼 Academic Service
-- None
+- Reviewer in NeurIPS 2023 Workshop R0-FoMo
+- 
+
+# 🔥 My friends
+
+## Zhengyi Wang
+- [[website](https://thuwzy.github.io/)]
+- My math teacher. Teach me a lot with patience.
+
+## Yinpeng Dong
+- [[website](https://ml.cs.tsinghua.edu.cn/~yinpeng/)]
+- My idol, instructor and friend.
+
+## Zeming Wei
+- [[website](https://weizeming.github.io/)]
+- A kind, intelligent, knowledgeable undergraduate student
+
+## Shitong Shao
+- [[website]()]
+- My first research friends. Always come up with lots of ideas.
+
