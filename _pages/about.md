@@ -29,9 +29,13 @@ I'm interested in Trustworthy ML, diffusion models.
 
 Please refer to my [[google scholar](https://scholar.google.com/citations?user=QYsKXccAAAAJ&hl=en)] for full publication list.
 
+## Rethinking Model Ensemble in Transfer-based Adversarial Attacks
+**Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
+- [[ICLR2024](https://arxiv.org/abs/2303.09105)]
+
 ## How Robust is Google's Bard to Adversarial Image Attacks?
 Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, Jun Zhu
--  [[NeurIPS Workshop](https://arxiv.org/abs/2309.11751)]
+-  [[NeurIPSW](https://arxiv.org/abs/2309.11751)]
 
 ## Robust Classification via a Single Diffusion Model
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Xiao Yang, Chengqi Duan, Hang Su, Jun Zhu            
@@ -41,13 +45,9 @@ Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zha
 Shitong Shao, Xu Dai, Shouyi Yin, Lujun Li, **Huanran Chen**, Yang Hu         
 - [[arxiv](https://arxiv.org/abs/2305.10769)]
 
-## Rethinking Model Ensemble in Transfer-based Adversarial Attacks
-**Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
-- [[arxiv](https://arxiv.org/abs/2303.09105)]
-
 ## Teach What You Should Teach: A Data-based Distillation Method.
 Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu      
-- [[IJCAI2023 Oral](https://arxiv.org/abs/2212.05422)]
+- [[IJCAI2023](https://arxiv.org/abs/2212.05422)] (<font color="red">oral</font>)
 
 ## T-SEA: Transfer-based Self-Ensemble Attack on Object Detection
 Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang           
@@ -97,8 +97,9 @@ Shitong Shao, Zhiqiang Shen, Linrui Gong, Huanran Chen
 
 
 # 💼 Academic Service
-- Reviewer in NeurIPS 2023 Workshop R0-FoMo
-- 
+- Reviewer in NeurIPS 2023 Workshop R0-FoMo          
+- Reviewer in ICLR 2024        
+- Reviewer in ICPR 2024     
 
 # 🔥 My friends
 
