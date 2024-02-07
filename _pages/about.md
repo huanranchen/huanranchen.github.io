@@ -29,6 +29,10 @@ I'm interested in Trustworthy ML, diffusion models.
 
 Please refer to my [[google scholar](https://scholar.google.com/citations?user=QYsKXccAAAAJ&hl=en)] for full publication list.
 
+## Your Diffusion Model is Secretly a Certifiably Robust Classifier
+**Huanran Chen**, Yinpeng Dong, Shitong Shao, Zhongkai Hao, Xiao Yang, Hang Su, Jun Zhu            
+-  [[arxiv](https://arxiv.org/abs/2402.02316)]
+
 ## Rethinking Model Ensemble in Transfer-based Adversarial Attacks
 **Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
 - [[ICLR2024](https://arxiv.org/abs/2303.09105)]
@@ -57,16 +61,6 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 **Huanran Chen**, Shitong Shao, Ziyi Wang, Zirui Shang, Jin Chen, Xiaofeng Ji, Xinxiao Wu   
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
 
-## AFN: Adaptive Fusion Normalization via Encoder-Decoder Framework
-Zikai Zhou, **Huanran Chen${}^\dagger$**
-- [[arxiv](https://arxiv.org/abs/2308.03321)]
-
-## Enhancing Adversarial Attacks: The Similar Target Method
-Shuo Zhang, Ziruo Wang, Zikai Zhou, **Huanran Chen${}^\dagger$**
-- [[arxiv](https://arxiv.org/abs/2308.10743)]
-
-## Knowledge Distillation via Flow Matching
-Shitong Shao, Zhiqiang Shen, Linrui Gong, Huanran Chen
 
 
 
@@ -97,9 +91,9 @@ Shitong Shao, Zhiqiang Shen, Linrui Gong, Huanran Chen
 
 
 # 💼 Academic Service
-- Reviewer in NeurIPS 2023 Workshop R0-FoMo          
-- Reviewer in ICLR 2024        
-- Reviewer in ICPR 2024     
+- Conference Reviewer in ICLR 2024, ACMMM 2024 
+- Workshop Reviewer in NeurIPS 2023 Workshop R0-FoMo
+- Reviewer in ICPR 2024, ICME 2024
 
 # 🔥 My friends
 
