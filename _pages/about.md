@@ -17,11 +17,8 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I'm a junior year undergraduate from TSAIL.        
-I'm interested in Trustworthy ML, diffusion models.        
+I'm a junior year undergraduate from TSAIL, with keen interest in Trustworthy ML and diffusion models. My aspiration is to elevate AI to the realm of science, moving beyond its current engineering-focused approach. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
 
-# 🔥 News
-- None
 
 
 # 📝 Selected Publications
@@ -33,10 +30,6 @@ Please refer to my [[google scholar](https://scholar.google.com/citations?user=Q
 **Huanran Chen**, Yinpeng Dong, Shitong Shao, Zhongkai Hao, Xiao Yang, Hang Su, Jun Zhu            
 -  [[arxiv](https://arxiv.org/abs/2402.02316)]
 
-## Rethinking Model Ensemble in Transfer-based Adversarial Attacks
-**Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
-- [[ICLR2024](https://arxiv.org/abs/2303.09105)]
-
 ## How Robust is Google's Bard to Adversarial Image Attacks?
 Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, Jun Zhu
 -  [[NeurIPSW](https://arxiv.org/abs/2309.11751)]
@@ -45,9 +38,9 @@ Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zha
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Xiao Yang, Chengqi Duan, Hang Su, Jun Zhu            
 -  [[arxiv](https://arxiv.org/abs/2305.15241)]
 
-## Catch-Up Distillation: You Only Need to Train Once for Accelerating Sampling
-Shitong Shao, Xu Dai, Shouyi Yin, Lujun Li, **Huanran Chen**, Yang Hu         
-- [[arxiv](https://arxiv.org/abs/2305.10769)]
+## Rethinking Model Ensemble in Transfer-based Adversarial Attacks
+**Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
+- [[ICLR2024](https://arxiv.org/abs/2303.09105)]
 
 ## Teach What You Should Teach: A Data-based Distillation Method.
 Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu      
@@ -71,10 +64,6 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 
 
 
-# 💡 Patents
-## None
-
-
 # 💻 Projects
 
 ## Adversarial Attacks package
@@ -92,24 +81,10 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 
 # 💼 Academic Service
 - Conference Reviewer in ICLR 2024, ACMMM 2024 
-- Workshop Reviewer in NeurIPS 2023 Workshop R0-FoMo
+- Workshop Reviewer in NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
 - Reviewer in ICPR 2024, ICME 2024
 
-# 🔥 My friends
-
-## Zhengyi Wang
-- [[website](https://thuwzy.github.io/)]
-- My math teacher. Teach me a lot with patience.
-
-## Yinpeng Dong
-- [[website](https://ml.cs.tsinghua.edu.cn/~yinpeng/)]
-- My idol, instructor and friend.
-
-## Zeming Wei
-- [[website](https://weizeming.github.io/)]
-- A kind, intelligent, knowledgeable undergraduate student
-
-## Shitong Shao
-- [[website]()]
-- My first research friends. Always come up with lots of ideas.
+# 🔥 Links
+- Advisor: [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
+- Friends: [[Zhengyi Wang](https://thuwzy.github.io/)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)], [[Zeming Wei](https://weizeming.github.io/)], [[Shitong Shao]()]
 
