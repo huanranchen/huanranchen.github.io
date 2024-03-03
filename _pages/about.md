@@ -32,7 +32,7 @@ Please refer to my [[google scholar](https://scholar.google.com/citations?user=Q
 
 ## How Robust is Google's Bard to Adversarial Image Attacks?
 Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, Jun Zhu
--  [[NeurIPSW](https://arxiv.org/abs/2309.11751)]
+-  [[NeurIPSW2023](https://arxiv.org/abs/2309.11751)]
 
 ## Robust Classification via a Single Diffusion Model
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Xiao Yang, Chengqi Duan, Hang Su, Jun Zhu            
@@ -60,7 +60,7 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 # 📖 Internships
 - *2022.11 - present*, Research Intern at TSAIL, Tsinghua University.    Advised by Prof. Jun Zhu  
 - *2022.06 - 2022.11*, Research Intern at VDIG, Wangxuan Institute, Peking University.     Advised by Prof. Yongtao Wang    
-- *2022.03 - present*, Research Intern at MCISLAB, Beijing Institute of Technology.    Advised by Prof. Xinxiao Wu    
+- *2022.02 - 2022.06*, Research Intern at MCISLAB, Beijing Institute of Technology.    Advised by Prof. Xinxiao Wu    
 
 
 
@@ -88,3 +88,15 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 - Advisor: [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
 - Friends: [[Zhengyi Wang](https://thuwzy.github.io/)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)], [[Zeming Wei](https://weizeming.github.io/)], [[Shitong Shao]()]
 
+
+
+
+# 📧 Emails
+
+I truly believe that great ideas and improvements come from open discussions and debates in academia. If you have any thoughts, disagreements with my work, or fresh ideas you'd like to share, I'd be really grateful to hear from you.
+
+If you've got any questions about my research or if you've tried reaching out through GitHub issues and haven't heard back, please don't hesitate to drop me an email. I’m always here to chat or help out in any way I can.
+
+My preferred email: huanran_chen@outlook.com
+
+Please avoid sending emails to huanranchen@bit.edu.cn, as I won't be able to access this account much longer.
