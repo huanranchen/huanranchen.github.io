@@ -20,23 +20,26 @@ redirect_from:
 I'm a junior year undergraduate from TSAIL, with keen interest in Trustworthy ML and diffusion models. My aspiration is to elevate AI to the realm of science, moving beyond its current engineering-focused approach. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
 
 
-
-# 📝 Selected Publications
-(\*: Equal Contribution; ${}^\dagger$: Corresponding Author)
-
-Please refer to my [[google scholar](https://scholar.google.com/citations?user=QYsKXccAAAAJ&hl=en)] for full publication list.
+# 📝 Papers in Generative/Discriminative Learning Unification
 
 ## Your Diffusion Model is Secretly a Certifiably Robust Classifier
 **Huanran Chen**, Yinpeng Dong, Shitong Shao, Zhongkai Hao, Xiao Yang, Hang Su, Jun Zhu            
 -  [[arxiv](https://arxiv.org/abs/2402.02316)]
 
-## How Robust is Google's Bard to Adversarial Image Attacks?
-Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, Jun Zhu
--  [[NeurIPSW2023](https://arxiv.org/abs/2309.11751)]
 
 ## Robust Classification via a Single Diffusion Model
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Xiao Yang, Chengqi Duan, Hang Su, Jun Zhu            
 -  [[arxiv](https://arxiv.org/abs/2305.15241)]
+
+
+# 📝 Papers in Optimization/Generalization
+(\*: Equal Contribution; ${}^\dagger$: Corresponding Author)
+
+
+## How Robust is Google's Bard to Adversarial Image Attacks?
+Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, Jun Zhu
+-  [[NeurIPSW2023](https://arxiv.org/abs/2309.11751)]
+
 
 ## Rethinking Model Ensemble in Transfer-based Adversarial Attacks
 **Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
@@ -53,6 +56,9 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 ## Bootstrap Generalization Ability from Loss Landscape Perspective
 **Huanran Chen**, Shitong Shao, Ziyi Wang, Zirui Shang, Jin Chen, Xiaofeng Ji, Xinxiao Wu   
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
+
+
+
 
 
 
@@ -80,7 +86,7 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 
 
 # 💼 Academic Service
-- Conference Reviewer in ICLR 2024, ACMMM 2024 
+- Conference Reviewer in ICLR 2024, ACMMM 2024, ECCV 2024
 - Workshop Reviewer in NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
 - Reviewer in ICPR 2024, ICME 2024
 
