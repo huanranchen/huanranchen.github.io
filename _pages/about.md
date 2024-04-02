@@ -92,7 +92,7 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 
 # 🔥 Links
 - Advisor: [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
-- Friends: [[Zhengyi Wang](https://thuwzy.github.io/)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)], [[Zeming Wei](https://weizeming.github.io/)], [[Shitong Shao]()]
+- Friends: [[Ziruo Wang](https://zerowang030221.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)], [[Zeming Wei](https://weizeming.github.io/)], [[Shitong Shao]()]
 
 
 
