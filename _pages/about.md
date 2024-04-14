@@ -91,8 +91,8 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 - Reviewer in ICPR 2024, ICME 2024
 
 # 🔥 Links
-- Advisor: [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
-- Friends: [[Ziruo Wang](https://zerowang030221.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)], [[Zeming Wei](https://weizeming.github.io/)], [[Shitong Shao]()]
+- Advisor: [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)], [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
+- Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
 
 
 
