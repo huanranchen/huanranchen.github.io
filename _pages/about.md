@@ -29,11 +29,13 @@ I'm a junior year undergraduate from TSAIL, with keen interest in Trustworthy ML
 
 ## Robust Classification via a Single Diffusion Model
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Xiao Yang, Chengqi Duan, Hang Su, Jun Zhu            
--  [[arxiv](https://arxiv.org/abs/2305.15241)]
+-  [[ICML2024](https://arxiv.org/abs/2305.15241)]
 
 
 # 📝 Papers in Optimization/Generalization
 (\*: Equal Contribution; ${}^\dagger$: Corresponding Author)
+
+
 
 
 ## How Robust is Google's Bard to Adversarial Image Attacks?
@@ -58,7 +60,13 @@ Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
 
 
+## On the Duality Between Sharpness-Aware Minimization and Adversarial Training
+Yihao Zhang, Hangzhou He, Jingyu Zhu, **Huanran Chen**, Yifei Wang, Zeming Wei         
+-  [[ICML2024](https://arxiv.org/abs/2402.15152)]
 
+## Enhancing Adversarial Attacks: The Similar Target Method
+Shuo Zhang, Ziruo Wang, Zikai Zhou, **Huanran Chen${}^\dagger$**      
+-  [[IJCNN2024](https://arxiv.org/abs/2308.10743)]
 
 
 
