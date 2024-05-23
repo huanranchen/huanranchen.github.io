@@ -19,8 +19,11 @@ redirect_from:
 
 I'm a junior year undergraduate from TSAIL, with keen interest in Trustworthy ML and diffusion models. My aspiration is to elevate AI to the realm of science, moving beyond its current engineering-focused approach. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
 
+Currently, most people formalize AI problems as a mapping from input to output, using neural networks to learn this mapping end-to-end through direct training, thereby achieving the desired functionality. Recent trends, like scaling up these learning paradigms in pursuit of AGI, have gained traction. However, I believe that the academic community should delve deeper into whether fundamental issues exist within this learning paradigm that cannot be resolved by merely scaling up—for example, adversarial examples still pose significant risks in large models, and it remains questionable whether these models learn probabilistic distributions or reasoning. On the other hand, we should also explore broader learning paradigms and design fundamentally different storage structures, optimization methods, and mapping techniques. This ensures that if the current learning paradigm proves unscalable, we will still have numerous alternatives to explore, preventing research in this field from reaching an impasse.
 
-# 📝 Papers in Generative/Discriminative Learning Unification
+Based on the aspiration of "establishing a science for AI", all my research revolves around two main themes mentioned before: "exploring the fundamental issues of the current paradigm" and "creating fundamentally different learning paradigms."
+
+# 📝 Papers in "Creating Fundamentally Different Learning Paradigms"
 
 ## Your Diffusion Model is Secretly a Certifiably Robust Classifier
 **Huanran Chen**, Yinpeng Dong, Shitong Shao, Zhongkai Hao, Xiao Yang, Hang Su, Jun Zhu            
@@ -32,7 +35,7 @@ I'm a junior year undergraduate from TSAIL, with keen interest in Trustworthy ML
 -  [[ICML2024](https://arxiv.org/abs/2305.15241)]
 
 
-# 📝 Papers in Optimization/Generalization
+# 📝 Papers in "Optimization and Generalization"
 (\*: Equal Contribution; ${}^\dagger$: Corresponding Author)
 
 
@@ -94,9 +97,9 @@ Shuo Zhang, Ziruo Wang, Zikai Zhou, **Huanran Chen${}^\dagger$**
 
 
 # 💼 Academic Service
-- Conference Reviewer in ICLR 2024, ACMMM 2024, ECCV 2024
+- Conference Reviewer in ICLR 2024, NeurIPS 2024, ECCV 2024
 - Workshop Reviewer in NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
-- Reviewer in ICPR 2024, ICME 2024
+- Conference Reviewer in ACMMM 2024, ICPR 2024, ICME 2024
 
 # 🔥 Links
 - Advisor: [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)], [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
