@@ -97,9 +97,8 @@ Shuo Zhang, Ziruo Wang, Zikai Zhou, **Huanran Chen${}^\dagger$**
 
 
 # 💼 Academic Service
-- Conference Reviewer in ICLR 2024, NeurIPS 2024, ECCV 2024
+- Reviewer in TMLR, ICLR 2024, NeurIPS 2024, ECCV 2024, ACMMM 2024, ICPR 2024, ICME 2024
 - Workshop Reviewer in NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
-- Conference Reviewer in ACMMM 2024, ICPR 2024, ICME 2024
 
 # 🔥 Links
 - Advisor: [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)], [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
@@ -114,6 +113,10 @@ I truly believe that great ideas and improvements come from open discussions and
 
 If you've got any questions about my research or if you've tried reaching out through GitHub issues and haven't heard back, please don't hesitate to drop me an email. I’m always here to chat or help out in any way I can.
 
+**If you are inclined to discuss publication or citation numbers, rely on numerical indicators to quantify individuals, or compare me to others, please refrain from contacting me. I am only interested in discussing intriguing problems and insights, not metrics.**
+
 My preferred email: huanran_chen@outlook.com
 
 Please avoid sending emails to huanranchen@bit.edu.cn, as I won't be able to access this account much longer.
+
+
