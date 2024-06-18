@@ -62,13 +62,13 @@ Based on the aspiration of "establishing a science for AI", all my research revo
 ## Bootstrap Generalization Ability from Loss Landscape Perspective
 **Huanran Chen**, Shitong Shao, Ziyi Wang, Zirui Shang, Jin Chen, Xiaofeng Ji, Xinxiao Wu   
 - Proposing new backbone, scheduler, training paradigm to encourage flatness of local optima.
-- Explaning previous tricks and regularization from landscape perspective.
+- Explaining previous tricks and regularization from landscape perspective.
 - ALRS is extremely helpful when using SGD. Strongly recommend ALRS if you are going to use SGD.
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
 
 ## How Robust is Google's Bard to Adversarial Image Attacks?
 Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, Jun Zhu
-- Direct application of CWA optimizer on adversarial attacks.
+- Direct application of CWA optimizer on Large Vision Language Models.
 - Successfully breaks VLMs like GPT-4, Claude, Gemini with more than 50%+ attack success rate.
 - [[NeurIPSW2023](https://arxiv.org/abs/2309.11751)]
 
@@ -103,25 +103,26 @@ Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu
 
 
 # 💻 Projects
+I place a high emphasis on code quality. I ensure that my project code is modular, plug-and-play, and must be clear and understandable. This makes it convenient for users to directly import or copy parts of the code.       
+I have reproduced over ten types of diffusion models such as EDM, DDIM, SDE, and DDPM, as well as over ten adversarial attacks like SSA, CWA, and VMI, and more than ten defense methods including AT and DiffPure. I hope my library can help others quickly familiarize themselves with these algorithms and facilitate their research.
 
-## Adversarial Attacks package
-- [[code](https://github.com/huanranchen/AdversarialAttacks)]
-
-## Attacks on GPT-4 and Bard
-- [[code](https://github.com/thu-ml/Attack-Bard)]
-
-## Adversarial Attacks on Object Detection
-- [[code](https://github.com/VDIGPKU/T-SEA)]
-
-## Landscape Visualization
-- [[code](https://github.com/huanranchen/Visualize-Loss-Landscape)]
+- [[Adversarial Attacks package](https://github.com/huanranchen/AdversarialAttacks)]
+- [[Attacks on GPT-4 and Bard](https://github.com/thu-ml/Attack-Bard)]
+- [[Adversarial Attacks on Object Detection](https://github.com/VDIGPKU/T-SEA)]
+- [[Landscape Visualization](https://github.com/huanranchen/Visualize-Loss-Landscape)]
 
 
 # 💼 Academic Service
+P.S. Just some volunteering to show that I am happy to contribute to society (QwQ).                
+Proof of my participation in these volunteer services can be verified on the respective conference websites.
+
 - Reviewer in TMLR, ICLR 2024, NeurIPS 2024, ECCV 2024, ACMMM 2024, ICPR 2024, ICME 2024
 - Workshop Reviewer in NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
 
 # 🔥 Links
+
+Links to my friends. I welcome connections with anyone who shares the same vision or hobbies as I do.
+
 - Advisor: [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)], [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
 - Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
 
