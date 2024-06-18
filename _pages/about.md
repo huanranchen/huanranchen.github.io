@@ -25,51 +25,72 @@ Based on the aspiration of "establishing a science for AI", all my research revo
 
 # 📝 Papers in "Creating Fundamentally Different Learning Paradigms"
 
+
+## Robust Classification via a Single Diffusion Model
+**Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Xiao Yang, Chengqi Duan, Hang Su, Jun Zhu    
+- Proposing diffusion classifier, directly use diffusion models as classifiers without discriminative training.
+- Demonstrating the robustness of diffusion classifier on O.O.D. data and adversarial examples.
+- Deriving the optimal solution of diffusion models, a theoretical tools for analyzing diffusion models.
+- Proposing an efficient approximate marginal inference, Likelihood Maximization.
+-  [[ICML2024](https://arxiv.org/abs/2305.15241)]
+
+
 ## Your Diffusion Model is Secretly a Certifiably Robust Classifier
-**Huanran Chen**, Yinpeng Dong, Shitong Shao, Zhongkai Hao, Xiao Yang, Hang Su, Jun Zhu            
+**Huanran Chen**, Yinpeng Dong, Shitong Shao, Zhongkai Hao, Xiao Yang, Hang Su, Jun Zhu       
+- Deriving two evidence lower bounds (ELBOs) for log likelihood on noisy data.
+- Constructing two new diffusion classfiers base on these ELBOs.
+- Deriving the analytical form for the gradient of diffusion classifiers (without UNet Jacobian).
+- Deriving three Lipschitzness and robustness lower bound for these diffusion classifiers.
+- Achieving state-of-the-art certified robustness (highest provable lower bound).
 -  [[arxiv](https://arxiv.org/abs/2402.02316)]
 
 
-## Robust Classification via a Single Diffusion Model
-**Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Xiao Yang, Chengqi Duan, Hang Su, Jun Zhu            
--  [[ICML2024](https://arxiv.org/abs/2305.15241)]
+
 
 
 # 📝 Papers in "Optimization and Generalization"
 (\*: Equal Contribution; ${}^\dagger$: Corresponding Author)
 
 
-
-
-## How Robust is Google's Bard to Adversarial Image Attacks?
-Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, Jun Zhu
--  [[NeurIPSW2023](https://arxiv.org/abs/2309.11751)]
-
-
 ## Rethinking Model Ensemble in Transfer-based Adversarial Attacks
 **Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu               
+- Identifying two second order information, flatness and closeness of local optima, strongly correlate with generalization error.
+- Providing generalization bound for closeness.
+- Proposing CWA optimizer for optimizing the closeness.
 - [[ICLR2024](https://arxiv.org/abs/2303.09105)]
-
-## Teach What You Should Teach: A Data-based Distillation Method.
-Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu      
-- [[IJCAI2023](https://arxiv.org/abs/2212.05422)] (<font color="red">oral</font>)
-
-## T-SEA: Transfer-based Self-Ensemble Attack on Object Detection
-Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang           
-- [[CVPR2023](https://openaccess.thecvf.com/content/CVPR2023/html/Huang_T-SEA_Transfer-Based_Self-Ensemble_Attack_on_Object_Detection_CVPR_2023_paper.html)]
 
 ## Bootstrap Generalization Ability from Loss Landscape Perspective
 **Huanran Chen**, Shitong Shao, Ziyi Wang, Zirui Shang, Jin Chen, Xiaofeng Ji, Xinxiao Wu   
+- Proposing new backbone, scheduler, training paradigm to encourage flatness of local optima.
+- Explaning previous tricks and regularization from landscape perspective.
+- ALRS is extremely helpful when using SGD. Strongly recommend ALRS if you are going to use SGD.
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
+
+## How Robust is Google's Bard to Adversarial Image Attacks?
+Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, Jun Zhu
+- Direct application of CWA optimizer on adversarial attacks.
+- Successfully breaks VLMs like GPT-4, Claude, Gemini with more than 50%+ attack success rate.
+- [[NeurIPSW2023](https://arxiv.org/abs/2309.11751)]
+
+## T-SEA: Transfer-based Self-Ensemble Attack on Object Detection
+Hao Huang\*, Ziyan Chen\*, **Huanran Chen**\*, Yongtao Wang, Kevin Zhang    
+- Direct application of my previous two theoretical work on adversarial attacks towards object detectors.
+- A convenient framework for generating adversarial patches.
+- [[CVPR2023](https://openaccess.thecvf.com/content/CVPR2023/html/Huang_T-SEA_Transfer-Based_Self-Ensemble_Attack_on_Object_Detection_CVPR_2023_paper.html)]
 
 
 ## On the Duality Between Sharpness-Aware Minimization and Adversarial Training
 Yihao Zhang, Hangzhou He, Jingyu Zhu, **Huanran Chen**, Yifei Wang, Zeming Wei         
+- Providing theoretical connections between Sharpness-Aware Minimization and Adversarial Training.
 -  [[ICML2024](https://arxiv.org/abs/2402.15152)]
 
-## Enhancing Adversarial Attacks: The Similar Target Method
-Shuo Zhang, Ziruo Wang, Zikai Zhou, **Huanran Chen${}^\dagger$**      
--  [[IJCNN2024](https://arxiv.org/abs/2308.10743)]
+
+## Teach What You Should Teach: A Data-based Distillation Method.
+Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu    
+- A heuristic work. Improving knowledge distillation by analogy with human learning.
+- [[IJCAI2023](https://arxiv.org/abs/2212.05422)] (<font color="red">oral</font>)
+
+
 
 
 
