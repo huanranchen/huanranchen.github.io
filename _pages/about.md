@@ -116,8 +116,9 @@ I have reproduced over ten types of diffusion models such as EDM, DDIM, SDE, and
 P.S. Just some volunteering to show that I am happy to contribute to society (QwQ).                
 Proof of my participation in these volunteer services can be verified on the respective conference websites.
 
-- Reviewer in TMLR, ICLR 2024, NeurIPS 2024, ECCV 2024, ACMMM 2024, ICPR 2024, ICME 2024
-- Workshop Reviewer in NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
+- Journal Reviewer: TMLR, Frontier of CS
+- Conference Reviewer: ICLR 2024/2025, NeurIPS 2024, ECCV 2024, ACMMM 2024, ICPR 2024, ICME 2024
+- Workshop Reviewer: NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
 
 # 🔥 Links
 
@@ -137,7 +138,7 @@ If you've got any questions about my research or if you've tried reaching out th
 
 **If you are inclined to discuss publication or citation numbers, rely on numerical indicators to quantify individuals, or compare me to others, please refrain from contacting me. I am only interested in discussing intriguing problems and insights, not metrics.**
 
-My preferred email: huanran_chen@outlook.com
+My preferred email: huanran_chen@outlook.com; huanran.chen@realai.ai;
 
 Please avoid sending emails to huanranchen@bit.edu.cn, as I won't be able to access this account much longer.
 
