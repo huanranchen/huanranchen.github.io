@@ -35,16 +35,20 @@ Based on the aspiration of "establishing a science for AI", all my research revo
 -  [[ICML2024](https://arxiv.org/abs/2305.15241)]
 
 
-## Your Diffusion Model is Secretly a Certifiably Robust Classifier
+## Diffusion Models are Certifiably Robust Classifiers
 **Huanran Chen**, Yinpeng Dong, Shitong Shao, Zhongkai Hao, Xiao Yang, Hang Su, Jun Zhu       
 - Deriving two evidence lower bounds (ELBOs) for log likelihood on noisy data.
 - Constructing two new diffusion classfiers base on these ELBOs.
 - Deriving the analytical form for the gradient of diffusion classifiers (without UNet Jacobian).
 - Deriving three Lipschitzness and robustness lower bound for these diffusion classifiers.
 - Achieving state-of-the-art certified robustness (highest provable lower bound).
--  [[arxiv](https://arxiv.org/abs/2402.02316)]
+-  [[NeurIPS2024](https://arxiv.org/abs/2402.02316)]
 
 
+## Membership Inference on Text-to-Image Diffusion Models via Conditional Likelihood Discrepancy
+Shengfang Zhai, **Huanran Chen**, Yinpeng Dong, Jiajun Li, Qingni Shen, Yansong Gao, Hang Su, Yang Liu
+- Proving that diffusion models overfit more to joint distribution p(x, y) than marginal distribution p(x).
+-  [[NeurIPS2024](https://arxiv.org/abs/2405.14800)]
 
 
 
@@ -116,7 +120,7 @@ I have reproduced over ten types of diffusion models such as EDM, DDIM, SDE, and
 P.S. Just some volunteering to show that I am happy to contribute to society (QwQ).                
 Proof of my participation in these volunteer services can be verified on the respective conference websites.
 
-- Journal Reviewer: TMLR, Frontier of CS
+- Journal Reviewer: TPAMI, TMLR, Frontier of CS
 - Conference Reviewer: ICLR 2024/2025, NeurIPS 2024, ECCV 2024, ACMMM 2024, ICPR 2024, ICME 2024
 - Workshop Reviewer: NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
 
