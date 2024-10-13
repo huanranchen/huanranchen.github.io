@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I'm a junior year undergraduate from TSAIL, with keen interest in Trustworthy ML and diffusion models. My aspiration is to elevate AI to the realm of science, moving beyond its current engineering-focused approach. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
+I'm an incoming PhD student from TSAIL, advised by Prof. [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], with keen interest in Trustworthy ML and diffusion models. My aspiration is to elevate AI to the realm of science, moving beyond its current engineering-focused approach. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
 
 Currently, most people formalize AI problems as a mapping from input to output, using neural networks to learn this mapping end-to-end through direct training, thereby achieving the desired functionality. Recent trends, like scaling up these learning paradigms in pursuit of AGI, have gained traction. However, I believe that the academic community should delve deeper into whether fundamental issues exist within this learning paradigm that cannot be resolved by merely scaling up—for example, adversarial examples still pose significant risks in large models, and it remains questionable whether these models learn probabilistic distributions or reasoning. On the other hand, we should also explore broader learning paradigms and design fundamentally different storage structures, optimization methods, and mapping techniques. This ensures that if the current learning paradigm proves unscalable, we will still have numerous alternatives to explore, preventing research in this field from reaching an impasse.
 
@@ -89,14 +89,6 @@ Yihao Zhang, Hangzhou He, Jingyu Zhu, **Huanran Chen**, Yifei Wang, Zeming Wei
 -  [[ICML2024](https://arxiv.org/abs/2402.15152)]
 
 
-## Teach What You Should Teach: A Data-based Distillation Method.
-Shitong Shao, **Huanran Chen**, Zhen Huang, Lirui Gong, Shuai Wang, Xinxiao Wu    
-- A heuristic work. Improving knowledge distillation by analogy with human learning.
-- [[IJCAI2023](https://arxiv.org/abs/2212.05422)] (<font color="red">oral</font>)
-
-
-
-
 
 
 # 📖 Internships
@@ -120,8 +112,8 @@ I have reproduced over ten types of diffusion models such as EDM, DDIM, SDE, and
 P.S. Just some volunteering to show that I am happy to contribute to society (QwQ).                
 Proof of my participation in these volunteer services can be verified on the respective conference websites.
 
-- Journal Reviewer: TPAMI, TMLR, Frontier of CS
-- Conference Reviewer: ICLR 2024/2025, NeurIPS 2024, ECCV 2024, ACMMM 2024, ICPR 2024, ICME 2024
+- Journal Reviewer: T-PAMI, TMLR, Frontier of CS
+- Conference Reviewer: ICLR 2024/2025, NeurIPS 2024, ECCV 2024, AISTATS 2025, ACMMM 2024, ICPR 2024, ICME 2024
 - Workshop Reviewer: NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
 
 # 🔥 Links
