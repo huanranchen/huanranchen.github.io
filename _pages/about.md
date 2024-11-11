@@ -113,14 +113,20 @@ P.S. Just some volunteering to show that I am happy to contribute to society (Qw
 Proof of my participation in these volunteer services can be verified on the respective conference websites.
 
 - Journal Reviewer: T-PAMI, TMLR, Frontier of CS
-- Conference Reviewer: ICLR 2024/2025, NeurIPS 2024, ECCV 2024, AISTATS 2025, ACMMM 2024, ICPR 2024, ICME 2024
+- Conference Reviewer: ICLR 2024/2025, NeurIPS 2024, AISTATS 2025, CVPR/ECCV 2024, ACMMM/ICPR/ICME 2024
 - Workshop Reviewer: NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
+
+
+Update:                                 
+I will absolutely never serve as a reviewer for NeurIPS/ACMMM/AAAI/IJCAI. These conferences have provided me with a very poor review experience, assigning more than 5 or 6 low-quality papers that lack rigor and scientific spirit, wasting a significant amount of my time.
+
+
 
 # 🔥 Links
 
 Links to my friends. I welcome connections with anyone who shares the same vision or hobbies as I do.
 
-- Advisor: [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)], [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
+- Advisor: [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Hang Su](https://www.suhangss.me/)], [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
 - Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
 
 
@@ -134,7 +140,7 @@ If you've got any questions about my research or if you've tried reaching out th
 
 **If you are inclined to discuss publication or citation numbers, rely on numerical indicators to quantify individuals, or compare me to others, please refrain from contacting me. I am only interested in discussing intriguing problems and insights, not metrics.**
 
-My preferred email: huanran_chen@outlook.com; huanran.chen@realai.ai;
+My preferred email: huanran.chen@outlook.com; huanran_chen@outlook.com; huanran.chen@realai.ai;
 
 Please avoid sending emails to huanranchen@bit.edu.cn, as I won't be able to access this account much longer.
 
