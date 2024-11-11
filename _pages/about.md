@@ -45,6 +45,17 @@ Based on the aspiration of "establishing a science for AI", all my research revo
 -  [[NeurIPS2024](https://arxiv.org/abs/2402.02316)]
 
 
+
+## DiffTextPure: Diffusion Models as Certifiable Language Purifiers**  
+**Huanran Chen**, Ziruo Wang, Zeming Wei, Yinpeng Dong
+- Demonstrates that existing large language model (LLM) defenses, including adversarial training (AT), achieve 0% robustness against white-box attacks.
+- Proposes diffusion models as a solution for language purification.
+- Shows that diffusion text models inherently pull out-of-distribution (OOD) data closer to in-distribution (ID) data.
+- Reduces any randomized smoothing-based certified robustness problem to a fractal knapsack problem and provides a general solution.
+- Derives a certified lower bound for DiffTextPure.
+-  [[NeurIPS2024 SafeGenAI](https://arxiv.org/abs/2402.02316)]
+
+
 ## Membership Inference on Text-to-Image Diffusion Models via Conditional Likelihood Discrepancy
 Shengfang Zhai, **Huanran Chen**, Yinpeng Dong, Jiajun Li, Qingni Shen, Yansong Gao, Hang Su, Yang Liu
 - Proving that diffusion models overfit more to joint distribution p(x, y) than marginal distribution p(x).
