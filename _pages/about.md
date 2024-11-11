@@ -128,10 +128,6 @@ Proof of my participation in these volunteer services can be verified on the res
 - Workshop Reviewer: NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
 
 
-Update:                                 
-I will absolutely never serve as a reviewer for NeurIPS/ACMMM/AAAI/IJCAI. These conferences have provided me with a very poor review experience, assigning more than 5 or 6 low-quality papers that lack rigor and scientific spirit, wasting a significant amount of my time.
-
-
 
 # 🔥 Links
 
