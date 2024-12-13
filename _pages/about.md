@@ -124,7 +124,7 @@ P.S. Just some volunteering to show that I am happy to contribute to society (Qw
 Proof of my participation in these volunteer services can be verified on the respective conference websites.
 
 - Journal Reviewer: T-PAMI, TMLR, Frontier of CS
-- Conference Reviewer: ICLR 2024/2025, NeurIPS 2024, AISTATS 2025, CVPR/ECCV 2024, ACMMM/ICPR/ICME 2024
+- Conference Reviewer: ICML/ICLR/NeurIPS, AISTATS, CVPR/ECCV/ICCV, ACMMM/ICPR/ICME
 - Workshop Reviewer: NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
 
 
