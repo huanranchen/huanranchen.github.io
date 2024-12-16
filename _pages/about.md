@@ -17,13 +17,13 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I'm an incoming PhD student from TSAIL, advised by Prof. [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], with keen interest in Trustworthy ML and diffusion models. My aspiration is to elevate AI to the realm of science, moving beyond its current engineering-focused approach. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
+I'm an incoming PhD student from TSAIL, advised by Prof. [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], with keen interest in Trustworthy ML and diffusion models. My **unattainable yet motivating** dream is to elevate AI to the realm of science, moving beyond its current engineering-focused approach. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
 
 Currently, most people formalize AI problems as a mapping from input to output, using neural networks to learn this mapping end-to-end through direct training, thereby achieving the desired functionality. Recent trends, like scaling up these learning paradigms in pursuit of AGI, have gained traction. However, I believe that the academic community should delve deeper into whether fundamental issues exist within this learning paradigm that cannot be resolved by merely scaling up—for example, adversarial examples still pose significant risks in large models, and it remains questionable whether these models learn probabilistic distributions or reasoning. On the other hand, we should also explore broader learning paradigms and design fundamentally different storage structures, optimization methods, and mapping techniques. This ensures that if the current learning paradigm proves unscalable, we will still have numerous alternatives to explore, preventing research in this field from reaching an impasse.
 
-Based on the aspiration of "establishing a science for AI", all my research revolves around two main themes mentioned before: "exploring the fundamental issues of the current paradigm" and "exploring fundamentally different learning paradigms."
+Therefore, all my research revolves around two main themes mentioned before: "exploring the fundamental issues of the current paradigm" and "exploring fundamentally different learning paradigms."
 
-Given that some people misunderstand my intent as overclaiming or pursuing something flashy to attract attention, I would like to clarify my point: "Most research involves trial and error. It might be better if we were more courageous in exploring new paradigms rather than fixating solely on current results." For instance, in many LLM tasks, slightly tweaking GPT-4 prompts often yields better results. However, in academia (as opposed to industry), it might be more valuable to experiment with ideas that, while perhaps only at a GPT-1 level of performance, represent a fundamentally different paradigm. These "seemingly useless trials" could ultimately prove more beneficial for future scaling and innovation.
+Given that some people misunderstand my intent as overclaiming or pursuing something flashy to attract attention, I would like to clarify my point: "Most research involves trial and error. It might be better if we were more courageous in exploring new paradigms rather than fixating solely on current results." For instance, in many LLM tasks, slightly tweaking GPT-4 prompts often yields better results. However, in academia (as opposed to industry), it might be more valuable to experiment with ideas that, while perhaps only at a GPT-1 level of performance, represent a fundamentally different paradigm (e.g. diffusion language modeling/energy language modeling). These "seemingly useless trials" could ultimately prove more beneficial for future scaling and innovation.
 
 # 📝 Papers in "Exploring Fundamentally Different Learning Paradigms"
 
@@ -48,7 +48,7 @@ Given that some people misunderstand my intent as overclaiming or pursuing somet
 
 
 
-## DiffTextPure: Diffusion Models as Certifiable Language Purifiers**  
+## DiffTextPure: Diffusion Models as Certifiable Language Purifiers
 **Huanran Chen**, Ziruo Wang, Zeming Wei, Yinpeng Dong
 - Demonstrates that existing large language model (LLM) defenses, including adversarial training (AT), achieve 0% robustness against white-box attacks.
 - Proposes diffusion models as a solution for language purification.
@@ -153,4 +153,22 @@ My preferred email: huanran.chen@outlook.com; huanran_chen@outlook.com; huanran.
 
 Please avoid sending emails to huanranchen@bit.edu.cn, as I won't be able to access this account much longer.
 
+
+
+
+
+# Interesting Paper List (Papers that greatly inspired me)
+
+- Model reconstruction from model explanations (new understanding on analysis of ReLU networks)
+- Diffusion models as plug-and-play priors (new understanding on what role diffusion modeling play)
+- Case-Based or Rule-Based: How Do Transformers Do the Math?  (The experimental results perfectly validate the new perspective proposed in the paper, leaving no room for rebuttal)
+- Denoising diffusion bridge models
+- A geometric perspective on diffusion models
+- Why can gpt learn in-context? language models implicitly perform gradient descent as meta-optimizers
+- Are generative classifiers more robust to adversarial attacks?
+- Score-based generative classifiers (integrating diffusion models gives classifiers)
+- Exploring the Connection between Robust and Generative Models
+- Dreamfusion: Text-to-3d using 2d diffusion (new understanding on what role diffusion prior play)
+- Prolificdreamer: High-fidelity and diverse text-to-3d generation with variational score distillation (new understanding on what role diffusion prior play)
+- 
 
