@@ -53,7 +53,7 @@ Given that some people misunderstand my intent as overclaiming or pursuing somet
 - Demonstrates that existing large language model (LLM) defenses, including adversarial training (AT), achieve 0% robustness against white-box attacks.
 - Proposes diffusion models as a solution for language purification.
 - Shows that diffusion text models inherently pull out-of-distribution (OOD) data closer to in-distribution (ID) data.
-- Reduces any randomized smoothing-based certified robustness problem to a fractal knapsack problem and provides a general solution.
+- **Reduces any randomized smoothing-based certified robustness problem to a fractal knapsack problem and provides a general solution**.
 - Derives a certified lower bound for DiffTextPure.
 -  [[NeurIPS2024 SafeGenAI](https://arxiv.org/abs/2402.02316)]
 
