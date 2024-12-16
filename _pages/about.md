@@ -21,9 +21,11 @@ I'm an incoming PhD student from TSAIL, advised by Prof. [[Jun Zhu](https://ml.c
 
 Currently, most people formalize AI problems as a mapping from input to output, using neural networks to learn this mapping end-to-end through direct training, thereby achieving the desired functionality. Recent trends, like scaling up these learning paradigms in pursuit of AGI, have gained traction. However, I believe that the academic community should delve deeper into whether fundamental issues exist within this learning paradigm that cannot be resolved by merely scaling up—for example, adversarial examples still pose significant risks in large models, and it remains questionable whether these models learn probabilistic distributions or reasoning. On the other hand, we should also explore broader learning paradigms and design fundamentally different storage structures, optimization methods, and mapping techniques. This ensures that if the current learning paradigm proves unscalable, we will still have numerous alternatives to explore, preventing research in this field from reaching an impasse.
 
-Based on the aspiration of "establishing a science for AI", all my research revolves around two main themes mentioned before: "exploring the fundamental issues of the current paradigm" and "creating fundamentally different learning paradigms."
+Based on the aspiration of "establishing a science for AI", all my research revolves around two main themes mentioned before: "exploring the fundamental issues of the current paradigm" and "exploring fundamentally different learning paradigms."
 
-# 📝 Papers in "Creating Fundamentally Different Learning Paradigms"
+Given that some people misunderstand my intent as overclaiming or pursuing something flashy to attract attention, I would like to clarify my point: "Most research involves trial and error. It might be better if we were more courageous in exploring new paradigms rather than fixating solely on current results." For instance, in many LLM tasks, slightly tweaking GPT-4 prompts often yields better results. However, in academia (as opposed to industry), it might be more valuable to experiment with ideas that, while perhaps only at a GPT-1 level of performance, represent a fundamentally different paradigm. These "seemingly useless trials" could ultimately prove more beneficial for future scaling and innovation.
+
+# 📝 Papers in "Exploring Fundamentally Different Learning Paradigms"
 
 
 ## Robust Classification via a Single Diffusion Model
