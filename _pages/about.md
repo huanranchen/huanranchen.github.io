@@ -154,6 +154,7 @@ My preferred email: huanran.chen@outlook.com; huanran_chen@outlook.com; huanran.
 Please avoid sending emails to huanranchen@bit.edu.cn, as I won't be able to access this account much longer.
 
 
+Note: I am a very pure person, and I do research solely for the joy of the process. I strongly dislike comparing myself to others or showing superiority. I reject all forms of counting, comparisons, and idolizing culture.
 
 
 
