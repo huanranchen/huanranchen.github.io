@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 
-I'm an incoming PhD student from TSAIL (Fall 2025), advised by Prof. [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], with a keen interest in the physics of machine learning. My **unattainable yet motivating** dream is to elevate AI to the realm of science, making every phenomenon explainable and predictable. I believe this requires both theoretical thinking and extensive empirical observation on every phenomenon we can observe. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories from diverse aspects, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
+I'm a PhD student from TSAIL (Fall 2025), advised by Prof. [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], with a keen interest in the physics of machine learning. My **unattainable yet motivating** dream is to elevate AI to the realm of science, making every phenomenon explainable and predictable. I believe this requires both theoretical thinking and extensive empirical observation on every phenomenon we can observe. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories from diverse aspects, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
 
 I'm an extremely interest-driven person. I do research only for fun.
 
@@ -87,7 +87,7 @@ I have been greatly inspired by previous work on the relationship between sharpn
 **Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu  
 - Identifying two second-order properties, flatness and the closeness of local optima, which are strongly correlated with generalization error.
 - Providing a generalization bound for closeness.
-- Proposing the CWA optimizer for optimizing the closeness.
+- Proposing the CWA optimizer for optimizing the (upper bound of) closeness.
 - [[ICLR2024](https://arxiv.org/abs/2303.09105)]
 
 This CWA optimizer may lead to a fundamental and significant improvement when the solution of SGD lacks closeness.
@@ -146,7 +146,7 @@ Links to my friends, my teachers, and my idol. I welcome connections with anyone
 
 - Advisor: [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Hang Su](https://www.suhangss.me/)], [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
 - Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
-- Idol: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)]
+- Idol: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)], [[Kaiyue Wen](https://whenwen.github.io/)]
 
 
 
