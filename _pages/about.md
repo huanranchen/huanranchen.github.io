@@ -29,7 +29,7 @@ I'm an extremely interest-driven person. I do research only for fun.
 
 I care about robustness mainly because it provides a window into the inner mechanisms of neural networks. The existence of adversarial examples and the lack of benign overfitting in adversarial training have been longstanding topics that attract generation after generation of researchers.
 
-Another reason is that most problems in robustness are what I classify as "white-box" problems, where we can use mathematical tools to accurately (without randomness) describe and solve them.
+Another reason is that most problems in robustness are what I classify as "white-box" problems, where we can use mathematical tools to accurately (without intractable randomness) describe and solve them.
 
 Among them, the certified bounds, which are data-dependent and model-dependent, mathematically prove the lower bound of robustness, and are gradually approaching the upper limit of empirical robustness.
 
@@ -46,7 +46,7 @@ On LLMs, I do this work:
 - Derive a Bayesian error upper bound for the uniform kernel, offering insights into the upper limit of the theoretical guarantee of robustness.
 - Present a symmetric lemma, prove the symmetry of the trading graph, and use this lemma to easily analyze the properties of certified robustness (e.g., proving the relationship between certified robustness and vocabulary size).
 - Achieved a certified radius of 2.00 in l2 (Bayesian upper bound of 2.10) and 6.57 in the suffix setting (where empirically researchers focus on suffix length 20).
-- [[NeurIPS2024 SafeGenAI](https://arxiv.org/abs/2402.02316)]
+- [[NeurIPS2024 SafeGenAI](https://arxiv.org/abs/2501.19040)]
 
 
 
@@ -114,7 +114,7 @@ Below is my first research project. It is simple, but it greatly cultivated my i
 
 
 
-# 📖 Internships
+# 📖 Academic Experience
 - *2025 - present*, PhD student at TSAIL, Tsinghua University.    Advised by Prof. Jun Zhu   
 - *2021 - 2025*, Undergraduate at BIT.
 
