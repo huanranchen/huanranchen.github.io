@@ -146,7 +146,7 @@ Links to my friends, my teachers, and my idol. I welcome connections with anyone
 
 - Advisor: [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Hang Su](https://www.suhangss.me/)], [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
 - Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
-- Idol: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)], [[Kaiyue Wen](https://whenwen.github.io/)]
+- Idol: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)]
 
 
 
