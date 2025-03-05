@@ -150,6 +150,12 @@ Links to my friends, my teachers, and my idol. I welcome connections with anyone
 
 
 
+# 🔥 Personality
+
+I'm an INTP 7w6, driven by an insatiable curiosity to explore the world, the universe, and the electrifying science behind neural networks. I’m utterly captivated by nearly all realms of scientific knowledge.
+
+My favorite food is McDonald’s/KFC. I also thrive on climbing mountains, hiking, and cycling.
+
 # 📧 Emails
 
 I truly believe that great ideas and improvements come from open discussions and debates in academia. If you have any thoughts, disagreements with my work, or fresh ideas you'd like to share, I'd be really grateful to hear from you.
