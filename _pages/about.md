@@ -54,7 +54,7 @@ When I was an undergraduate student, I also used diffusion models to provide cer
 
 ## Robust Classification via a Single Diffusion Model
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Jun Zhu  
-- Proposing a diffusion classifier, directly using diffusion models as classifiers without discriminative training.
+- Showing that diffusion model itself can be a (provably) robust classifier without any discriminative training.
 - Demonstrating the robustness of the diffusion classifier on out-of-distribution (O.O.D.) data and adversarial examples.
 - Deriving the optimal solution for diffusion models, a theoretical tool for analyzing diffusion models.
 - Proposing an efficient approximate marginal inference method, Likelihood Maximization.
@@ -144,7 +144,7 @@ Proof of my participation in these volunteer services can be verified on the res
 
 Links to my friends, my teachers, and my idol. I welcome connections with anyone who shares the same vision or hobbies as I do.
 
-- Advisor: [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Hang Su](https://www.suhangss.me/)], [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)]       
+- Advisor(s): [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Hang Su](https://www.suhangss.me/)]
 - Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
 - Idol: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)]
 
