@@ -36,7 +36,7 @@ Among them, the certified bounds, which are data-dependent and model-dependent, 
 On LLMs, I do this work:
 
 ## Towards the Worst-case Robustness of Large Language Models.
-**Huanran Chen**, Zeming Wei, Yinpeng Dong
+**Huanran Chen**, Zeming Wei, Yinpeng Dong, Hang Su, Jun Zhu.
 - White-box evaluations provide an empirical upper bound for worst-case robustness. Trivially (yes, this is trivial but require a large amount of time to do it), I present an optimizer that strictly evaluates models in the white-box setting by carefully and strictly aligning the tokens during optimization and inference.
 - Demonstrates that existing large language model (LLM) defenses, including adversarial training (AT), achieve 0% robustness against white-box evaluations.
 - To provide a lower bound on worst-case robustness, I focus on randomized smoothing, which smoothes a function with any pre-defined distribution.
@@ -54,6 +54,7 @@ When I was an undergraduate student, I also used diffusion models to provide cer
 
 ## Robust Classification via a Single Diffusion Model
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Jun Zhu  
+- Given that diffusion models know the relationship between images and labels (since they can generate images based on users instruction), and their amazing generalization ability (using diffusion's generated data can improve discriminative training), their amazing robustness (using diffusion models as purifiers can improve robustness), can we directly use a single diffusion generative model to construct a robust discriminative classifier without any discriminative training?
 - Showing that diffusion model itself can be a (provably) robust classifier without any discriminative training.
 - Demonstrating the robustness of the diffusion classifier on out-of-distribution (O.O.D.) data and adversarial examples.
 - Deriving the optimal solution for diffusion models, a theoretical tool for analyzing diffusion models.
@@ -84,7 +85,7 @@ Generalization is the fundamental problem in machine learning, to which I would 
 I have been greatly inspired by previous work on the relationship between sharpness and generalization. I focus on another second-order property: the closeness of local optima to each other.
 
 ## Closeness of the Local Optima: A Second Order Property Related to Generalization.
-**Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu  
+**Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu
 - Identifying two second-order properties, flatness and the closeness of local optima, which are strongly correlated with generalization error.
 - Providing a generalization bound for closeness.
 - Proposing the CWA optimizer for optimizing the (upper bound of) closeness.
@@ -115,8 +116,7 @@ Below is my first research project. It is simple, but it greatly cultivated my i
 
 
 # 📖 Academic Experience
-- *2025 - present*, PhD student at TSAIL, Tsinghua University.    Advised by Prof. Jun Zhu   
-- *2021 - 2025*, Undergraduate at BIT.
+- *2025 - present*, PhD student at TSAIL, Tsinghua University.    Advised by Prof. Jun Zhu
 
 
 
@@ -134,8 +134,8 @@ I have reproduced over ten types of diffusion models such as EDM, DDIM, SDE, and
 P.S. Just some volunteering to show that I am happy to contribute to society (QwQ).                
 Proof of my participation in these volunteer services can be verified on the respective conference websites.
 
-- Journal Reviewer: T-PAMI, TMLR, Frontier of CS
-- Conference Reviewer: ICML/ICLR/NeurIPS, AISTATS, CVPR/ECCV/ICCV, ACMMM/ICPR/ICME
+- Journal Reviewer: T-PAMI, TMLR
+- Conference Reviewer: ICML/ICLR/NeurIPS, AISTATS, CVPR/ECCV/ICCV
 - Workshop Reviewer: NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
 
 
@@ -146,7 +146,7 @@ Links to my friends, my teachers, and my idol. I welcome connections with anyone
 
 - Advisor(s): [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Hang Su](https://www.suhangss.me/)]
 - Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
-- Idol: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)]
+- Role Model: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)]
 
 
 
