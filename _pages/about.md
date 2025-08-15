@@ -33,7 +33,17 @@ Another reason is that most problems in robustness are what I classify as "white
 
 Among them, the certified bounds, which are data-dependent and model-dependent, mathematically prove the lower bound of robustness, and are gradually approaching the upper limit of empirical robustness.
 
-On LLMs, I do this work:
+Regarding LLMs, I've done some preliminary exploration:
+
+
+## The Loss Landscape of LLMs: A Basin-like Structure
+**Huanran Chen**, Yinpeng Dong, Zeming Wei, Hang Su, Jun Zhu.
+- We identified that LLMs exhibit robustness to Gaussian noise within a certain range, such that several benchmark values do not degrade at all within this region, forming stable "basins" in (benchmark-driven) loss landscape (Sec. 3.1, 3.2), and the larger the model, the wider the basin (Appendix D). This novel finding reveals a fundamental property of LLM robustness.
+- We conjectured that benign fine-tuning within these basins preserves existing model capabilities, as random perturbations are minimally harmful within the basin, suggesting benign fine-tuning is even less disruptive. We validated this experimentally (Sec. 3.4, Appendix E).
+- Using randomized smoothing, we proved that larger basins correlate with reduced performance degradation during benign fine-tuning, providing a rigorous explanation for why "larger basins make subsequent SFT less likely to forget existing capabilities" (Sec. 4.1).
+- We analyzed how parameter-space robustness imply some robustness against jailbreak attacks (Sec 3.3, Sec. 4.2), explored regularization to constrain SFT within basins (Sec. 4.3), and conducted preliminary investigations into methods for enlarging basins (Sec. 5).
+- [[Arxiv](https://arxiv.org/abs/2505.17646)]
+
 
 ## Towards the Worst-case Robustness of Large Language Models.
 **Huanran Chen**, Zeming Wei, Yinpeng Dong, Hang Su, Jun Zhu.
@@ -146,7 +156,7 @@ Links to my friends, my teachers, and my idol. I welcome connections with anyone
 
 - Advisor(s): [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Hang Su](https://www.suhangss.me/)]
 - Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
-- Role Model: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)]
+- Role Model: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)], [[Kaiyue Wen](https://whenwen.github.io/)]
 
 
 
