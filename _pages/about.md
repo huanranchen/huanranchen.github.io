@@ -138,6 +138,7 @@ I have reproduced over ten types of diffusion models such as EDM, DDIM, SDE, and
 - [[Attacks on GPT-4 and Bard](https://github.com/thu-ml/Attack-Bard)]
 - [[Adversarial Attacks on Object Detection](https://github.com/VDIGPKU/T-SEA)]
 - [[Landscape Visualization](https://github.com/huanranchen/Visualize-Loss-Landscape)]
+- [[LLM Landscape](https://github.com/huanranchen/LLMLandscape)]
 
 
 # 💼 Academic Service
@@ -146,8 +147,6 @@ Proof of my participation in these volunteer services can be verified on the res
 
 - Journal Reviewer: T-PAMI, TMLR
 - Conference Reviewer: ICML/ICLR/NeurIPS, AISTATS, CVPR/ECCV/ICCV
-- Workshop Reviewer: NeurIPS2023-R0-FoMo, ICLR2024-BGPT, ICLR2024-SeT
-
 
 
 # 🔥 Links
