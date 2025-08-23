@@ -25,7 +25,7 @@ I'm an extremely interest-driven person. I do research only for fun.
 
 
 
-# 📝 Papers in "Robustness"
+# 📝 Some work in "Robustness"
 
 I care about robustness mainly because it provides a window into the inner mechanisms of neural networks. The existence of adversarial examples and the lack of benign overfitting in adversarial training have been longstanding topics that attract generation after generation of researchers.
 
@@ -42,7 +42,7 @@ Regarding LLMs, I've done some preliminary exploration:
 - We conjectured that benign fine-tuning within these basins preserves existing model capabilities, as random perturbations are minimally harmful within the basin, suggesting benign fine-tuning is even less disruptive. We validated this experimentally (Sec. 3.4, Appendix E).
 - Using randomized smoothing, we proved that larger basins correlate with reduced performance degradation during benign fine-tuning, providing a rigorous explanation for why "larger basins make subsequent SFT less likely to forget existing capabilities" (Sec. 4.1).
 - We analyzed how parameter-space robustness imply some robustness against jailbreak attacks (Sec 3.3, Sec. 4.2), explored regularization to constrain SFT within basins (Sec. 4.3), and conducted preliminary investigations into methods for enlarging basins (Sec. 5).
-- [[Arxiv](https://arxiv.org/abs/2505.17646)]
+- [[Arxiv](https://arxiv.org/abs/2505.17646)]  [[Blog](https://zhuanlan.zhihu.com/p/1920616505151845374)] [[No Video]]
 
 
 ## Towards the Worst-case Robustness of Large Language Models.
@@ -56,7 +56,7 @@ Regarding LLMs, I've done some preliminary exploration:
 - Derive a Bayesian error upper bound for the uniform kernel, offering insights into the upper limit of the theoretical guarantee of robustness.
 - Present a symmetric lemma, prove the symmetry of the trading graph, and use this lemma to easily analyze the properties of certified robustness (e.g., proving the relationship between certified robustness and vocabulary size).
 - Achieved a certified radius of 2.00 in l2 (Bayesian upper bound of 2.10) and 6.57 in the suffix setting (where empirically researchers focus on suffix length 20).
-- [[NeurIPS2024 SafeGenAI](https://arxiv.org/abs/2501.19040)]
+- [[NeurIPS2024 SafeGenAI](https://arxiv.org/abs/2501.19040)]  [[Blog](https://zhuanlan.zhihu.com/p/21266930786)] [[Video](https://www.bilibili.com/video/BV1WhV2zRE2m/)]
 
 
 
@@ -70,7 +70,7 @@ When I was an undergraduate student, I also used diffusion models to provide cer
 - Deriving the optimal solution for diffusion models, a theoretical tool for analyzing diffusion models.
 - Proposing an efficient approximate marginal inference method, Likelihood Maximization.
 - Achieving good empirical robustness without adversarial training.
-- [[ICML2024](https://arxiv.org/abs/2305.15241)]
+- [[ICML2024](https://arxiv.org/abs/2305.15241)] [[Blog](https://zhuanlan.zhihu.com/p/675067562)] [[Video](https://www.bilibili.com/video/BV1sk4y1S7pv/?spm_id_from=333.337.search-card.all.click)]
 
 I did a theoretical work to provide a theoretical guarantee for this empirical work.
 
@@ -81,14 +81,14 @@ I did a theoretical work to provide a theoretical guarantee for this empirical w
 - Deriving the analytical form of the gradient for diffusion classifiers (without the UNet Jacobian).
 - Deriving three Lipschitzness and robustness lower bounds for these diffusion classifiers.
 - Achieving state-of-the-art certified robustness, e.g., 70.7% certified robustness for l2 norm of 0.5, with only a 20% difference from the empirical upper bound.
-- [[NeurIPS2024](https://arxiv.org/abs/2402.02316)]
+- [[NeurIPS2024](https://arxiv.org/abs/2402.02316)] [[Blog1](https://zhuanlan.zhihu.com/p/12592746504)] [[Blog2](https://zhuanlan.zhihu.com/p/690230490)] [[Video](https://www.bilibili.com/video/BV1WhV2zRE2m/)]
 
 
 
 
 
 
-# 📝 Papers in "Optimization and Generalization"
+# 📝 Some work in "Optimization and Generalization"
 
 Generalization is the fundamental problem in machine learning, to which I would like to devote my whole life. In deep learning, I believe generalization is entangled with optimization, and cannot be separated from it as in the previous bias-variance tradeoff.
 
@@ -99,7 +99,7 @@ I have been greatly inspired by previous work on the relationship between sharpn
 - Identifying two second-order properties, flatness and the closeness of local optima, which are strongly correlated with generalization error.
 - Providing a generalization bound for closeness.
 - Proposing the CWA optimizer for optimizing the (upper bound of) closeness.
-- [[ICLR2024](https://arxiv.org/abs/2303.09105)]
+- [[ICLR2024](https://arxiv.org/abs/2303.09105)] [[Blog](https://zhuanlan.zhihu.com/p/680197033)] [[Video](https://www.bilibili.com/video/BV13W421N7mi/)]
 
 This CWA optimizer may lead to a fundamental and significant improvement when the solution of SGD lacks closeness.
 
@@ -108,7 +108,7 @@ Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zha
 - Direct application of the CWA optimizer on Large Vision Language Models.
 - Successfully breaks VLMs like GPT-4 with more than 95% attack success rate.
 - This demonstrates that when the solution of SGD lacks closeness, using a closeness optimizer can result in a fundamental improvement.
-- [[NeurIPSW2023](https://arxiv.org/abs/2309.11751)]
+- [[NeurIPSW2023](https://arxiv.org/abs/2309.11751)] [[Blog](https://zhuanlan.zhihu.com/p/2991362466)] [[Video](https://www.bilibili.com/video/BV13W421N7mi/)]
 
 
 
@@ -120,14 +120,14 @@ Below is my first research project. It is simple, but it greatly cultivated my i
 - Proposing a new backbone, scheduler, and training paradigm to encourage the flatness of local optima.
 - Explaining previous tricks and regularization from the landscape perspective.
 - ALRS is extremely helpful when using SGD, and I strongly recommend it if you are going to use SGD.
-- [[ECCVW2022](https://arxiv.org/abs/2209.08473)]
+- [[ECCVW2022](https://arxiv.org/abs/2209.08473)] [[Blog](https://www.zhihu.com/question/638766873/answer/3358801861)] [[Video](https://www.bilibili.com/video/BV13W421N7mi/)]
 
 
 
 
 # 📖 Academic Experience
 - *2025 - present*, PhD student at TSAIL, Tsinghua University.    Advised by Prof. Jun Zhu
-
+- *2025 - present*, Top Seed Intern at ByteDance.
 
 
 # 💻 Projects
@@ -173,7 +173,7 @@ If you've got any questions about my research or if you've tried reaching out th
 
 **If you are inclined to discuss publication or citation numbers, rely on numerical indicators to quantify individuals, or compare me to others, please refrain from contacting me. I am only interested in discussing intriguing problems and insights, not metrics.**
 
-My preferred email: huanran.chen@outlook.com; huanran_chen@outlook.com; huanran.chen@realai.ai;
+My preferred email: huanran.chen@outlook.com; huanran_chen@outlook.com; chenhr25@mails.tsinghua.edu.cn; chenhuanran@bytedance.com; 
 
 Please avoid sending emails to huanranchen@bit.edu.cn, as I won't be able to access this account much longer.
 
