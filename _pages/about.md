@@ -36,7 +36,7 @@ Among them, the certified bounds, which are data-dependent and model-dependent, 
 Regarding LLMs, I've done some preliminary exploration:
 
 
-## The Loss Landscape of LLMs: A Basin-like Structure
+## Unveiling the Basin-Like Loss Landscape in Large Language Models
 **Huanran Chen**, Yinpeng Dong, Zeming Wei, Hang Su, Jun Zhu.
 - We identified that LLMs exhibit robustness to Gaussian noise within a certain range, such that several benchmark values do not degrade at all within this region, forming stable "basins" in (benchmark-driven) loss landscape (Sec. 3.1, 3.2), and the larger the model, the wider the basin (Appendix D). This novel finding reveals a fundamental property of LLM robustness.
 - We conjectured that benign fine-tuning within these basins preserves existing model capabilities, as random perturbations are minimally harmful within the basin, suggesting benign fine-tuning is even less disruptive. We validated this experimentally (Sec. 3.4, Appendix E).
@@ -155,7 +155,7 @@ Links to my friends, my teachers, and my idol. I welcome connections with anyone
 
 - Advisor(s): [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Hang Su](https://www.suhangss.me/)]
 - Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
-- Role Model: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)], [[Kaiyue Wen](https://whenwen.github.io/)]
+- Role Models: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)], [[Kaiyue Wen](https://whenwen.github.io/)], [[Jeremy Cohen](https://jmcohen.github.io/)], [[Alex Damian](https://alex-damian.github.io/)]
 
 
 
@@ -174,6 +174,3 @@ If you've got any questions about my research or if you've tried reaching out th
 **If you are inclined to discuss publication or citation numbers, rely on numerical indicators to quantify individuals, or compare me to others, please refrain from contacting me. I am only interested in discussing intriguing problems and insights, not metrics.**
 
 My preferred email: huanran.chen@outlook.com; huanran_chen@outlook.com; chenhr25@mails.tsinghua.edu.cn; chenhuanran@bytedance.com; 
-
-Please avoid sending emails to huanranchen@bit.edu.cn, as I won't be able to access this account much longer.
-
