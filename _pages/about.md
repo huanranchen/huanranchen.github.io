@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 
-I'm a PhD student from TSAIL (Fall 2025), advised by Prof. [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], and closely collaborate with Prof. [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)]. I have a keen interest in the physics of machine learning. My **unattainable yet motivating** dream is to elevate AI to the realm of science, making every phenomenon explainable and predictable. I believe this requires both theoretical thinking and extensive empirical observation on every phenomenon we can observe. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories from diverse aspects, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
+I'm a PhD student from TSAIL (Fall 2025), advised by Prof. [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], and closely collaborate with Prof. [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)]. I’m currently working in Prof. [[Jingzhao Zhang](https://iiis.tsinghua.edu.cn/en/People/Faculty/ZhangJingzhao.htm)]’s lab as a rotation student. I have a keen interest in the physics of machine learning. My **unattainable yet motivating** dream is to elevate AI to the realm of science, making every phenomenon explainable and predictable. I believe this requires both theoretical thinking and extensive empirical observation on every phenomenon we can observe. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories from diverse aspects, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
 
 I'm an extremely interest-driven person. I do research only for fun.
 
@@ -153,7 +153,7 @@ Proof of my participation in these volunteer services can be verified on the res
 
 Here you can find links to my advisors, friends, and role models. I’m always happy to connect with those who share similar research interests or hobbies!
 
-- Advisor(s): [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Hang Su](https://www.suhangss.me/)]
+- Advisor(s): [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Hang Su](https://www.suhangss.me/)], [[Jingzhao Zhang](https://iiis.tsinghua.edu.cn/en/People/Faculty/ZhangJingzhao.htm)]
 - Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
 - Role Models: [[Tengyu Ma](https://ai.stanford.edu/~tengyuma/)], [[Kaiyue Wen](https://whenwen.github.io/)], [[Jeremy Cohen](https://jmcohen.github.io/)], [[Alex Damian](https://alex-damian.github.io/)], [[Sébastien Bubeck](http://sbubeck.com/)]
 
