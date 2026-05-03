@@ -80,11 +80,11 @@ The visualization of loss landscapes has always fascinated me. One day, while pl
 
 
 ## Unveiling the Basin-Like Loss Landscape in Large Language Models
-**Huanran Chen**, Yinpeng Dong, Zeming Wei, Hang Su, Jun Zhu.
-- **The Basin Phenomenon:** Discovered that LLMs exhibit remarkable parameter-space robustness to Gaussian noise, forming stable "basins" in the benchmark-driven loss landscape where capabilities do not degrade. Interestingly, the larger the model, the wider this basin becomes.
-- **Implications for Fine-Tuning:** Hypothesized and experimentally validated that benign fine-tuning operating within these basins minimally disrupts existing capabilities, offering an intuitive geometric explanation for why SFT doesn't easily trigger catastrophic forgetting.
-- **Theoretical Grounding:** Leveraged randomized smoothing to rigorously prove that larger basins inherently correlate with reduced performance degradation during Supervised Fine-Tuning (SFT).
-- **Security & Regularization:** Analyzed how parameter-space robustness mathematically implies robustness against jailbreak attacks. Furthermore, explored regularization techniques to actively constrain SFT within these safe basins.
+**Huanran Chen**, Zeming Wei, Yao Huang, Yichi Zhang, Yinpeng Dong, Jun Zhu.
+- **The Basin Phenomenon:** We discovered that LLMs exhibit remarkable parameter-space robustness, forming stable "basins" across diverse benchmarks (e.g., Math, Coding, Safety) and models (Llama 2/3, Mistral, Vicuna). This basin phenomenon is non-trivial: it gradually emerges during the training process and consistently widens as model capacity scales up from 0.5B to 14B parameters. Interestingly, anywhere within this basin, the model generates diverse but consistently correct (or safe) responses.
+- **Implications for Fine-Tuning & Attacks:** By visualizing the loss landscape along the Supervised Fine-Tuning (SFT) direction, we provide a clear geometric explanation for both catastrophic forgetting and fine-tuning attacks (e.g., performing normally on standard tasks but generating harmful content on malicious queries).
+- **Theoretical Grounding via Randomized Smoothing:** We mathematically proved that average-case robustness to Gaussian noise inherently bounds the performance degradation caused by worst-case perturbations, including SFT. Furthermore, we elegantly extended this theoretical guarantee to *any* known noise distribution by reducing the certified bound calculation to a fractional or 0-1 knapsack problem.
+- **Pre-training Regularization:** We demonstrated that incorporating Gaussian noise during the pre-training phase effectively transfers to enhanced robustness during downstream SFT, offering a principled way to widen these safe basins.
 - [[ICLR2026](https://arxiv.org/abs/2505.17646)]  [[Blog](https://zhuanlan.zhihu.com/p/1920616505151845374)] [[No Video]]
 
 
@@ -167,7 +167,6 @@ Proof of my participation in these volunteer services can be verified on the res
 Here you can find links to my advisors, friends, and role models. I’m always happy to connect with those who share similar research interests or hobbies!
 
 - Advisor(s): [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Jingzhao Zhang](https://iiis.tsinghua.edu.cn/en/People/Faculty/ZhangJingzhao.htm)], [[Hang Su](https://www.suhangss.me/)]
-- Friends: [[Ziruo Wang](https://zerowang030221.github.io/)],  [[Zeming Wei](https://weizeming.github.io/)], [[Zhengyi Wang](https://thuwzy.github.io/)], [[Shitong Shao]()]
 - Role Models: [[Kaiyue Wen](https://whenwen.github.io/)], [[Jeremy Cohen](https://jmcohen.github.io/)], [[Alex Damian](https://alex-damian.github.io/)], [[Sébastien Bubeck](http://sbubeck.com/)]
 
 The researchers listed as my role models have produced work that I deeply admire and have learned immensely from. My goal is to create research that is equally interesting, insightful and impactful—I aspire to follow in their footsteps.
