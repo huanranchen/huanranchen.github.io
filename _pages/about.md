@@ -57,7 +57,7 @@ This optimization philosophy achieves extremely fascinating results across diver
 - [[Arxiv](https://arxiv.org/abs/2604.09258)]
 
 **2. Black-box Transfer Attacks:** It achieves much higher attack success rates than baselines. In this adversarial setting, models always trivially achieve **0 training loss**, meaning optimization speed is irrelevant—***generalization* is all that matters**.
-### Closeness of the Local Optima: A Second Order Property Related to Generalization
+### Rethinking Model Ensemble in Transfer-based Adversarial Attacks
 **Huanran Chen**, Yichi Zhang, Yinpeng Dong, Jun Zhu
 - [[ICLR2024](https://arxiv.org/abs/2303.09105)] [[Blog](https://zhuanlan.zhihu.com/p/680197033)] [[Video](https://www.bilibili.com/video/BV13W421N7mi/)]
 
