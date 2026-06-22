@@ -36,6 +36,9 @@ I'm an extremely interest-driven person—I do research purely for fun. Currentl
 
 # 📝 Implicit Bias of Closeness
 
+<details markdown="1">
+<summary><b>[👉 Click to expand details on Closeness & Optimization]</b></summary>
+
 Generalization is the fundamental problem in machine learning, to which I would like to devote my whole life. In deep learning, I believe generalization is **deeply entangled with optimization**, and cannot be separated from it as in the traditional bias-variance tradeoff.
 
 I have been greatly inspired by previous work on the relationship between sharpness and generalization. In recent years, I identified another implicit bias—which I term **closeness**—that strongly correlates with generalization across various settings.
@@ -75,9 +78,13 @@ This optimization philosophy achieves extremely fascinating results across diver
 Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zhang, Yu Tian, Hang Su, Jun Zhu
 - [[NeurIPSW2023](https://arxiv.org/abs/2309.11751)] [[Blog](https://zhuanlan.zhihu.com/p/2991362466)] [[Video](https://www.bilibili.com/video/BV13W421N7mi/)]
 
+</details>
 
 
 # 📝 Basin-like Loss Landscape in Deep Learning
+
+<details markdown="1">
+<summary><b>[👉 Click to expand details on LLM Basins & Landscape Visualizations]</b></summary>
 
 The visualization of loss landscapes has always fascinated me. One day, while plotting the empirical loss landscapes of Large Language Models, I made a striking observation: rather than converging to sharp, isolated minima, LLMs often settle into expansive, flat "basins". This geometric property turns out to be intimately connected to how they preserve knowledge and resist perturbations.
 
@@ -89,15 +96,10 @@ The visualization of loss landscapes has always fascinated me. One day, while pl
 ## Unveiling the Basin-Like Loss Landscape in Large Language Models
 **Huanran Chen**, Zeming Wei, Yao Huang, Yichi Zhang, Yinpeng Dong, Jun Zhu.
 
-<details markdown="1">
-<summary><b>[👉 Click to expand paper details]</b></summary>
-
 - **The Basin Phenomenon:** We discovered that LLMs exhibit remarkable parameter-space robustness, forming stable "basins" across diverse benchmarks (e.g., Math, Coding, Safety) and models (Llama 2/3, Mistral, Vicuna). This basin phenomenon is non-trivial: it gradually emerges during the training process and consistently widens as model capacity scales up from 0.5B to 14B parameters. Interestingly, anywhere within this basin, the model generates diverse but consistently correct (or safe) responses.
 - **Implications for Fine-Tuning & Attacks:** By visualizing the loss landscape along the Supervised Fine-Tuning (SFT) direction, we provide a clear geometric explanation for both catastrophic forgetting and fine-tuning attacks (e.g., performing normally on standard tasks but generating harmful content on malicious queries).
 - **Theoretical Grounding via Randomized Smoothing:** We mathematically proved that average-case robustness to Gaussian noise inherently bounds the performance degradation caused by worst-case perturbations, including SFT. Furthermore, we elegantly extended this theoretical guarantee to *any* known noise distribution by reducing the certified bound calculation to a fractional or 0-1 knapsack problem.
 - **Pre-training Regularization:** We demonstrated that incorporating Gaussian noise during the pre-training phase effectively transfers to enhanced robustness during downstream SFT, offering a principled way to widen these safe basins.
-
-</details>
 
 - [[ICLR2026](https://arxiv.org/abs/2505.17646)]  [[Blog](https://zhuanlan.zhihu.com/p/1920616505151845374)] [[No Video]]
 
@@ -108,36 +110,29 @@ My fascination with the geometry of neural networks traces back to my very first
 ## Bootstrap Generalization Ability from Loss Landscape Perspective
 **Huanran Chen**, Shitong Shao, Ziyi Wang, Zirui Shang, Jin Chen, Xiaofeng Ji, Xinxiao Wu  
 
-<details markdown="1">
-<summary><b>[👉 Click to expand paper details]</b></summary>
-
 - Proposed a novel backbone, scheduler, and training paradigm specifically designed to encourage the flatness of local optima during optimization.
 - Provided a unified explanation for various empirical tricks and regularizations strictly through the lens of loss landscapes.
 - **Practical Recommendation:** Demonstrated that our ALRS method provides a fundamental boost to standard SGD, offering a highly recommended plug-and-play solution if you are heavily relying on vanilla SGD.
 
-</details>
-
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)] [[Blog](https://www.zhihu.com/question/638766873/answer/3358801861)] [[Video](https://www.bilibili.com/video/BV13W421N7mi/)]
 
-
+</details>
 
 
 # 📝 Diffusion Models and Robustness Certification
+
+<details markdown="1">
+<summary><b>[👉 Click to expand details on Generative Models & Certifiable Robustness]</b></summary>
 
 This line of work began during my undergraduate years. While studying diffusion models, I was struck by a fascinating counter-intuition: a purely generative model, trained solely to denoise, inherently contains all the conditional distribution information needed to perform discriminative tasks—without a single step of standard discriminative training.
 
 ## Robust Classification via a Single Diffusion Model
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Jun Zhu  
 
-<details markdown="1">
-<summary><b>[👉 Click to expand paper details]</b></summary>
-
 - **Paradigm Shift:** Proposed directly utilizing a single diffusion generative model as a robust discriminative classifier, completely bypassing adversarial training.
 - **Empirical Validation:** Demonstrated the inherent robustness of the diffusion classifier against both out-of-distribution (O.O.D.) data and adversarial examples.
 - **Theoretical Tools:** Derived the optimal solution for diffusion models, providing a rigorous mathematical tool for analyzing their behavior.
 - **Efficient Inference:** Proposed Likelihood Maximization as an efficient approximate marginal inference method.
-
-</details>
 
 - [[ICML2024](https://arxiv.org/abs/2305.15241)] [[Blog](https://zhuanlan.zhihu.com/p/675067562)] [[Video](https://www.bilibili.com/video/BV1sk4y1S7pv/?spm_id_from=333.337.search-card.all.click)]
 
@@ -148,15 +143,10 @@ Empirical robustness is intriguing, but as someone who pursues mathematical cert
 ## Diffusion Models are Certifiably Robust Classifiers
 **Huanran Chen**, Yinpeng Dong, Shitong Shao, Zhongkai Hao, Xiao Yang, Hang Su, Jun Zhu  
 
-<details markdown="1">
-<summary><b>[👉 Click to expand paper details]</b></summary>
-
 - Derived two Evidence Lower Bounds (ELBOs) for log-likelihood on noisy data to construct new noised diffusion classifiers (enabling point-wise Lipschitz bounds).
 - Obtained the analytical form of the gradient for diffusion classifiers, elegantly bypassing the intractable UNet Jacobian.
 - Established three Lipschitzness and robustness lower bounds, providing rigorous point-wise certification.
 - Achieved state-of-the-art certified robustness (e.g., 70.7% for an $\ell_2$ radius of 0.5), closing the gap to merely 20% from the empirical upper bound.
-
-</details>
 
 - [[NeurIPS2024](https://arxiv.org/abs/2402.02316)] [[Blog1](https://zhuanlan.zhihu.com/p/12592746504)] [[Blog2](https://zhuanlan.zhihu.com/p/690230490)] [[Video](https://www.bilibili.com/video/BV1WhV2zRE2m/)]
 
@@ -167,9 +157,6 @@ Later, I realized this theoretical framework wasn't limited to continuous image 
 ## Towards the Worst-case Robustness of Large Language Models
 **Huanran Chen**, Zeming Wei, Yinpeng Dong, Hang Su, Jun Zhu.
 
-<details markdown="1">
-<summary><b>[👉 Click to expand paper details]</b></summary>
-
 - **The Brutal Reality of White-Box:** Conducted rigorous white-box evaluations (conceptually straightforward but requiring massive engineering effort to strictly align tokens during optimization and inference). Demonstrated that existing LLM defenses, including adversarial training (AT), drop to 0% robustness under strict white-box evaluation.
 - **The Knapsack Reduction:** To provide a lower bound on worst-case robustness, I focused on randomized smoothing. I reduced the calculation of certified robustness under *any* smoothing distribution to a fractal or 0-1 knapsack problem, providing a universal solver.
 - **Kernel Superiority:** Theoretically proved that the uniform kernel (analogous to diffusion) strictly dominates the absorbing kernel (masked generation) in terms of robustness at the same accuracy level. Proved it is the best data-independent kernel without knowing data priors.
@@ -177,9 +164,9 @@ Later, I realized this theoretical framework wasn't limited to continuous image 
 - **Symmetric Lemma:** Introduced a symmetric lemma to analyze the trading graph, enabling elegant proofs for properties like the relationship between certified robustness and vocabulary size.
 - **Results:** Achieved a certified radius of 2.00 in $\ell_2$ (against a Bayesian upper bound of 2.10) and 6.57 in the suffix setting (where empirical research typically focuses on a suffix length of 20).
 
-</details>
-
 - [[NeurIPS2024 SafeGenAI](https://arxiv.org/abs/2501.19040)]  [[Blog](https://zhuanlan.zhihu.com/p/21266930786)] [[Video](https://www.bilibili.com/video/BV1WhV2zRE2m/)]
+
+</details>
 
 
 
@@ -194,6 +181,8 @@ Later, I realized this theoretical framework wasn't limited to continuous image 
 I place a high emphasis on code quality. I ensure that my project code is modular, plug-and-play, and must be clear and understandable. This makes it convenient for users to directly import or copy parts of the code.       
 I have reproduced over ten types of diffusion models such as EDM, DDIM, SDE, and DDPM, as well as over ten adversarial attacks like SSA, CWA, and VMI, and more than ten defense methods including AT and DiffPure. I hope my library can help others quickly familiarize themselves with these algorithms and facilitate their research.
 
+- [[Awesome-physics-of-ai paper list !](https://huanranchen.github.io/awesome-physics-of-ai/)]
+- [[Nexus pretraining package](https://github.com/huanranchen/NexusPretraining/tree/main)]
 - [[Adversarial Attacks package](https://github.com/huanranchen/AdversarialAttacks)]
 - [[Attacks on GPT-4 and Bard](https://github.com/thu-ml/Attack-Bard)]
 - [[Adversarial Attacks on Object Detection](https://github.com/VDIGPKU/T-SEA)]
@@ -214,7 +203,7 @@ Proof of my participation in these volunteer services can be verified on the res
 Here you can find links to my advisors, friends, and role models. I’m always happy to connect with those who share similar research interests or hobbies!
 
 - Advisor(s): [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)],  [[Jingzhao Zhang](https://iiis.tsinghua.edu.cn/en/People/Faculty/ZhangJingzhao.htm)], [[Hang Su](https://www.suhangss.me/)]
-- Role Models: [[Kaiyue Wen](https://whenwen.github.io/)], [[Jeremy Cohen](https://jmcohen.github.io/)], [[Alex Damian](https://alex-damian.github.io/)], [[Sébastien Bubeck](http://sbubeck.com/)]
+- Role Models: [[Kaiyue Wen](https://whenwen.github.io/)]
 
 The researchers listed as my role models have produced work that I deeply admire and have learned immensely from. My goal is to create research that is equally interesting, insightful and impactful—I aspire to follow in their footsteps.
 
