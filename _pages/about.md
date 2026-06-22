@@ -17,13 +17,22 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
+<div style="text-align: center; font-size: 1.1em; padding: 10px 0; margin-bottom: 20px; font-weight: bold;">
+  <a href="#about-me">About Me</a> &nbsp;|&nbsp; 
+  <a href="#publications">Publications</a> &nbsp;|&nbsp; 
+  <a href="#projects">Projects</a> &nbsp;|&nbsp; 
+  <a href="#personality">Personality & Hobbies</a> &nbsp;|&nbsp; 
+  <a href="#contact">Contact</a>
+</div>
 
 I'm a PhD student at TSAIL (Fall 2025), advised by Prof. [[Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml)], and closely collaborating with Prof. [[Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/)]. I’m currently working in Prof. [[Jingzhao Zhang](https://iiis.tsinghua.edu.cn/en/People/Faculty/ZhangJingzhao.htm)]’s lab as a rotation student. I have a keen interest in the **physics of deep learning**. My **unattainable yet motivating** dream is to elevate AI to the realm of science, making every phenomenon explainable and predictable. I believe this requires both rigorous theoretical thinking and extensive empirical observation. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories from diverse aspects, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
+
+> **Quick Facts:** 🧠 INTP 7w6 | 🥾 Founder of THU CollegeAI Hiker | 📜 Wei-Jin History Buff | 🍔 KFC/McDonald's Enthusiast
 
 I'm an extremely interest-driven person—I do research purely for fun. Currently, I'm extremely interested in analyzing the optimization and generalization dynamics in both toy models and LLM pretraining under controllable settings. I actively explore topics like river valley, edge of stability, central flow, tensor programs, greedy low-rank, deep linear networks, momentum and conditional gradients in LLM pretraining. Below is a selection of my previous research. To me, the ultimate compliment is simply to hear: 'Your work is interesting.'
 
 
-
+<span class='anchor' id='publications'></span>
 
 # 📝 Implicit Bias of Closeness
 
@@ -72,29 +81,42 @@ Yinpeng Dong, **Huanran Chen**, Jiawei Chen, Zhengwei Fang, Xiao Yang, Yichi Zha
 
 The visualization of loss landscapes has always fascinated me. One day, while plotting the empirical loss landscapes of Large Language Models, I made a striking observation: rather than converging to sharp, isolated minima, LLMs often settle into expansive, flat "basins". This geometric property turns out to be intimately connected to how they preserve knowledge and resist perturbations.
 
-
 <p align="center">
   <img src="../images/papers/basin.png" width="80%">
   <br>
 </p>
 
-
 ## Unveiling the Basin-Like Loss Landscape in Large Language Models
 **Huanran Chen**, Zeming Wei, Yao Huang, Yichi Zhang, Yinpeng Dong, Jun Zhu.
+
+<details markdown="1">
+<summary><b>[👉 Click to expand paper details]</b></summary>
+
 - **The Basin Phenomenon:** We discovered that LLMs exhibit remarkable parameter-space robustness, forming stable "basins" across diverse benchmarks (e.g., Math, Coding, Safety) and models (Llama 2/3, Mistral, Vicuna). This basin phenomenon is non-trivial: it gradually emerges during the training process and consistently widens as model capacity scales up from 0.5B to 14B parameters. Interestingly, anywhere within this basin, the model generates diverse but consistently correct (or safe) responses.
 - **Implications for Fine-Tuning & Attacks:** By visualizing the loss landscape along the Supervised Fine-Tuning (SFT) direction, we provide a clear geometric explanation for both catastrophic forgetting and fine-tuning attacks (e.g., performing normally on standard tasks but generating harmful content on malicious queries).
 - **Theoretical Grounding via Randomized Smoothing:** We mathematically proved that average-case robustness to Gaussian noise inherently bounds the performance degradation caused by worst-case perturbations, including SFT. Furthermore, we elegantly extended this theoretical guarantee to *any* known noise distribution by reducing the certified bound calculation to a fractional or 0-1 knapsack problem.
 - **Pre-training Regularization:** We demonstrated that incorporating Gaussian noise during the pre-training phase effectively transfers to enhanced robustness during downstream SFT, offering a principled way to widen these safe basins.
+
+</details>
+
 - [[ICLR2026](https://arxiv.org/abs/2505.17646)]  [[Blog](https://zhuanlan.zhihu.com/p/1920616505151845374)] [[No Video]]
 
+<br>
 
 My fascination with the geometry of neural networks traces back to my very first research project. While conceptually simpler than my current work on massive LLMs, it was the crucial spark that cultivated my interest and drove me to dedicate my research career to the profound connection between optimization and generalization.
 
 ## Bootstrap Generalization Ability from Loss Landscape Perspective
 **Huanran Chen**, Shitong Shao, Ziyi Wang, Zirui Shang, Jin Chen, Xiaofeng Ji, Xinxiao Wu  
+
+<details markdown="1">
+<summary><b>[👉 Click to expand paper details]</b></summary>
+
 - Proposed a novel backbone, scheduler, and training paradigm specifically designed to encourage the flatness of local optima during optimization.
 - Provided a unified explanation for various empirical tricks and regularizations strictly through the lens of loss landscapes.
 - **Practical Recommendation:** Demonstrated that our ALRS method provides a fundamental boost to standard SGD, offering a highly recommended plug-and-play solution if you are heavily relying on vanilla SGD.
+
+</details>
+
 - [[ECCVW2022](https://arxiv.org/abs/2209.08473)] [[Blog](https://www.zhihu.com/question/638766873/answer/3358801861)] [[Video](https://www.bilibili.com/video/BV13W421N7mi/)]
 
 
@@ -106,35 +128,58 @@ This line of work began during my undergraduate years. While studying diffusion 
 
 ## Robust Classification via a Single Diffusion Model
 **Huanran Chen**, Yinpeng Dong, Zhengyi Wang, Jun Zhu  
+
+<details markdown="1">
+<summary><b>[👉 Click to expand paper details]</b></summary>
+
 - **Paradigm Shift:** Proposed directly utilizing a single diffusion generative model as a robust discriminative classifier, completely bypassing adversarial training.
 - **Empirical Validation:** Demonstrated the inherent robustness of the diffusion classifier against both out-of-distribution (O.O.D.) data and adversarial examples.
 - **Theoretical Tools:** Derived the optimal solution for diffusion models, providing a rigorous mathematical tool for analyzing their behavior.
 - **Efficient Inference:** Proposed Likelihood Maximization as an efficient approximate marginal inference method.
+
+</details>
+
 - [[ICML2024](https://arxiv.org/abs/2305.15241)] [[Blog](https://zhuanlan.zhihu.com/p/675067562)] [[Video](https://www.bilibili.com/video/BV1sk4y1S7pv/?spm_id_from=333.337.search-card.all.click)]
+
+<br>
 
 Empirical robustness is intriguing, but as someone who pursues mathematical certainty, I wanted strict theoretical bounds. I realized we could elegantly bypass intractable components to derive a very tight certified guarantee for these diffusion classifiers.
 
 ## Diffusion Models are Certifiably Robust Classifiers
 **Huanran Chen**, Yinpeng Dong, Shitong Shao, Zhongkai Hao, Xiao Yang, Hang Su, Jun Zhu  
+
+<details markdown="1">
+<summary><b>[👉 Click to expand paper details]</b></summary>
+
 - Derived two Evidence Lower Bounds (ELBOs) for log-likelihood on noisy data to construct new noised diffusion classifiers (enabling point-wise Lipschitz bounds).
 - Obtained the analytical form of the gradient for diffusion classifiers, elegantly bypassing the intractable UNet Jacobian.
 - Established three Lipschitzness and robustness lower bounds, providing rigorous point-wise certification.
 - Achieved state-of-the-art certified robustness (e.g., 70.7% for an $\ell_2$ radius of 0.5), closing the gap to merely 20% from the empirical upper bound.
+
+</details>
+
 - [[NeurIPS2024](https://arxiv.org/abs/2402.02316)] [[Blog1](https://zhuanlan.zhihu.com/p/12592746504)] [[Blog2](https://zhuanlan.zhihu.com/p/690230490)] [[Video](https://www.bilibili.com/video/BV1WhV2zRE2m/)]
+
+<br>
 
 Later, I realized this theoretical framework wasn't limited to continuous image spaces or Gaussian noise. We could generalize the robustness guarantee to **any discrete noise distribution** in Large Language Models by reducing the randomized smoothing process to a classical knapsack problem.
 
 ## Towards the Worst-case Robustness of Large Language Models
 **Huanran Chen**, Zeming Wei, Yinpeng Dong, Hang Su, Jun Zhu.
+
+<details markdown="1">
+<summary><b>[👉 Click to expand paper details]</b></summary>
+
 - **The Brutal Reality of White-Box:** Conducted rigorous white-box evaluations (conceptually straightforward but requiring massive engineering effort to strictly align tokens during optimization and inference). Demonstrated that existing LLM defenses, including adversarial training (AT), drop to 0% robustness under strict white-box evaluation.
 - **The Knapsack Reduction:** To provide a lower bound on worst-case robustness, I focused on randomized smoothing. I reduced the calculation of certified robustness under *any* smoothing distribution to a fractal or 0-1 knapsack problem, providing a universal solver.
 - **Kernel Superiority:** Theoretically proved that the uniform kernel (analogous to diffusion) strictly dominates the absorbing kernel (masked generation) in terms of robustness at the same accuracy level. Proved it is the best data-independent kernel without knowing data priors.
 - **Mapping the Ceiling:** Derived a Bayesian error upper bound for the uniform kernel, mapping the theoretical ceiling of robust guarantees.
 - **Symmetric Lemma:** Introduced a symmetric lemma to analyze the trading graph, enabling elegant proofs for properties like the relationship between certified robustness and vocabulary size.
 - **Results:** Achieved a certified radius of 2.00 in $\ell_2$ (against a Bayesian upper bound of 2.10) and 6.57 in the suffix setting (where empirical research typically focuses on a suffix length of 20).
+
+</details>
+
 - [[NeurIPS2024 SafeGenAI](https://arxiv.org/abs/2501.19040)]  [[Blog](https://zhuanlan.zhihu.com/p/21266930786)] [[Video](https://www.bilibili.com/video/BV1WhV2zRE2m/)]
-
-
 
 
 
@@ -142,6 +187,8 @@ Later, I realized this theoretical framework wasn't limited to continuous image 
 - *2025 - present*, PhD student at TSAIL, Tsinghua University.    Advised by Prof. Jun Zhu
 - *2025 - present*, Top Seed Intern at ByteDance.
 
+
+<span class='anchor' id='projects'></span>
 
 # 💻 Projects
 I place a high emphasis on code quality. I ensure that my project code is modular, plug-and-play, and must be clear and understandable. This makes it convenient for users to directly import or copy parts of the code.       
@@ -171,11 +218,20 @@ Here you can find links to my advisors, friends, and role models. I’m always h
 
 The researchers listed as my role models have produced work that I deeply admire and have learned immensely from. My goal is to create research that is equally interesting, insightful and impactful—I aspire to follow in their footsteps.
 
-# 🔥 Personality
 
+<span class='anchor' id='personality'></span>
+
+# 🔥 Personality
 I'm an INTP 7w6, driven by an insatiable curiosity to explore the world, the universe, and the electrifying science behind neural networks. I’m utterly captivated by nearly all realms of scientific knowledge.
 
-My favorite food is McDonald’s/KFC. I also thrive on climbing mountains, hiking, and cycling.
+Beyond my love for science, my second greatest passion is hiking. Interestingly, part of this stems from my research—navigating complex, beautiful physical landscapes constantly inspires my understanding of optimizer trajectories and loss landscapes! But more fundamentally, I am drawn to nature, the unconstrained freedom of the outdoors, simple joys, and easygoing, authentic relationships. To share this passion, I founded the THU CollegeAI hiker community, where we organize weekly hiking trips. I absolutely love connecting with people of different personalities, understanding diverse perspectives, and exploring how different minds work. If you'd like to join our hikes or simply want to chat, feel free to add my WeChat: ScientificML. Everyone is welcome!  
+
+When I'm not doing research or hiking, I immerse myself in history. I am particularly fascinated by eras of profound chaos and transformation, such as the 魏晋南北朝, 五胡十六国, and 五代十国. My historical idol is 宇文泰. I deeply admire his extreme rationality, his unyielding resilience, and his strategic wisdom in establishing the Northern Zhou dynasty from a position of absolute despair. In many ways, I view his traits as a historical projection of my own personality—maintaining ultimate rationality and unwavering calm when navigating through chaotic, high-entropy environments.
+
+In my daily life, I am not a materially driven person; different levels of material comfort feel largely the same to me. A simple lifestyle brings me the most peace and leaves more mental bandwidth for the things I truly care about. As proof, my favorite food is simply McDonald’s/KFC! That said, I am always open-minded and more than happy to experience new things and share new adventures with friends.
+
+
+<span class='anchor' id='contact'></span>
 
 # 📧 Emails
 
@@ -185,4 +241,4 @@ If you've got any questions about my research or if you've tried reaching out th
 
 **If you are inclined to discuss publication or citation numbers, rely on numerical indicators to quantify individuals, or compare me to others, please refrain from contacting me. I am only interested in discussing intriguing problems and insights, not metrics.**
 
-My preferred email: huanran.chen@outlook.com; huanran_chen@outlook.com; chenhr25@mails.tsinghua.edu.cn; chenhuanran@bytedance.com; 
+My preferred email: huanran.chen@outlook.com; huanran_chen@outlook.com; chenhr25@mails.tsinghua.edu.cn; chenhuanran@bytedance.com;
