@@ -1,23 +1,21 @@
-# main links links
 main:
   - title: "About Me"
     url: "/#about-me"
 
-  - title: "News"
-    url: "/#-news"
+  - title: "Selected Work"
+    url: "/#selected-work"
 
-  - title: "Publications"
-    url: "/#-research-publications"
+  - title: "Research Stories"
+    url: "/#research-stories"
 
-  - title: "Internships"
-    url: "/#-internships"
-
-  - title: "Patents"
-    url: "/#-patents"
+  - title: "Experience"
+    url: "/#experience"
 
   - title: "Projects"
-    url: "/#-projects"
+    url: "/#projects"
 
-  - title: "Academic Service"
-    url: "/#-academic-service"
-  
+  - title: "Beyond Research"
+    url: "/#beyond-research"
+
+  - title: "Contact"
+    url: "/#contact"

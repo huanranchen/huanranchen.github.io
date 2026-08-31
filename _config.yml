@@ -11,8 +11,8 @@ description              : "Student at Tsinghua SAIL Group"
 repository               : "huanranchen/huanranchen.github.io"
 google_scholar_stats_use_cdn : true
 
-# google analytics
-google_analytics_id      :  "QYsKXccAAAAj" # get google_analytics_id from https://analytics.google.com/analytics/
+# Google Analytics (set to a GA measurement ID such as G-XXXXXXXXXX to enable)
+google_analytics_id      :
 
 # SEO Related
 google_site_verification :  "google-site-verification=6ScN9LPyidMwUPPTabtPI3BbJQyuiaCmyPcQ2J7Edoo"

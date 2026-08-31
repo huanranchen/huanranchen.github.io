@@ -107,3 +107,92 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+.research-thesis {
+    margin: 1.25rem 0;
+    padding: 1rem 1.15rem;
+    border-left: 4px solid $info-color;
+    background: mix(#fff, $info-color, 95%);
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.section-intro {
+    color: $gray;
+    max-width: 52rem;
+}
+
+.selected-work-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin: 1.25rem 0 2.5rem;
+    border-top: 1px solid $border-color;
+
+    @include breakpoint($medium) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.selected-work-item {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid $border-color;
+
+    @include breakpoint($medium) {
+        padding: 1.35rem 1.4rem 1.35rem 0;
+
+        &:nth-child(even) {
+            padding-right: 0;
+            padding-left: 1.4rem;
+            border-left: 1px solid $border-color;
+        }
+    }
+
+    h3 {
+        margin: 0.35rem 0 0.55rem;
+        font-size: 1.05rem;
+        line-height: 1.35;
+    }
+
+    p {
+        margin-bottom: 0.7rem;
+        color: $dark-gray;
+    }
+}
+
+.selected-work-meta {
+    color: $info-color;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.selected-work-links {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+details.research-story {
+    margin: 0.8rem 0 2rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    background: mix(#fff, $light-gray, 92%);
+
+    > summary {
+        color: $link-color;
+        cursor: pointer;
+    }
+
+    &[open] > summary {
+        margin-bottom: 1.25rem;
+    }
+}
