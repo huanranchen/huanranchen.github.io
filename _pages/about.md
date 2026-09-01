@@ -255,7 +255,6 @@ I care about modular, readable, plug-and-play research code. My libraries includ
 - Co-organizer: [FAI Seminar](https://www.fai-seminar.ac.cn/)
 - Co-organizer: [X-AGI](https://www.x-agi.cc/)
 - Journal Reviewer: T-PAMI, TMLR
-- Conference Reviewer: ICML/ICLR/NeurIPS, AISTATS, CVPR/ECCV/ICCV
 
 
 ## People
