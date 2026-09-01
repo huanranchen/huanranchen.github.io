@@ -19,7 +19,7 @@ redirect_from:
 
 # Huanran Chen
 
-I'm a PhD student at [Tsinghua SAIL](https://ml.cs.tsinghua.edu.cn/), advised by Prof. [Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml) and closely collaborating with Prof. [Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/). I also work with Prof. [Jingzhao Zhang](https://iiis.tsinghua.edu.cn/en/People/Faculty/ZhangJingzhao.htm)'s group. I study the **physics of deep learning**: the optimization dynamics, geometry, and statistical mechanisms that could make neural-network training more explainable, predictable, and controllable.
+I'm a PhD student at TSAIL (Fall 2025), advised by Prof. [Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml), and closely collaborating with Prof. [Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/). I'm currently working in Prof. [Jingzhao Zhang](https://iiis.tsinghua.edu.cn/en/People/Faculty/ZhangJingzhao.htm)'s lab as a rotation student. I have a keen interest in the **physics of deep learning**. My **unattainable yet motivating** dream is to elevate AI to the realm of science, making every phenomenon explainable and predictable. I believe this requires both rigorous theoretical thinking and extensive empirical observation. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories from diverse aspects, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
 
 <div class="research-thesis" markdown="1">
 **My current approach is intervention-first.** I look for predictions on which competing explanations disagree, then intervene on the optimizer, learning-rate schedule, model, or data. A successful prediction can become a method; a failed one reveals exactly where the theory needs to change.
@@ -47,7 +47,7 @@ To me, the ultimate compliment is simply: “Your work is interesting.”
     <div class="selected-work-meta">PREPRINT · 2026</div>
     <h3>Nexus: Same Pretraining Loss, Better Downstream Generalization via Common Minima</h3>
     <p>The same pretraining loss can conceal different downstream behavior; Nexus explicitly optimizes for common minima across tasks.</p>
-    <div class="selected-work-links"><a href="https://arxiv.org/abs/2604.09258">Paper</a><a href="https://github.com/huanranchen/NexusPretraining">Code</a></div>
+    <div class="selected-work-links"><a href="https://arxiv.org/abs/2604.09258">Paper</a><a href="https://github.com/huanranchen/NexusPretraining">Code</a><a href="https://www.bilibili.com/video/BV15c416WEMf/">Video</a></div>
   </article>
   <article class="selected-work-item">
     <div class="selected-work-meta">ICLR · 2026</div>
@@ -70,7 +70,7 @@ To me, the ultimate compliment is simply: “Your work is interesting.”
   <article class="selected-work-item">
     <div class="selected-work-meta">NEURIPS · 2024</div>
     <h3>Diffusion Models are Certifiably Robust Classifiers</h3>
-    <p>Diffusion likelihood bounds yield point-wise robustness certificates without differentiating through the full UNet Jacobian.</p>
+    <p>We prove that diffusion models are certifiably unattackable within a guaranteed perturbation radius.</p>
     <div class="selected-work-links"><a href="https://arxiv.org/abs/2402.02316">Paper</a><a href="https://zhuanlan.zhihu.com/p/12592746504">Blog</a></div>
   </article>
   <article class="selected-work-item">
@@ -121,7 +121,7 @@ This optimization perspective produces consistent results across several setting
 **1. LLM Pre-training:** It achieves the **exact same pretraining loss curve** as the baseline, but delivers **significantly better downstream task generalization**.
 #### Nexus: Same Pretraining Loss, Better Downstream Generalization via Common Minima
 **Huanran Chen**, Huaqing Zhang, Xiao Li, Yinpeng Dong, Ke Shen, Jun Zhu
-- [Paper](https://arxiv.org/abs/2604.09258)
+- [Paper](https://arxiv.org/abs/2604.09258) · [Video](https://www.bilibili.com/video/BV15c416WEMf/)
 
 **2. Black-box Transfer Attacks:** It achieves much higher attack success rates than baselines. In this adversarial setting, models always trivially achieve **0 training loss**, meaning optimization speed is irrelevant—***generalization* is all that matters**.
 #### Rethinking Model Ensemble in Transfer-based Adversarial Attacks
@@ -252,6 +252,8 @@ I care about modular, readable, plug-and-play research code. My libraries includ
 
 ## Academic Service
 
+- Co-organizer: [FAI Seminar](https://www.fai-seminar.ac.cn/)
+- Co-organizer: [X-AGI](https://www.x-agi.cc/)
 - Journal Reviewer: T-PAMI, TMLR
 - Conference Reviewer: ICML/ICLR/NeurIPS, AISTATS, CVPR/ECCV/ICCV
 
