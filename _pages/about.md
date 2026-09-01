@@ -46,37 +46,37 @@ To me, the ultimate compliment is simply: “Your work is interesting.”
   <article class="selected-work-item">
     <div class="selected-work-meta">PREPRINT · 2026</div>
     <h3>Nexus: Same Pretraining Loss, Better Downstream Generalization via Common Minima</h3>
-    <p>The same pretraining loss can conceal different downstream behavior; Nexus explicitly optimizes for common minima across tasks.</p>
+    <p>Models with indistinguishable pretraining loss can generalize very differently; Nexus follows the exact same loss curve while substantially improving downstream performance by steering optimization toward common minima.</p>
     <div class="selected-work-links"><a href="https://arxiv.org/abs/2604.09258">Paper</a><a href="https://github.com/huanranchen/NexusPretraining">Code</a><a href="https://www.bilibili.com/video/BV15c416WEMf/">Video</a></div>
   </article>
   <article class="selected-work-item">
     <div class="selected-work-meta">ICLR · 2026</div>
     <h3>Unveiling the Basin-Like Loss Landscape in Large Language Models</h3>
-    <p>LLM loss landscapes form widening parameter-space basins that connect knowledge preservation, fine-tuning, and robustness.</p>
+    <p>Across LLMs from 0.5B to 14B, training produces widening basins in which widely different parameters still generate diverse but consistently correct—or safe—answers.</p>
     <div class="selected-work-links"><a href="https://arxiv.org/abs/2505.17646">Paper</a><a href="https://zhuanlan.zhihu.com/p/1920616505151845374">Blog</a></div>
   </article>
   <article class="selected-work-item">
     <div class="selected-work-meta">ICLR · 2024</div>
     <h3>Rethinking Model Ensemble in Transfer-based Adversarial Attacks</h3>
-    <p>Transferability depends on gradient closeness across models, revealing an optimization bias that matters even after training loss reaches zero.</p>
+    <p>Even when every surrogate reaches zero training loss, their transferability differs sharply; gradient closeness explains the gap and directly yields stronger black-box attacks.</p>
     <div class="selected-work-links"><a href="https://arxiv.org/abs/2303.09105">Paper</a><a href="https://zhuanlan.zhihu.com/p/680197033">Blog</a></div>
   </article>
   <article class="selected-work-item">
     <div class="selected-work-meta">ICML · 2024</div>
     <h3>Robust Classification via a Single Diffusion Model</h3>
-    <p>A single generative diffusion model can act as a robust classifier without standard discriminative or adversarial training.</p>
+    <p>A single diffusion model, trained only to denoise and without adversarial training, can serve directly as a classifier robust to both adversarial and out-of-distribution inputs.</p>
     <div class="selected-work-links"><a href="https://arxiv.org/abs/2305.15241">Paper</a><a href="https://www.bilibili.com/video/BV1sk4y1S7pv/">Video</a></div>
   </article>
   <article class="selected-work-item">
     <div class="selected-work-meta">NEURIPS · 2024</div>
     <h3>Diffusion Models are Certifiably Robust Classifiers</h3>
-    <p>We prove that diffusion models are certifiably unattackable within a guaranteed perturbation radius.</p>
+    <p>We prove that diffusion models are unattackable within a certified radius, achieving 70.7% certified accuracy at an ℓ₂ radius of 0.5.</p>
     <div class="selected-work-links"><a href="https://arxiv.org/abs/2402.02316">Paper</a><a href="https://zhuanlan.zhihu.com/p/12592746504">Blog</a></div>
   </article>
   <article class="selected-work-item">
     <div class="selected-work-meta">SAFEGENAI @ NEURIPS · 2024</div>
     <h3>Towards the Worst-case Robustness of Large Language Models</h3>
-    <p>Certified robustness under general discrete noise reduces to a knapsack problem, enabling tight guarantees for LLMs.</p>
+    <p>Under strict white-box evaluation, existing LLM defenses—including adversarial training—fall to 0% robustness; our universal certificate reaches radius 2.00 against a Bayesian ceiling of 2.10.</p>
     <div class="selected-work-links"><a href="https://arxiv.org/abs/2501.19040">Paper</a><a href="https://zhuanlan.zhihu.com/p/21266930786">Blog</a></div>
   </article>
 </div>
@@ -265,7 +265,7 @@ People whose work has shaped mine:
 - Advisors and collaborators: [Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml), [Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/), [Jingzhao Zhang](https://iiis.tsinghua.edu.cn/en/People/Faculty/ZhangJingzhao.htm), [Hang Su](https://www.suhangss.me/)
 - Role models: [Kaiyue Wen](https://whenwen.github.io/), [Jingfeng Wu](https://uuujf.github.io/)
 
-I have learned a great deal from the questions they choose, the mechanisms they uncover, and the clarity of their work.
+The researchers listed as my role models have produced work that I deeply admire and have learned immensely from. My goal is to create research that is equally interesting, insightful and impactful—I aspire to follow in their footsteps.
 
 
 <span class='anchor' id='personality'></span>
