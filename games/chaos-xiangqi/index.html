@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<title>离谱象棋 · 好友大招版</title>
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.5/dist/peerjs.min.js"></script>
+<style>
+:root{--bg:#101418;--panel:#171d23;--line:#7b6745;--board:#d8b77b;--red:#b91c1c;--black:#18212a;--text:#f4f4f5;--muted:#a1a1aa;--accent:#f59e0b}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 50% 0,#202833,#0d1117 55%);color:var(--text);font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;min-height:100vh}
+.app{width:min(100%,1000px);margin:auto;padding:14px}.top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px}.title{font-weight:900;font-size:clamp(20px,4vw,34px)}.tag{font-size:12px;color:#111;background:var(--accent);border-radius:999px;padding:3px 8px;font-weight:800}
+.card{background:rgba(23,29,35,.95);border:1px solid #303946;border-radius:16px;padding:14px;box-shadow:0 10px 30px #0005}.lobby{max-width:560px;margin:8vh auto}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}button,input{font:inherit}button{border:0;border-radius:10px;padding:10px 14px;background:#2a3440;color:white;font-weight:750;cursor:pointer}button.primary{background:#f59e0b;color:#17120a}button.danger{background:#7f1d1d}button:disabled{opacity:.4;cursor:not-allowed}input{min-width:0;flex:1;border:1px solid #3b4654;background:#0d1218;color:white;border-radius:10px;padding:10px}.hint{color:var(--muted);font-size:13px;line-height:1.55}.status{font-size:13px;color:#d4d4d8;margin-top:10px}.game{display:none}.layout{display:grid;grid-template-columns:minmax(300px,620px) minmax(260px,1fr);gap:14px;align-items:start}
+.board-wrap{position:relative;background:#3b2b17;border-radius:14px;padding:10px;box-shadow:0 12px 35px #0007}.board{width:100%;aspect-ratio:9/10;display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(10,1fr);background:var(--board);border:3px solid #4b3820;position:relative;overflow:hidden}.cell{position:relative;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;touch-action:manipulation}.cell:nth-child(9n){border-right:0}.cell.river{border-top:3px solid #5a4628}.cell.sel{background:#fde68a99}.cell.target{background:#86efac66}.cell.last{box-shadow:inset 0 0 0 3px #f59e0b}.piece{width:82%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:#f2deb8;border:2px solid currentColor;box-shadow:0 2px 4px #0007;font-size:clamp(17px,5.8vw,34px);font-family:serif;font-weight:900;user-select:none}.piece.red{color:var(--red)}.piece.black{color:var(--black)}.river-label{position:absolute;pointer-events:none;left:10%;right:10%;top:50%;transform:translateY(-50%);display:flex;justify-content:space-around;font:900 clamp(14px,3.6vw,26px) serif;color:#5c4526aa;letter-spacing:.5em}
+.side{display:flex;flex-direction:column;gap:12px}.turn{font-weight:900;font-size:18px}.you{font-size:13px;color:var(--muted)}.skills{display:grid;grid-template-columns:1fr 1fr;gap:8px}.skill{text-align:left;padding:10px;background:#232c36;border:1px solid #394553;min-height:66px}.skill b{display:block;color:#fbbf24}.skill small{display:block;color:#b6bcc5;font-weight:500;margin-top:3px;line-height:1.3}.skill.active{outline:3px solid #f59e0b}.skill.used{opacity:.35}.log{height:180px;overflow:auto;background:#0d1218;border-radius:10px;padding:9px;font-size:12px;color:#cbd5e1;line-height:1.55}.pill{display:inline-block;background:#29323c;border-radius:999px;padding:3px 8px;font-size:12px;color:#cbd5e1}.banner{margin-bottom:9px;padding:8px 10px;border-radius:10px;background:#1e293b;font-size:13px}.win{background:#713f12;color:#fef3c7;font-weight:900}.roomline{font-size:12px;word-break:break-all;color:#cbd5e1;margin-top:6px}
+@media(max-width:760px){.app{padding:8px}.layout{grid-template-columns:1fr}.side{order:-1}.skills{grid-template-columns:repeat(3,1fr)}.skill{padding:8px;min-height:60px}.skill small{display:none}.log{height:105px}.board-wrap{padding:7px}.piece{font-size:clamp(18px,7vw,32px)}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div class="title">离谱象棋 <span class="tag">好友大招版</span></div><span class="pill">无广告 · 全大招解锁</span></div>
+
+  <section id="lobby" class="card lobby">
+    <h2 style="margin-top:0">发个链接，直接和好友开打</h2>
+    <p class="hint">这是一个独立原创的“大招象棋”网页，不使用《万宁象棋》的代码或素材。联机采用 WebRTC P2P；房主为红方，好友为黑方。</p>
+    <div id="hostControls">
+      <button id="createBtn" class="primary">创建好友房</button>
+    </div>
+    <div id="joinControls" style="display:none">
+      <div class="row"><button id="joinBtn" class="primary">加入好友房</button><button id="backBtn">自己开房</button></div>
+    </div>
+    <div id="shareBox" style="display:none;margin-top:12px">
+      <div class="row"><input id="shareUrl" readonly/><button id="copyBtn">复制链接</button></div>
+      <div class="hint" style="margin-top:7px">把这个链接发给好友。他打开后点“加入好友房”即可。</div>
+    </div>
+    <div id="lobbyStatus" class="status">尚未连接。</div>
+  </section>
+
+  <section id="game" class="game">
+    <div class="layout">
+      <div class="board-wrap">
+        <div id="board" class="board"></div>
+        <div class="river-label"><span>楚河</span><span>汉界</span></div>
+      </div>
+      <aside class="side">
+        <div class="card">
+          <div id="banner" class="banner">连接中…</div>
+          <div id="turnText" class="turn"></div>
+          <div id="youText" class="you"></div>
+          <div id="roomLine" class="roomline"></div>
+        </div>
+        <div class="card">
+          <div style="font-weight:900;margin-bottom:8px">六大招 · 开局全解锁</div>
+          <div class="skills" id="skills"></div>
+          <div id="skillHint" class="hint" style="margin-top:8px">每回合至多使用一个大招；每个大招每局一次，大招后仍可正常走棋。</div>
+        </div>
+        <div class="card">
+          <div class="row"><button id="restartBtn">重新开局</button><button id="copyRoomBtn">复制房间链接</button><button id="cancelSkillBtn" style="display:none">取消大招</button></div>
+          <div style="font-weight:900;margin:10px 0 6px">战报</div><div id="log" class="log"></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</div>
+<script>
+(() => {
+'use strict';
+const $=s=>document.querySelector(s);
+const lobby=$('#lobby'), game=$('#game'), boardEl=$('#board'), statusEl=$('#lobbyStatus');
+let peer=null, conn=null, role=null, myColor=null, state=null, selected=null, skillMode=null, skillFrom=null;
+const roomParam=new URLSearchParams(location.search).get('room');
+const CNAME={r:'红方',b:'黑方'};
+const PIECE_CHARS={r:{K:'帅',A:'仕',B:'相',N:'马',R:'车',C:'炮',P:'兵'},b:{K:'将',A:'士',B:'象',N:'马',R:'车',C:'炮',P:'卒'}};
+const SKILLS=[
+  {id:'summon',name:'天降神兵',desc:'在己方半场随机召来 3 枚兵卒。'},
+  {id:'blast',name:'雷霆万钧',desc:'点掉任意一枚敌方非将帅棋子。'},
+  {id:'teleport',name:'乾坤挪移',desc:'将己方一枚非将帅棋子瞬移到任意空位。'},
+  {id:'mirror',name:'镜花水月',desc:'复制己方一枚非将帅棋子到镜像/随机空位。'},
+  {id:'double',name:'风驰电掣',desc:'本回合获得额外一次正常走棋。'},
+  {id:'freeze',name:'封天锁地',desc:'对手的下一回合直接跳过。'}
+];
+
+if(roomParam){ $('#hostControls').style.display='none'; $('#joinControls').style.display='block'; statusEl.textContent='检测到好友房链接：'+roomParam; }
+$('#backBtn').onclick=()=>{history.replaceState(null,'',location.pathname);location.reload()};
+$('#createBtn').onclick=createRoom; $('#joinBtn').onclick=joinRoom; $('#copyBtn').onclick=copyShare; $('#copyRoomBtn').onclick=copyShare;
+$('#cancelSkillBtn').onclick=()=>{skillMode=null;skillFrom=null;render()};
+$('#restartBtn').onclick=()=>sendAction({type:'restart'});
+
+function makeId(){return 'lxq-'+Math.random().toString(36).slice(2,8)+'-'+Date.now().toString(36).slice(-4)}
+function makePeer(id){
+  try{return new Peer(id||undefined,{debug:1})}catch(e){statusEl.textContent='PeerJS 初始化失败：'+e.message;throw e}
+}
+function createRoom(){
+  if(peer)return; role='host'; myColor='r'; statusEl.textContent='正在创建房间…';
+  peer=makePeer(makeId());
+  peer.on('open',id=>{
+    const u=new URL(location.href);u.search='';u.searchParams.set('room',id);
+    $('#shareUrl').value=u.toString();$('#shareBox').style.display='block';
+    statusEl.textContent='房间已创建，等待好友加入…';
+    state=initialState(); render();
+  });
+  peer.on('connection',c=>{
+    if(conn && conn.open){c.close();return}
+    conn=c; wireConn(true);
+  });
+  peer.on('error',peerError);
+}
+function joinRoom(){
+  if(peer)return; role='guest'; myColor='b'; statusEl.textContent='正在连接好友房…';
+  peer=makePeer();
+  peer.on('open',()=>{conn=peer.connect(roomParam,{reliable:true});wireConn(false)});
+  peer.on('error',peerError);
+}
+function peerError(e){statusEl.textContent='联机错误：'+(e?.type||e?.message||e); if($('#game').style.display==='block') $('#banner').textContent='联机异常：'+(e?.type||'unknown')}
+function wireConn(asHost){
+  conn.on('open',()=>{
+    statusEl.textContent='好友已连接！';
+    if(asHost){broadcastState();showGame()} else {conn.send({type:'hello'});}
+  });
+  conn.on('data',msg=>{
+    if(!msg||typeof msg!=='object')return;
+    if(role==='host' && msg.type==='action') hostHandle(msg.action,'b');
+    if(role==='guest' && msg.type==='state'){state=msg.state;showGame();render()}
+    if(role==='host' && msg.type==='hello') broadcastState();
+  });
+  conn.on('close',()=>{$('#banner').textContent='好友已断开连接';});
+  conn.on('error',peerError);
+}
+function showGame(){lobby.style.display='none';game.style.display='block';render()}
+async function copyShare(){
+  const v=$('#shareUrl').value || (()=>{const u=new URL(location.href); if(role==='host'&&peer?.id){u.search='';u.searchParams.set('room',peer.id)} return u.toString()})();
+  try{await navigator.clipboard.writeText(v); $('#banner').textContent='房间链接已复制 ✓'}catch{prompt('复制这个链接：',v)}
+}
+
+function initialBoard(){
+  const b=Array.from({length:10},()=>Array(9).fill(null));
+  const back=['R','N','B','A','K','A','B','N','R'];
+  back.forEach((t,c)=>{b[0][c]={t,c:'b'};b[9][c]={t,c:'r'}});
+  b[2][1]={t:'C',c:'b'};b[2][7]={t:'C',c:'b'};b[7][1]={t:'C',c:'r'};b[7][7]={t:'C',c:'r'};
+  [0,2,4,6,8].forEach(c=>{b[3][c]={t:'P',c:'b'};b[6][c]={t:'P',c:'r'}});
+  return b;
+}
+function initialState(){return {board:initialBoard(),turn:'r',winner:null,draw:false,last:null,skillsUsed:{r:[],b:[]},skillUsedThisTurn:false,extraMoves:{r:0,b:0},skip:{r:0,b:0},log:['红方先行。六大招全部解锁。'],seq:0}}
+function opp(c){return c==='r'?'b':'r'}
+function cloneBoard(b){return b.map(row=>row.map(p=>p?{...p}:null))}
+function inB(r,c){return r>=0&&r<10&&c>=0&&c<9}
+function betweenCount(b,r1,c1,r2,c2){let n=0;if(r1===r2){for(let c=Math.min(c1,c2)+1;c<Math.max(c1,c2);c++)if(b[r1][c])n++}else if(c1===c2){for(let r=Math.min(r1,r2)+1;r<Math.max(r1,r2);r++)if(b[r][c1])n++}else return 99;return n}
+function palace(color,r,c){return c>=3&&c<=5&&(color==='r'?r>=7&&r<=9:r>=0&&r<=2)}
+function crossed(color,r){return color==='r'?r<=4:r>=5}
+function basicCanMove(b,fr,fc,tr,tc){
+  if(!inB(fr,fc)||!inB(tr,tc)||(fr===tr&&fc===tc))return false; const p=b[fr][fc]; if(!p)return false; const q=b[tr][tc]; if(q&&q.c===p.c)return false;
+  const dr=tr-fr,dc=tc-fc,ar=Math.abs(dr),ac=Math.abs(dc);
+  switch(p.t){
+    case'R': return (dr===0||dc===0)&&betweenCount(b,fr,fc,tr,tc)===0;
+    case'C': {const n=betweenCount(b,fr,fc,tr,tc);return (dr===0||dc===0)&&(q?n===1:n===0)}
+    case'N': {if(!((ar===2&&ac===1)||(ar===1&&ac===2)))return false; const lr=fr+(ar===2?Math.sign(dr):0),lc=fc+(ac===2?Math.sign(dc):0);return !b[lr][lc]}
+    case'B': {if(ar!==2||ac!==2)return false; if(p.c==='r'&&tr<5)return false;if(p.c==='b'&&tr>4)return false;return !b[fr+dr/2][fc+dc/2]}
+    case'A': return ar===1&&ac===1&&palace(p.c,tr,tc);
+    case'K': {
+      if(ar+ac===1&&palace(p.c,tr,tc))return true;
+      if(dc===0&&q&&q.t==='K'&&q.c!==p.c&&betweenCount(b,fr,fc,tr,tc)===0)return true;
+      return false;
+    }
+    case'P': {const fw=p.c==='r'?-1:1;if(dr===fw&&dc===0)return true;return crossed(p.c,fr)&&dr===0&&ac===1}
+  }
+  return false;
+}
+function findKing(b,color){for(let r=0;r<10;r++)for(let c=0;c<9;c++){const p=b[r][c];if(p&&p.c===color&&p.t==='K')return[r,c]}return null}
+function attacked(b,r,c,by){for(let i=0;i<10;i++)for(let j=0;j<9;j++){const p=b[i][j];if(p&&p.c===by&&basicCanMove(b,i,j,r,c))return true}return false}
+function isLegal(b,fr,fc,tr,tc,color){
+  const p=b[fr]?.[fc];if(!p||p.c!==color||!basicCanMove(b,fr,fc,tr,tc))return false;
+  const nb=cloneBoard(b);nb[tr][tc]=nb[fr][fc];nb[fr][fc]=null;const k=findKing(nb,color);if(!k)return false;return !attacked(nb,k[0],k[1],opp(color));
+}
+function hasMove(b,color){for(let fr=0;fr<10;fr++)for(let fc=0;fc<9;fc++){const p=b[fr][fc];if(!p||p.c!==color)continue;for(let tr=0;tr<10;tr++)for(let tc=0;tc<9;tc++)if(isLegal(b,fr,fc,tr,tc,color))return true}return false}
+function inCheck(b,color){const k=findKing(b,color);return k?attacked(b,k[0],k[1],opp(color)):true}
+function coord(r,c){return String.fromCharCode(65+c)+(10-r)}
+
+function sendAction(action){
+  if(!state)return;
+  if(role==='host')hostHandle(action,'r'); else if(conn?.open)conn.send({type:'action',action});
+}
+function hostHandle(a,color){
+  if(!state)return;
+  if(a.type==='restart'){state=initialState();broadcastState();render();return}
+  if(state.winner||state.draw||state.turn!==color)return;
+  if(a.type==='move')applyMove(a,color);
+  if(a.type==='skill')applySkill(a,color);
+  broadcastState();render();
+}
+function addLog(s){state.log.push(s);if(state.log.length>80)state.log.shift()}
+function applyMove(a,color){
+  const {fr,fc,tr,tc}=a;if(!isLegal(state.board,fr,fc,tr,tc,color))return;
+  const moving=state.board[fr][fc],taken=state.board[tr][tc];state.board[tr][tc]=moving;state.board[fr][fc]=null;state.last={fr,fc,tr,tc};
+  addLog(`${CNAME[color]} ${PIECE_CHARS[color][moving.t]} ${coord(fr,fc)}→${coord(tr,tc)}${taken?'，吃 '+PIECE_CHARS[taken.c][taken.t]:''}`);
+  if(taken?.t==='K'){state.winner=color;addLog(`${CNAME[color]} 获胜！`);return}
+  finishNormalMove(color);
+}
+function finishNormalMove(color){
+  if(state.extraMoves[color]>0){state.extraMoves[color]--;addLog(`${CNAME[color]} 的额外走棋生效，再走一步。`);return}
+  let n=opp(color);
+  if(state.skip[n]>0){state.skip[n]--;addLog(`${CNAME[n]} 被「封天锁地」跳过一回合。`);n=color}
+  state.turn=n;state.skillUsedThisTurn=false;
+  if(!hasMove(state.board,n)){
+    if(inCheck(state.board,n)){state.winner=color;addLog(`${CNAME[n]} 无合法应手，${CNAME[color]} 获胜！`)}else{state.draw=true;addLog('无子可动，和棋。')}
+  }
+}
+function skillAvailable(color,id){return state.turn===color&&!state.skillUsedThisTurn&&!state.skillsUsed[color].includes(id)&&!state.winner&&!state.draw}
+function useSkill(color,id){state.skillsUsed[color].push(id);state.skillUsedThisTurn=true;addLog(`${CNAME[color]} 发动「${SKILLS.find(x=>x.id===id).name}」！`)}
+function emptyCells(filter=()=>true){const xs=[];for(let r=0;r<10;r++)for(let c=0;c<9;c++)if(!state.board[r][c]&&filter(r,c))xs.push([r,c]);return xs}
+function pick(xs){return xs.length?xs[Math.floor(Math.random()*xs.length)]:null}
+function applySkill(a,color){
+  const id=a.id;if(!SKILLS.some(s=>s.id===id)||!skillAvailable(color,id))return; const b=state.board;
+  if(id==='summon'){
+    let cells=emptyCells((r)=>color==='r'?r>=5:r<=4);for(let i=0;i<3&&cells.length;i++){const at=pick(cells);b[at[0]][at[1]]={t:'P',c:color};cells=cells.filter(x=>x[0]!==at[0]||x[1]!==at[1])}useSkill(color,id);return;
+  }
+  if(id==='blast'){
+    const p=b[a.r]?.[a.c];if(!p||p.c===color||p.t==='K')return;b[a.r][a.c]=null;useSkill(color,id);addLog(`雷光落在 ${coord(a.r,a.c)}，${PIECE_CHARS[p.c][p.t]} 消失。`);return;
+  }
+  if(id==='teleport'){
+    const p=b[a.fr]?.[a.fc];if(!p||p.c!==color||p.t==='K'||b[a.tr]?.[a.tc])return;b[a.tr][a.tc]=p;b[a.fr][a.fc]=null;useSkill(color,id);addLog(`${PIECE_CHARS[color][p.t]} 瞬移 ${coord(a.fr,a.fc)}→${coord(a.tr,a.tc)}。`);return;
+  }
+  if(id==='mirror'){
+    const p=b[a.r]?.[a.c];if(!p||p.c!==color||p.t==='K')return;let tr=a.r,tc=8-a.c;if(b[tr][tc]){const at=pick(emptyCells());if(!at)return;[tr,tc]=at}b[tr][tc]={...p};useSkill(color,id);addLog(`${PIECE_CHARS[color][p.t]} 在 ${coord(tr,tc)} 映出分身。`);return;
+  }
+  if(id==='double'){state.extraMoves[color]++;useSkill(color,id);return}
+  if(id==='freeze'){state.skip[opp(color)]++;useSkill(color,id);return}
+}
+function broadcastState(){state.seq++;if(conn?.open)conn.send({type:'state',state})}
+
+function render(){
+  if(!state)return;
+  renderBoard();renderSkills();
+  const mine=myColor===state.turn; const ended=state.winner||state.draw;
+  $('#turnText').textContent=ended?(state.draw?'和棋':`${CNAME[state.winner]}获胜`):`当前：${CNAME[state.turn]}${mine?'（轮到你）':''}`;
+  $('#youText').textContent=`你是 ${CNAME[myColor]} · ${role==='host'?'房主':'好友'}${inCheck(state.board,myColor)&&!ended?' · ⚠ 正被将军':''}`;
+  $('#banner').className='banner'+(ended?' win':'');
+  $('#banner').textContent=ended?(state.draw?'本局和棋。':`${CNAME[state.winner]}赢了！点“重新开局”再来。`):(mine?'轮到你：可先放一个大招，再走棋。':'等好友走棋…');
+  const room=role==='host'?peer?.id:roomParam;$('#roomLine').textContent=room?`房间：${room}`:'';
+  $('#restartBtn').disabled=role!=='host';
+  $('#log').innerHTML=state.log.map((x,i)=>`<div>${i+1}. ${esc(x)}</div>`).join('');$('#log').scrollTop=$('#log').scrollHeight;
+  $('#cancelSkillBtn').style.display=skillMode?'inline-block':'none';
+}
+function renderBoard(){
+  boardEl.innerHTML='';const flip=myColor==='b';
+  for(let vr=0;vr<10;vr++)for(let vc=0;vc<9;vc++){
+    const r=flip?9-vr:vr,c=flip?8-vc:vc;const d=document.createElement('div');d.className='cell';if(vr===5)d.classList.add('river');
+    if(selected&&selected[0]===r&&selected[1]===c)d.classList.add('sel');
+    if(state.last&&((state.last.fr===r&&state.last.fc===c)||(state.last.tr===r&&state.last.tc===c)))d.classList.add('last');
+    d.dataset.r=r;d.dataset.c=c;const p=state.board[r][c];if(p){const e=document.createElement('div');e.className='piece '+(p.c==='r'?'red':'black');e.textContent=PIECE_CHARS[p.c][p.t];d.appendChild(e)}
+    d.onclick=()=>cellClick(r,c);boardEl.appendChild(d);
+  }
+}
+function cellClick(r,c){
+  if(!state||state.winner||state.draw||state.turn!==myColor)return;const p=state.board[r][c];
+  if(skillMode){
+    if(skillMode==='blast'){if(p&&p.c!==myColor&&p.t!=='K'){sendAction({type:'skill',id:'blast',r,c});skillMode=null}render();return}
+    if(skillMode==='mirror'){if(p&&p.c===myColor&&p.t!=='K'){sendAction({type:'skill',id:'mirror',r,c});skillMode=null}render();return}
+    if(skillMode==='teleport'){
+      if(!skillFrom){if(p&&p.c===myColor&&p.t!=='K')skillFrom=[r,c]}
+      else if(!p){sendAction({type:'skill',id:'teleport',fr:skillFrom[0],fc:skillFrom[1],tr:r,tc:c});skillMode=null;skillFrom=null}
+      render();return;
+    }
+  }
+  if(!selected){if(p&&p.c===myColor)selected=[r,c];render();return}
+  if(p&&p.c===myColor){selected=[r,c];render();return}
+  const [fr,fc]=selected;selected=null;sendAction({type:'move',fr,fc,tr:r,tc:c});render();
+}
+function renderSkills(){
+  const wrap=$('#skills');wrap.innerHTML='';
+  for(const s of SKILLS){const b=document.createElement('button');b.className='skill';const used=state.skillsUsed[myColor].includes(s.id);if(used)b.classList.add('used');if(skillMode===s.id)b.classList.add('active');
+    b.disabled=used||state.skillUsedThisTurn||state.turn!==myColor||!!state.winner||state.draw;b.innerHTML=`<b>${esc(s.name)}</b><small>${esc(s.desc)}</small>`;
+    b.onclick=()=>activateSkill(s.id);wrap.appendChild(b)}
+  let h='每回合至多使用一个大招；每个大招每局一次，大招后仍可正常走棋。';
+  if(skillMode==='blast')h='雷霆万钧：点一枚敌方非将帅棋子。';
+  if(skillMode==='mirror')h='镜花水月：点一枚己方非将帅棋子。';
+  if(skillMode==='teleport')h=skillFrom?'乾坤挪移：再点一个空位作为落点。':'乾坤挪移：先点己方一枚非将帅棋子。';
+  $('#skillHint').textContent=h;
+}
+function activateSkill(id){
+  if(!skillAvailable(myColor,id))return;selected=null;skillFrom=null;
+  if(['summon','double','freeze'].includes(id)){sendAction({type:'skill',id});skillMode=null}else skillMode=(skillMode===id?null:id);render();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+})();
+</script>
+</body>
+</html>
