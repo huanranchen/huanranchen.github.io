@@ -119,38 +119,6 @@ h1:before, .anchor:before {
     }
 }
 
-.research-style {
-    margin: -0.25rem 0 1.35rem;
-    padding: 0.8rem 1rem;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    background: mix(#fff, $light-gray, 94%);
-}
-
-.research-style-label {
-    margin-bottom: 0.55rem;
-    color: $gray;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-}
-
-.research-style-keywords {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-
-    span {
-        padding: 0.25rem 0.6rem;
-        border-radius: 999px;
-        color: $info-color;
-        background: mix(#fff, $info-color, 91%);
-        font-size: 0.84rem;
-        font-weight: 700;
-    }
-}
-
 .section-intro {
     color: $gray;
     max-width: 52rem;

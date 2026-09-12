@@ -21,16 +21,7 @@ redirect_from:
 
 I'm a PhD student at TSAIL (Fall 2025), advised by Prof. [Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml), and closely collaborating with Prof. [Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/). I'm currently working in Prof. [Jingzhao Zhang](https://iiis.tsinghua.edu.cn/en/People/Faculty/ZhangJingzhao.htm)'s lab as a rotation student. I have a keen interest in the **physics of deep learning**. My **unattainable yet motivating** dream is to elevate AI to the realm of science, making every phenomenon explainable and predictable. I believe this requires both rigorous theoretical thinking and extensive empirical observation. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories from diverse aspects, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
 
-<div class="research-thesis" markdown="1">
-**My current approach is intervention-first.** I look for predictions on which competing explanations disagree, then intervene on the optimizer, learning-rate schedule, model, or data. A successful prediction can become a method; a failed one reveals exactly where the theory needs to change.
-</div>
-
-<div class="research-style">
-  <div class="research-style-label">My research taste, in five words</div>
-  <div class="research-style-keywords">
-    <span>Mechanism</span><span>Minimal Model</span><span>Falsification</span><span>Intervention</span><span>Compression</span>
-  </div>
-</div>
+> **My research taste, in five words:** *Mechanism* | *Minimal Model* | *Falsification* | *Intervention* | *Compression*
 
 > **Quick Facts:** 🧠 INTP 7w6 | 🥾 Founder of THU CollegeAI Hiker | 📜 Wei-Jin History Buff | 🍔 KFC/McDonald's Enthusiast
 
