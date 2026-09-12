@@ -21,7 +21,16 @@ redirect_from:
 
 I'm a PhD student at TSAIL (Fall 2025), advised by Prof. [Jun Zhu](https://ml.cs.tsinghua.edu.cn/~jun/index.shtml), and closely collaborating with Prof. [Yinpeng Dong](https://ml.cs.tsinghua.edu.cn/~yinpeng/). I'm currently working in Prof. [Jingzhao Zhang](https://iiis.tsinghua.edu.cn/en/People/Faculty/ZhangJingzhao.htm)'s lab as a rotation student. I have a keen interest in the **physics of deep learning**. My **unattainable yet motivating** dream is to elevate AI to the realm of science, making every phenomenon explainable and predictable. I believe this requires both rigorous theoretical thinking and extensive empirical observation. My preferred research paradigm involves observing phenomena, proposing multiple explanations, constructing various theories from diverse aspects, validating corollaries, and ultimately deriving solutions or methodologies. I'm eager to connect with anyone who shares this vision for AI or appreciates the same research approach.
 
-> **My research taste, in five words:** *Mechanism* | *Minimal Model* | *Falsification* | *Intervention* | *Compression*
+<div class="research-taste">
+  <div class="research-taste-label">My research taste, in five words:</div>
+  <div class="research-taste-grid">
+    <span>⚙️ <em>Mechanism</em></span>
+    <span>🧩 <em>Minimal Model</em></span>
+    <span>🧪 <em>Falsification</em></span>
+    <span>🎯 <em>Intervention</em></span>
+    <span>🗜️ <em>Compression</em></span>
+  </div>
+</div>
 
 > **Quick Facts:** 🧠 INTP 7w6 | 🥾 Founder of THU CollegeAI Hiker | 📜 Wei-Jin History Buff | 🍔 KFC/McDonald's Enthusiast
 
