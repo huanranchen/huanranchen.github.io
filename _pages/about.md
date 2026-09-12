@@ -25,6 +25,13 @@ I'm a PhD student at TSAIL (Fall 2025), advised by Prof. [Jun Zhu](https://ml.cs
 **My current approach is intervention-first.** I look for predictions on which competing explanations disagree, then intervene on the optimizer, learning-rate schedule, model, or data. A successful prediction can become a method; a failed one reveals exactly where the theory needs to change.
 </div>
 
+<div class="research-style">
+  <div class="research-style-label">My research taste, in five words</div>
+  <div class="research-style-keywords">
+    <span>Mechanism</span><span>Minimal Model</span><span>Falsification</span><span>Intervention</span><span>Compression</span>
+  </div>
+</div>
+
 > **Quick Facts:** 🧠 INTP 7w6 | 🥾 Founder of THU CollegeAI Hiker | 📜 Wei-Jin History Buff | 🍔 KFC/McDonald's Enthusiast
 
 I do research largely for fun. Right now, I am especially interested in three questions:
