@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-<title>离谱象棋 · 好友大招版</title>
+<title>万宁式象棋 · 好友大招复刻</title>
 <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.5/dist/peerjs.min.js"></script>
 <style>
 :root{--bg:#101418;--panel:#171d23;--line:#7b6745;--board:#d8b77b;--red:#b91c1c;--black:#18212a;--text:#f4f4f5;--muted:#a1a1aa;--accent:#f59e0b}
@@ -17,11 +17,11 @@
 </head>
 <body>
 <div class="app">
-  <div class="top"><div class="title">离谱象棋 <span class="tag">好友大招版</span></div><span class="pill">无广告 · 全大招解锁</span></div>
+  <div class="top"><div class="title">万宁式象棋 <span class="tag">好友大招复刻</span></div><span class="pill">网页直玩 · 好友 PVP</span></div>
 
   <section id="lobby" class="card lobby">
     <h2 style="margin-top:0">发个链接，直接和好友开打</h2>
-    <p class="hint">这是一个独立原创的“大招象棋”网页，不使用《万宁象棋》的代码或素材。联机采用 WebRTC P2P；房主为红方，好友为黑方。</p>
+    <p class="hint">按《万宁象棋》公开攻略中的大招规则重新实现；不使用原作代码或素材。双方开局各选一个大招，机制会随走棋持续/条件触发。联机采用 WebRTC P2P；房主红方，好友黑方。</p>
     <div id="hostControls">
       <button id="createBtn" class="primary">创建好友房</button>
     </div>
@@ -49,12 +49,12 @@
           <div id="roomLine" class="roomline"></div>
         </div>
         <div class="card">
-          <div style="font-weight:900;margin-bottom:8px">六大招 · 开局全解锁</div>
+          <div style="font-weight:900;margin-bottom:8px">大招模式 · 开局各选一招</div>
           <div class="skills" id="skills"></div>
-          <div id="skillHint" class="hint" style="margin-top:8px">每回合至多使用一个大招；每个大招每局一次，大招后仍可正常走棋。</div>
+          <div id="skillHint" class="hint" style="margin-top:8px">双方各选一个大招。原作中 x 随技能等级变化；这里固定为高强度参数。</div>
         </div>
         <div class="card">
-          <div class="row"><button id="restartBtn">重新开局</button><button id="copyRoomBtn">复制房间链接</button><button id="cancelSkillBtn" style="display:none">取消大招</button></div>
+          <div class="row"><button id="restartBtn">重新开局</button><button id="copyRoomBtn">复制房间链接</button></div>
           <div style="font-weight:900;margin:10px 0 6px">战报</div><div id="log" class="log"></div>
         </div>
       </aside>
@@ -71,18 +71,18 @@ const roomParam=new URLSearchParams(location.search).get('room');
 const CNAME={r:'红方',b:'黑方'};
 const PIECE_CHARS={r:{K:'帅',A:'仕',B:'相',N:'马',R:'车',C:'炮',P:'兵'},b:{K:'将',A:'士',B:'象',N:'马',R:'车',C:'炮',P:'卒'}};
 const SKILLS=[
-  {id:'summon',name:'天降神兵',desc:'在己方半场随机召来 3 枚兵卒。'},
-  {id:'blast',name:'雷霆万钧',desc:'点掉任意一枚敌方非将帅棋子。'},
-  {id:'teleport',name:'乾坤挪移',desc:'将己方一枚非将帅棋子瞬移到任意空位。'},
-  {id:'mirror',name:'镜花水月',desc:'复制己方一枚非将帅棋子到镜像/随机空位。'},
-  {id:'double',name:'风驰电掣',desc:'本回合获得额外一次正常走棋。'},
-  {id:'freeze',name:'封天锁地',desc:'对手的下一回合直接跳过。'}
+  {id:'touliang',name:'偷梁换柱',desc:'开局随机把 5 个敌方非将帅棋子变成我方兵。'},
+  {id:'meiren',name:'美人计',desc:'开局魅惑 5 个敌方棋子向楚河移动 2 格，抵达楚河自毁。'},
+  {id:'four2',name:'四个二',desc:'开局随机轰炸 8 个点，落点有棋子就击杀。'},
+  {id:'wuzhong',name:'无中生有',desc:'开局在随机空格额外生成 6 个己方炮。'},
+  {id:'fudi',name:'釜底抽薪',desc:'每次吃子后，再随机击杀对方九宫内 2 枚棋子。'},
+  {id:'qimen',name:'奇门遁甲',desc:'帅/将踏入九宫八门时，触发对应门的效果。'}
 ];
 
 if(roomParam){ $('#hostControls').style.display='none'; $('#joinControls').style.display='block'; statusEl.textContent='检测到好友房链接：'+roomParam; }
 $('#backBtn').onclick=()=>{history.replaceState(null,'',location.pathname);location.reload()};
 $('#createBtn').onclick=createRoom; $('#joinBtn').onclick=joinRoom; $('#copyBtn').onclick=copyShare; $('#copyRoomBtn').onclick=copyShare;
-$('#cancelSkillBtn').onclick=()=>{skillMode=null;skillFrom=null;render()};
+
 $('#restartBtn').onclick=()=>sendAction({type:'restart'});
 
 function makeId(){return 'lxq-'+Math.random().toString(36).slice(2,8)+'-'+Date.now().toString(36).slice(-4)}
@@ -139,7 +139,7 @@ function initialBoard(){
   [0,2,4,6,8].forEach(c=>{b[3][c]={t:'P',c:'b'};b[6][c]={t:'P',c:'r'}});
   return b;
 }
-function initialState(){return {board:initialBoard(),turn:'r',winner:null,draw:false,last:null,skillsUsed:{r:[],b:[]},skillUsedThisTurn:false,extraMoves:{r:0,b:0},skip:{r:0,b:0},log:['红方先行。六大招全部解锁。'],seq:0}}
+function initialState(){return {board:initialBoard(),turn:'r',winner:null,draw:false,last:null,choice:{r:null,b:null},started:false,immune:{r:false,b:false},hidden:{r:false,b:false},log:['双方先选择一个大招。两边都选好后红方先行。'],seq:0}}
 function opp(c){return c==='r'?'b':'r'}
 function cloneBoard(b){return b.map(row=>row.map(p=>p?{...p}:null))}
 function inB(r,c){return r>=0&&r<10&&c>=0&&c<9}
@@ -181,24 +181,27 @@ function sendAction(action){
 function hostHandle(a,color){
   if(!state)return;
   if(a.type==='restart'){state=initialState();broadcastState();render();return}
-  if(state.winner||state.draw||state.turn!==color)return;
+  if(a.type==='choose'){chooseSkill(a.id,color);broadcastState();render();return}
+  if(!state.started||state.winner||state.draw||state.turn!==color)return;
   if(a.type==='move')applyMove(a,color);
-  if(a.type==='skill')applySkill(a,color);
   broadcastState();render();
 }
 function addLog(s){state.log.push(s);if(state.log.length>80)state.log.shift()}
 function applyMove(a,color){
   const {fr,fc,tr,tc}=a;if(!isLegal(state.board,fr,fc,tr,tc,color))return;
-  const moving=state.board[fr][fc],taken=state.board[tr][tc];state.board[tr][tc]=moving;state.board[fr][fc]=null;state.last={fr,fc,tr,tc};
+  const moving=state.board[fr][fc],taken=state.board[tr][tc];
+  if(taken&&state.immune[taken.c]){addLog(`${CNAME[taken.c]} 处于休门无敌，本次击杀无效。`);return}
+  state.board[tr][tc]=moving;state.board[fr][fc]=null;state.last={fr,fc,tr,tc};
   addLog(`${CNAME[color]} ${PIECE_CHARS[color][moving.t]} ${coord(fr,fc)}→${coord(tr,tc)}${taken?'，吃 '+PIECE_CHARS[taken.c][taken.t]:''}`);
+  if(taken&&state.hidden[color]){state.hidden[color]=false;addLog(`${CNAME[color]} 吃子后解除杜门隐身。`)}
   if(taken?.t==='K'){state.winner=color;addLog(`${CNAME[color]} 获胜！`);return}
+  if(taken&&state.choice[color]==='fudi'){triggerFudi(color);if(state.winner||state.draw)return}
+  if(moving.t==='K'&&state.choice[color]==='qimen'){triggerQimen(color,tr,tc);if(state.winner||state.draw)return}
   finishNormalMove(color);
 }
 function finishNormalMove(color){
-  if(state.extraMoves[color]>0){state.extraMoves[color]--;addLog(`${CNAME[color]} 的额外走棋生效，再走一步。`);return}
-  let n=opp(color);
-  if(state.skip[n]>0){state.skip[n]--;addLog(`${CNAME[n]} 被「封天锁地」跳过一回合。`);n=color}
-  state.turn=n;state.skillUsedThisTurn=false;
+  const n=opp(color);state.turn=n;
+  if(state.immune[n]){state.immune[n]=false;addLog(`${CNAME[n]} 的休门无敌在回合开始时结束。`)}
   if(!hasMove(state.board,n)){
     if(inCheck(state.board,n)){state.winner=color;addLog(`${CNAME[n]} 无合法应手，${CNAME[color]} 获胜！`)}else{state.draw=true;addLog('无子可动，和棋。')}
   }
@@ -224,20 +227,95 @@ function applySkill(a,color){
   if(id==='double'){state.extraMoves[color]++;useSkill(color,id);return}
   if(id==='freeze'){state.skip[opp(color)]++;useSkill(color,id);return}
 }
+function chooseSkill(id,color){
+  if(state.started||state.choice[color]||!SKILLS.some(x=>x.id===id))return;
+  state.choice[color]=id;addLog(`${CNAME[color]} 选择「${SKILLS.find(x=>x.id===id).name}」。`);
+  if(state.choice.r&&state.choice.b){
+    state.started=true;addLog('双方大招确定，红方先行。');
+    applyOpeningSkill('r');if(!state.winner&&!state.draw)applyOpeningSkill('b');checkKingDeaths();
+  }
+}
+function randShuffle(xs){for(let i=xs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[xs[i],xs[j]]=[xs[j],xs[i]]}return xs}
+function allPieces(filter=()=>true){const xs=[];for(let r=0;r<10;r++)for(let c=0;c<9;c++){const p=state.board[r][c];if(p&&filter(p,r,c))xs.push([r,c,p])}return xs}
+function checkKingDeaths(){
+  const kr=findKing(state.board,'r'),kb=findKing(state.board,'b');
+  if(!kr&&!kb){state.draw=true;addLog('双方将帅同时消失，和棋。')}
+  else if(!kr){state.winner='b';addLog('红帅消失，黑方获胜！')}
+  else if(!kb){state.winner='r';addLog('黑将消失，红方获胜！')}
+}
+function applyOpeningSkill(color){
+  const id=state.choice[color],enemy=opp(color);
+  if(id==='touliang'){
+    const xs=randShuffle(allPieces(p=>p.c===enemy&&p.t!=='K')).slice(0,5);
+    for(const [r,c] of xs)state.board[r][c]={t:'P',c:color};
+    addLog(`${CNAME[color]}「偷梁换柱」：${xs.length} 枚敌子变成己方兵。`);
+  }else if(id==='meiren'){
+    const xs=randShuffle(allPieces(p=>p.c===enemy&&p.t!=='K')).slice(0,5);
+    for(const [r,c,p] of xs){
+      const dir=p.c==='r'?-1:1,nr=r+2*dir;
+      if((p.c==='r'&&nr<=4)||(p.c==='b'&&nr>=5)){state.board[r][c]=null;continue}
+      if(inB(nr,c)&&!state.board[nr][c]){state.board[nr][c]=p;state.board[r][c]=null}
+    }
+    addLog(`${CNAME[color]}「美人计」发动：随机棋子被吸向楚河。`);
+  }else if(id==='four2'){
+    const cells=[];for(let r=0;r<10;r++)for(let c=0;c<9;c++)cells.push([r,c]);
+    const hits=randShuffle(cells).slice(0,8);for(const [r,c] of hits)state.board[r][c]=null;
+    addLog(`${CNAME[color]}「四个二」：8 个随机落点爆炸。`);
+  }else if(id==='wuzhong'){
+    const cells=randShuffle(emptyCells());
+    for(let i=0;i<6&&i<cells.length;i++){const [r,c]=cells[i];state.board[r][c]={t:'C',c:color}}
+    addLog(`${CNAME[color]}「无中生有」：凭空增加 6 门炮。`);
+  }
+  checkKingDeaths();
+}
+function triggerFudi(color){
+  const enemy=opp(color);let xs=allPieces((p,r,c)=>p.c===enemy&&palace(enemy,r,c));xs=randShuffle(xs).slice(0,2);
+  for(const [r,c,p] of xs){state.board[r][c]=null;addLog(`「釜底抽薪」击杀九宫内 ${PIECE_CHARS[p.c][p.t]}。`)}
+  checkKingDeaths();
+}
+function qimenGate(color,r,c){
+  const rr=color==='r'?r:9-r,cc=color==='r'?c:8-c;
+  const map={'7,3':'杜门','7,4':'景门','7,5':'死门','8,3':'伤门','8,5':'惊门','9,3':'生门','9,4':'休门','9,5':'开门'};
+  return map[rr+','+cc]||null;
+}
+function triggerQimen(color,r,c){
+  const gate=qimenGate(color,r,c);if(!gate)return;const enemy=opp(color);addLog(`${CNAME[color]} 奇门遁甲触发「${gate}」！`);
+  if(gate==='生门'){
+    const base=initialBoard();for(let i=0;i<10;i++)for(let j=0;j<9;j++)if(state.board[i][j]?.c===color)state.board[i][j]=null;
+    for(let i=0;i<10;i++)for(let j=0;j<9;j++)if(base[i][j]?.c===color)state.board[i][j]={...base[i][j]};
+  }else if(gate==='伤门'){
+    const xs=randShuffle(allPieces(p=>p.t!=='K')).slice(0,15);for(const [i,j] of xs)state.board[i][j]=null;
+  }else if(gate==='开门'){
+    let cells=[];for(let i=0;i<10;i++)for(let j=0;j<9;j++)if(!(state.board[i][j]?.c===color&&state.board[i][j]?.t==='K'))cells.push([i,j]);
+    cells=randShuffle(cells).slice(0,15);const ts=['P','A','B','N','R','C'];
+    for(const [i,j] of cells)state.board[i][j]={t:ts[Math.floor(Math.random()*ts.length)],c:color};
+  }else if(gate==='景门'){
+    const old=allPieces(p=>p.t!=='K'),ps=old.map(x=>x[2]);for(const [i,j] of old)state.board[i][j]=null;
+    let cells=[];for(let i=0;i<10;i++)for(let j=0;j<9;j++)if(!state.board[i][j])cells.push([i,j]);cells=randShuffle(cells).slice(0,ps.length);
+    ps.forEach((p,k)=>{const [i,j]=cells[k];state.board[i][j]=p});addLog('景门：除将帅外棋子位置被彻底打乱。');
+  }else if(gate==='惊门'){
+    const xs=allPieces(p=>p.c===enemy&&p.t!=='K'),dir=enemy==='r'?1:-1;xs.sort((a,b)=>dir>0?b[0]-a[0]:a[0]-b[0]);
+    for(const [i,j,p] of xs){const ni=i+dir;if(inB(ni,j)&&!state.board[ni][j]){state.board[ni][j]=p;state.board[i][j]=null}}
+  }else if(gate==='休门'){state.immune[color]=true}
+  else if(gate==='杜门'){state.hidden[color]=true}
+  else if(gate==='死门'){const victim=Math.random()<0.8?color:enemy,k=findKing(state.board,victim);if(k)state.board[k[0]][k[1]]=null}
+  checkKingDeaths();
+}
 function broadcastState(){state.seq++;if(conn?.open)conn.send({type:'state',state})}
 
 function render(){
   if(!state)return;
   renderBoard();renderSkills();
-  const mine=myColor===state.turn; const ended=state.winner||state.draw;
-  $('#turnText').textContent=ended?(state.draw?'和棋':`${CNAME[state.winner]}获胜`):`当前：${CNAME[state.turn]}${mine?'（轮到你）':''}`;
-  $('#youText').textContent=`你是 ${CNAME[myColor]} · ${role==='host'?'房主':'好友'}${inCheck(state.board,myColor)&&!ended?' · ⚠ 正被将军':''}`;
+  const mine=myColor===state.turn,ended=state.winner||state.draw,ready=state.choice.r&&state.choice.b;
+  $('#turnText').textContent=!ready?'等待双方选择大招':(ended?(state.draw?'和棋':`${CNAME[state.winner]}获胜`):`当前：${CNAME[state.turn]}${mine?'（轮到你）':''}`);
+  const mySkill=state.choice[myColor]?SKILLS.find(x=>x.id===state.choice[myColor]).name:null;
+  $('#youText').textContent=`你是 ${CNAME[myColor]} · ${role==='host'?'房主':'好友'}${mySkill?' · 大招：'+mySkill:''}${state.started&&inCheck(state.board,myColor)&&!ended?' · ⚠ 正被将军':''}`;
   $('#banner').className='banner'+(ended?' win':'');
-  $('#banner').textContent=ended?(state.draw?'本局和棋。':`${CNAME[state.winner]}赢了！点“重新开局”再来。`):(mine?'轮到你：可先放一个大招，再走棋。':'等好友走棋…');
+  $('#banner').textContent=!ready?'先在下面选择一个大招；双方选好后自动开局。':(ended?(state.draw?'本局和棋。':`${CNAME[state.winner]}赢了！点“重新开局”再来。`):(mine?'轮到你走棋。':'等好友走棋…'));
   const room=role==='host'?peer?.id:roomParam;$('#roomLine').textContent=room?`房间：${room}`:'';
   $('#restartBtn').disabled=role!=='host';
   $('#log').innerHTML=state.log.map((x,i)=>`<div>${i+1}. ${esc(x)}</div>`).join('');$('#log').scrollTop=$('#log').scrollHeight;
-  $('#cancelSkillBtn').style.display=skillMode?'inline-block':'none';
+
 }
 function renderBoard(){
   boardEl.innerHTML='';const flip=myColor==='b';
@@ -245,40 +323,27 @@ function renderBoard(){
     const r=flip?9-vr:vr,c=flip?8-vc:vc;const d=document.createElement('div');d.className='cell';if(vr===5)d.classList.add('river');
     if(selected&&selected[0]===r&&selected[1]===c)d.classList.add('sel');
     if(state.last&&((state.last.fr===r&&state.last.fc===c)||(state.last.tr===r&&state.last.tc===c)))d.classList.add('last');
-    d.dataset.r=r;d.dataset.c=c;const p=state.board[r][c];if(p){const e=document.createElement('div');e.className='piece '+(p.c==='r'?'red':'black');e.textContent=PIECE_CHARS[p.c][p.t];d.appendChild(e)}
+    d.dataset.r=r;d.dataset.c=c;const p=state.board[r][c];const concealed=p&&state.hidden[p.c]&&p.c!==myColor&&p.t!=='K';if(p&&!concealed){const e=document.createElement('div');e.className='piece '+(p.c==='r'?'red':'black');e.textContent=PIECE_CHARS[p.c][p.t];d.appendChild(e)}
     d.onclick=()=>cellClick(r,c);boardEl.appendChild(d);
   }
 }
 function cellClick(r,c){
-  if(!state||state.winner||state.draw||state.turn!==myColor)return;const p=state.board[r][c];
-  if(skillMode){
-    if(skillMode==='blast'){if(p&&p.c!==myColor&&p.t!=='K'){sendAction({type:'skill',id:'blast',r,c});skillMode=null}render();return}
-    if(skillMode==='mirror'){if(p&&p.c===myColor&&p.t!=='K'){sendAction({type:'skill',id:'mirror',r,c});skillMode=null}render();return}
-    if(skillMode==='teleport'){
-      if(!skillFrom){if(p&&p.c===myColor&&p.t!=='K')skillFrom=[r,c]}
-      else if(!p){sendAction({type:'skill',id:'teleport',fr:skillFrom[0],fc:skillFrom[1],tr:r,tc:c});skillMode=null;skillFrom=null}
-      render();return;
-    }
-  }
+  if(!state||!state.started||state.winner||state.draw||state.turn!==myColor)return;const p=state.board[r][c];
   if(!selected){if(p&&p.c===myColor)selected=[r,c];render();return}
   if(p&&p.c===myColor){selected=[r,c];render();return}
   const [fr,fc]=selected;selected=null;sendAction({type:'move',fr,fc,tr:r,tc:c});render();
 }
 function renderSkills(){
   const wrap=$('#skills');wrap.innerHTML='';
-  for(const s of SKILLS){const b=document.createElement('button');b.className='skill';const used=state.skillsUsed[myColor].includes(s.id);if(used)b.classList.add('used');if(skillMode===s.id)b.classList.add('active');
-    b.disabled=used||state.skillUsedThisTurn||state.turn!==myColor||!!state.winner||state.draw;b.innerHTML=`<b>${esc(s.name)}</b><small>${esc(s.desc)}</small>`;
-    b.onclick=()=>activateSkill(s.id);wrap.appendChild(b)}
-  let h='每回合至多使用一个大招；每个大招每局一次，大招后仍可正常走棋。';
-  if(skillMode==='blast')h='雷霆万钧：点一枚敌方非将帅棋子。';
-  if(skillMode==='mirror')h='镜花水月：点一枚己方非将帅棋子。';
-  if(skillMode==='teleport')h=skillFrom?'乾坤挪移：再点一个空位作为落点。':'乾坤挪移：先点己方一枚非将帅棋子。';
-  $('#skillHint').textContent=h;
+  for(const sk of SKILLS){
+    const b=document.createElement('button');b.className='skill';const mine=state.choice[myColor]===sk.id;if(mine)b.classList.add('active');
+    b.disabled=!!state.choice[myColor]||state.started||!!state.winner||state.draw;
+    b.innerHTML=`<b>${esc(sk.name)}${mine?' ✓':''}</b><small>${esc(sk.desc)}</small>`;b.onclick=()=>activateSkill(sk.id);wrap.appendChild(b);
+  }
+  const my=state.choice[myColor],op=state.choice[opp(myColor)];
+  $('#skillHint').textContent=my?`你选择：${SKILLS.find(x=>x.id===my).name}；${op?'对手：'+SKILLS.find(x=>x.id===op).name:'等待对手选择…'}`:'选择一个大招。双方各选一个；选定后本局锁定。';
 }
-function activateSkill(id){
-  if(!skillAvailable(myColor,id))return;selected=null;skillFrom=null;
-  if(['summon','double','freeze'].includes(id)){sendAction({type:'skill',id});skillMode=null}else skillMode=(skillMode===id?null:id);render();
-}
+function activateSkill(id){if(state.choice[myColor]||state.started)return;sendAction({type:'choose',id})}
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 })();
 </script>
