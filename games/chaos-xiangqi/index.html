@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-<title>万宁式象棋 · 好友大招复刻</title>
+<title>万宁象棋大招复刻 · Lv.30 好友PVP</title>
 <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.5/dist/peerjs.min.js"></script>
 <style>
 :root{--bg:#101418;--panel:#171d23;--line:#7b6745;--board:#d8b77b;--red:#b91c1c;--black:#18212a;--text:#f4f4f5;--muted:#a1a1aa;--accent:#f59e0b}
 *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 50% 0,#202833,#0d1117 55%);color:var(--text);font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;min-height:100vh}
 .app{width:min(100%,1000px);margin:auto;padding:14px}.top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px}.title{font-weight:900;font-size:clamp(20px,4vw,34px)}.tag{font-size:12px;color:#111;background:var(--accent);border-radius:999px;padding:3px 8px;font-weight:800}
 .card{background:rgba(23,29,35,.95);border:1px solid #303946;border-radius:16px;padding:14px;box-shadow:0 10px 30px #0005}.lobby{max-width:560px;margin:8vh auto}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}button,input{font:inherit}button{border:0;border-radius:10px;padding:10px 14px;background:#2a3440;color:white;font-weight:750;cursor:pointer}button.primary{background:#f59e0b;color:#17120a}button.danger{background:#7f1d1d}button:disabled{opacity:.4;cursor:not-allowed}input{min-width:0;flex:1;border:1px solid #3b4654;background:#0d1218;color:white;border-radius:10px;padding:10px}.hint{color:var(--muted);font-size:13px;line-height:1.55}.status{font-size:13px;color:#d4d4d8;margin-top:10px}.game{display:none}.layout{display:grid;grid-template-columns:minmax(300px,620px) minmax(260px,1fr);gap:14px;align-items:start}
-.board-wrap{position:relative;background:#3b2b17;border-radius:14px;padding:10px;box-shadow:0 12px 35px #0007}.board{width:100%;aspect-ratio:9/10;display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(10,1fr);background:var(--board);border:3px solid #4b3820;position:relative;overflow:hidden}.cell{position:relative;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;touch-action:manipulation}.cell:nth-child(9n){border-right:0}.cell.river{border-top:3px solid #5a4628}.cell.sel{background:#fde68a99}.cell.target{background:#86efac66}.cell.last{box-shadow:inset 0 0 0 3px #f59e0b}.piece{width:82%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:#f2deb8;border:2px solid currentColor;box-shadow:0 2px 4px #0007;font-size:clamp(17px,5.8vw,34px);font-family:serif;font-weight:900;user-select:none}.piece.red{color:var(--red)}.piece.black{color:var(--black)}.river-label{position:absolute;pointer-events:none;left:10%;right:10%;top:50%;transform:translateY(-50%);display:flex;justify-content:space-around;font:900 clamp(14px,3.6vw,26px) serif;color:#5c4526aa;letter-spacing:.5em}
+.board-wrap{position:relative;background:#3b2b17;border-radius:14px;padding:10px;box-shadow:0 12px 35px #0007}.board{width:100%;aspect-ratio:9/10;display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(10,1fr);background:var(--board);border:3px solid #4b3820;position:relative;overflow:hidden}.cell{position:relative;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;touch-action:manipulation}.cell:nth-child(9n){border-right:0}.cell.river{border-top:3px solid #5a4628}.cell.sel{background:#fde68a99}.cell.target{background:#86efac66}.cell.last{box-shadow:inset 0 0 0 3px #f59e0b}.cell.mark{box-shadow:inset 0 0 0 4px #ef4444;background:#ef444433}.cell.blast{animation:flash .45s ease}@keyframes flash{0%{filter:brightness(2)}100%{filter:none}}.piece{width:82%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:#f2deb8;border:2px solid currentColor;box-shadow:0 2px 4px #0007;font-size:clamp(17px,5.8vw,34px);font-family:serif;font-weight:900;user-select:none}.piece.red{color:var(--red)}.piece.black{color:var(--black)}.river-label{position:absolute;pointer-events:none;left:10%;right:10%;top:50%;transform:translateY(-50%);display:flex;justify-content:space-around;font:900 clamp(14px,3.6vw,26px) serif;color:#5c4526aa;letter-spacing:.5em}
 .side{display:flex;flex-direction:column;gap:12px}.turn{font-weight:900;font-size:18px}.you{font-size:13px;color:var(--muted)}.skills{display:grid;grid-template-columns:1fr 1fr;gap:8px}.skill{text-align:left;padding:10px;background:#232c36;border:1px solid #394553;min-height:66px}.skill b{display:block;color:#fbbf24}.skill small{display:block;color:#b6bcc5;font-weight:500;margin-top:3px;line-height:1.3}.skill.active{outline:3px solid #f59e0b}.skill.used{opacity:.35}.log{height:180px;overflow:auto;background:#0d1218;border-radius:10px;padding:9px;font-size:12px;color:#cbd5e1;line-height:1.55}.pill{display:inline-block;background:#29323c;border-radius:999px;padding:3px 8px;font-size:12px;color:#cbd5e1}.banner{margin-bottom:9px;padding:8px 10px;border-radius:10px;background:#1e293b;font-size:13px}.win{background:#713f12;color:#fef3c7;font-weight:900}.roomline{font-size:12px;word-break:break-all;color:#cbd5e1;margin-top:6px}
 @media(max-width:760px){.app{padding:8px}.layout{grid-template-columns:1fr}.side{order:-1}.skills{grid-template-columns:repeat(3,1fr)}.skill{padding:8px;min-height:60px}.skill small{display:none}.log{height:105px}.board-wrap{padding:7px}.piece{font-size:clamp(18px,7vw,32px)}}
 </style>
 </head>
 <body>
 <div class="app">
-  <div class="top"><div class="title">万宁式象棋 <span class="tag">好友大招复刻</span></div><span class="pill">网页直玩 · 好友 PVP</span></div>
+  <div class="top"><div class="title">万宁象棋大招复刻 <span class="tag">Lv.30 好友PVP</span></div><span class="pill">网页直玩 · 无广告</span></div>
 
   <section id="lobby" class="card lobby">
     <h2 style="margin-top:0">发个链接，直接和好友开打</h2>
-    <p class="hint">按《万宁象棋》公开攻略中的大招规则重新实现；不使用原作代码或素材。双方开局各选一个大招，机制会随走棋持续/条件触发。联机采用 WebRTC P2P；房主红方，好友黑方。</p>
+    <p class="hint">以 Keepmobi v20250616 网页版对应的大招谱系做 clean-room 复刻：不使用原作代码/素材；双方开局各选一个满级大招，房间状态由房主权威同步。</p>
     <div id="hostControls">
       <button id="createBtn" class="primary">创建好友房</button>
     </div>
@@ -49,9 +49,9 @@
           <div id="roomLine" class="roomline"></div>
         </div>
         <div class="card">
-          <div style="font-weight:900;margin-bottom:8px">大招模式 · 开局各选一招</div>
+          <div style="font-weight:900;margin-bottom:8px">大招模式 · 全部按满级实现</div>
           <div class="skills" id="skills"></div>
-          <div id="skillHint" class="hint" style="margin-top:8px">双方各选一个大招。原作中 x 随技能等级变化；这里固定为高强度参数。</div>
+          <div id="skillHint" class="hint" style="margin-top:8px">双方各选一个满级大招；选定后本局锁定。</div>
         </div>
         <div class="card">
           <div class="row"><button id="restartBtn">重新开局</button><button id="copyRoomBtn">复制房间链接</button></div>
@@ -69,14 +69,24 @@ const lobby=$('#lobby'), game=$('#game'), boardEl=$('#board'), statusEl=$('#lobb
 let peer=null, conn=null, role=null, myColor=null, state=null, selected=null, skillMode=null, skillFrom=null;
 const roomParam=new URLSearchParams(location.search).get('room');
 const CNAME={r:'红方',b:'黑方'};
-const PIECE_CHARS={r:{K:'帅',A:'仕',B:'相',N:'马',R:'车',C:'炮',P:'兵'},b:{K:'将',A:'士',B:'象',N:'马',R:'车',C:'炮',P:'卒'}};
+const PIECE_CHARS={
+  r:{K:'帅',A:'仕',B:'相',N:'马',R:'车',C:'炮',P:'兵',M:'妈',D:'龍'},
+  b:{K:'将',A:'士',B:'象',N:'马',R:'车',C:'炮',P:'卒',M:'妈',D:'龍'}
+};
+const LV=30;
 const SKILLS=[
-  {id:'touliang',name:'偷梁换柱',desc:'开局随机把 5 个敌方非将帅棋子变成我方兵。'},
-  {id:'meiren',name:'美人计',desc:'开局魅惑 5 个敌方棋子向楚河移动 2 格，抵达楚河自毁。'},
-  {id:'four2',name:'四个二',desc:'开局随机轰炸 8 个点，落点有棋子就击杀。'},
-  {id:'wuzhong',name:'无中生有',desc:'开局在随机空格额外生成 6 个己方炮。'},
-  {id:'fudi',name:'釜底抽薪',desc:'每次吃子后，再随机击杀对方九宫内 2 枚棋子。'},
-  {id:'qimen',name:'奇门遁甲',desc:'帅/将踏入九宫八门时，触发对应门的效果。'}
+  {id:'mama',name:'妈妈计',desc:'满级：两匹马变“妈”；妈不可被吃。'},
+  {id:'touliang',name:'偷梁换柱',desc:'Lv.30：每次走棋后，最多30枚敌子变成我方兵。'},
+  {id:'meiren',name:'美人计',desc:'Lv.30：每次走棋后，最多30枚敌子被吸向楚河2格；入河自毁。'},
+  {id:'four2',name:'四个二',desc:'Lv.30：每次走棋后随机轰炸30个点；满级优先命中将帅。'},
+  {id:'jinchan',name:'金蝉脱壳',desc:'Lv.30：将帅将被吃时，可与场上棋子换位，最多30次。'},
+  {id:'caomu',name:'草木皆兵',desc:'满级被动：每次走棋后在空位大量生成最高阶棋子“车”。'},
+  {id:'chenhuo',name:'趁火打劫',desc:'Lv.30：吃子后，附近生成最多30枚同类型己方棋子。'},
+  {id:'wuzhong',name:'无中生有',desc:'Lv.30：首回合随机把30个空位变为己方炮。'},
+  {id:'huangen',name:'皇恩浩荡',desc:'Lv.30：首回合增加30枚将；移动一将，其余无阻挡的将同步。'},
+  {id:'yuqin',name:'欲擒故纵',desc:'己方棋子被吃后，周围留下3个标记；一回合后爆炸。'},
+  {id:'dragon',name:'召唤神龙',desc:'满级：开局额外召唤30枚“龍”。'},
+  {id:'huhu',name:'虎虎生威',desc:'移动棋子后，猛虎摧毁其周围格子的敌方棋子。'}
 ];
 
 if(roomParam){ $('#hostControls').style.display='none'; $('#joinControls').style.display='block'; statusEl.textContent='检测到好友房链接：'+roomParam; }
@@ -134,12 +144,17 @@ async function copyShare(){
 function initialBoard(){
   const b=Array.from({length:10},()=>Array(9).fill(null));
   const back=['R','N','B','A','K','A','B','N','R'];
-  back.forEach((t,c)=>{b[0][c]={t,c:'b'};b[9][c]={t,c:'r'}});
+  back.forEach((t,c)=>{b[0][c]={t,c:'b',royal:t==='K'};b[9][c]={t,c:'r',royal:t==='K'}});
   b[2][1]={t:'C',c:'b'};b[2][7]={t:'C',c:'b'};b[7][1]={t:'C',c:'r'};b[7][7]={t:'C',c:'r'};
   [0,2,4,6,8].forEach(c=>{b[3][c]={t:'P',c:'b'};b[6][c]={t:'P',c:'r'}});
   return b;
 }
-function initialState(){return {board:initialBoard(),turn:'r',winner:null,draw:false,last:null,choice:{r:null,b:null},started:false,immune:{r:false,b:false},hidden:{r:false,b:false},log:['双方先选择一个大招。两边都选好后红方先行。'],seq:0}}
+function initialState(){return {
+  board:initialBoard(),turn:'r',winner:null,draw:false,last:null,
+  choice:{r:null,b:null},started:false,
+  firstTurn:{r:true,b:true},jinchanLeft:{r:LV,b:LV},
+  pendingBombs:{r:[],b:[]},log:['双方先选择一个满级大招。两边都选好后红方先行。'],seq:0
+}}
 function opp(c){return c==='r'?'b':'r'}
 function cloneBoard(b){return b.map(row=>row.map(p=>p?{...p}:null))}
 function inB(r,c){return r>=0&&r<10&&c>=0&&c<9}
@@ -147,31 +162,66 @@ function betweenCount(b,r1,c1,r2,c2){let n=0;if(r1===r2){for(let c=Math.min(c1,c
 function palace(color,r,c){return c>=3&&c<=5&&(color==='r'?r>=7&&r<=9:r>=0&&r<=2)}
 function crossed(color,r){return color==='r'?r<=4:r>=5}
 function basicCanMove(b,fr,fc,tr,tc){
-  if(!inB(fr,fc)||!inB(tr,tc)||(fr===tr&&fc===tc))return false; const p=b[fr][fc]; if(!p)return false; const q=b[tr][tc]; if(q&&q.c===p.c)return false;
+  if(!inB(fr,fc)||!inB(tr,tc)||(fr===tr&&fc===tc))return false;
+  const p=b[fr][fc]; if(!p)return false;
+  const q=b[tr][tc]; if(q&&q.c===p.c)return false;
+  if(q&&q.t==='M')return false;
   const dr=tr-fr,dc=tc-fc,ar=Math.abs(dr),ac=Math.abs(dc);
   switch(p.t){
     case'R': return (dr===0||dc===0)&&betweenCount(b,fr,fc,tr,tc)===0;
     case'C': {const n=betweenCount(b,fr,fc,tr,tc);return (dr===0||dc===0)&&(q?n===1:n===0)}
-    case'N': {if(!((ar===2&&ac===1)||(ar===1&&ac===2)))return false; const lr=fr+(ar===2?Math.sign(dr):0),lc=fc+(ac===2?Math.sign(dc):0);return !b[lr][lc]}
-    case'B': {if(ar!==2||ac!==2)return false; if(p.c==='r'&&tr<5)return false;if(p.c==='b'&&tr>4)return false;return !b[fr+dr/2][fc+dc/2]}
+    case'N': case'M': {
+      if(!((ar===2&&ac===1)||(ar===1&&ac===2)))return false;
+      const lr=fr+(ar===2?Math.sign(dr):0),lc=fc+(ac===2?Math.sign(dc):0);
+      return !b[lr][lc];
+    }
+    case'D': return ar+ac===1;
+    case'B': {
+      if(ar!==2||ac!==2)return false;
+      if(p.c==='r'&&tr<5)return false;if(p.c==='b'&&tr>4)return false;
+      return !b[fr+dr/2][fc+dc/2];
+    }
     case'A': return ar===1&&ac===1&&palace(p.c,tr,tc);
     case'K': {
+      if(state?.choice?.[p.c]==='huangen') return ar+ac===1;
       if(ar+ac===1&&palace(p.c,tr,tc))return true;
-      if(dc===0&&q&&q.t==='K'&&q.c!==p.c&&betweenCount(b,fr,fc,tr,tc)===0)return true;
+      if(dc===0&&q&&q.t==='K'&&q.royal&&q.c!==p.c&&betweenCount(b,fr,fc,tr,tc)===0)return true;
       return false;
     }
-    case'P': {const fw=p.c==='r'?-1:1;if(dr===fw&&dc===0)return true;return crossed(p.c,fr)&&dr===0&&ac===1}
+    case'P': {
+      const fw=p.c==='r'?-1:1;
+      if(dr===fw&&dc===0)return true;
+      return crossed(p.c,fr)&&dr===0&&ac===1;
+    }
   }
   return false;
 }
-function findKing(b,color){for(let r=0;r<10;r++)for(let c=0;c<9;c++){const p=b[r][c];if(p&&p.c===color&&p.t==='K')return[r,c]}return null}
-function attacked(b,r,c,by){for(let i=0;i<10;i++)for(let j=0;j<9;j++){const p=b[i][j];if(p&&p.c===by&&basicCanMove(b,i,j,r,c))return true}return false}
+function findRoyal(b,color){
+  for(let r=0;r<10;r++)for(let c=0;c<9;c++){
+    const p=b[r][c];if(p&&p.c===color&&p.t==='K'&&p.royal)return[r,c];
+  }
+  return null;
+}
+function attacked(b,r,c,by){
+  for(let i=0;i<10;i++)for(let j=0;j<9;j++){
+    const p=b[i][j];if(p&&p.c===by&&basicCanMove(b,i,j,r,c))return true;
+  }
+  return false;
+}
 function isLegal(b,fr,fc,tr,tc,color){
   const p=b[fr]?.[fc];if(!p||p.c!==color||!basicCanMove(b,fr,fc,tr,tc))return false;
-  const nb=cloneBoard(b);nb[tr][tc]=nb[fr][fc];nb[fr][fc]=null;const k=findKing(nb,color);if(!k)return false;return !attacked(nb,k[0],k[1],opp(color));
+  const nb=cloneBoard(b);nb[tr][tc]=nb[fr][fc];nb[fr][fc]=null;
+  const k=findRoyal(nb,color);if(!k)return false;
+  return !attacked(nb,k[0],k[1],opp(color));
 }
-function hasMove(b,color){for(let fr=0;fr<10;fr++)for(let fc=0;fc<9;fc++){const p=b[fr][fc];if(!p||p.c!==color)continue;for(let tr=0;tr<10;tr++)for(let tc=0;tc<9;tc++)if(isLegal(b,fr,fc,tr,tc,color))return true}return false}
-function inCheck(b,color){const k=findKing(b,color);return k?attacked(b,k[0],k[1],opp(color)):true}
+function hasMove(b,color){
+  for(let fr=0;fr<10;fr++)for(let fc=0;fc<9;fc++){
+    const p=b[fr][fc];if(!p||p.c!==color)continue;
+    for(let tr=0;tr<10;tr++)for(let tc=0;tc<9;tc++)if(isLegal(b,fr,fc,tr,tc,color))return true;
+  }
+  return false;
+}
+function inCheck(b,color){const k=findRoyal(b,color);return k?attacked(b,k[0],k[1],opp(color)):true}
 function coord(r,c){return String.fromCharCode(65+c)+(10-r)}
 
 function sendAction(action){
@@ -188,118 +238,230 @@ function hostHandle(a,color){
 }
 function addLog(s){state.log.push(s);if(state.log.length>80)state.log.shift()}
 function applyMove(a,color){
-  const {fr,fc,tr,tc}=a;if(!isLegal(state.board,fr,fc,tr,tc,color))return;
-  const moving=state.board[fr][fc],taken=state.board[tr][tc];
-  if(taken&&state.immune[taken.c]){addLog(`${CNAME[taken.c]} 处于休门无敌，本次击杀无效。`);return}
-  state.board[tr][tc]=moving;state.board[fr][fc]=null;state.last={fr,fc,tr,tc};
-  addLog(`${CNAME[color]} ${PIECE_CHARS[color][moving.t]} ${coord(fr,fc)}→${coord(tr,tc)}${taken?'，吃 '+PIECE_CHARS[taken.c][taken.t]:''}`);
-  if(taken&&state.hidden[color]){state.hidden[color]=false;addLog(`${CNAME[color]} 吃子后解除杜门隐身。`)}
-  if(taken?.t==='K'){state.winner=color;addLog(`${CNAME[color]} 获胜！`);return}
-  if(taken&&state.choice[color]==='fudi'){triggerFudi(color);if(state.winner||state.draw)return}
-  if(moving.t==='K'&&state.choice[color]==='qimen'){triggerQimen(color,tr,tc);if(state.winner||state.draw)return}
+  const {fr,fc,tr,tc}=a;
+  if(!isLegal(state.board,fr,fc,tr,tc,color))return;
+
+  let moving=state.board[fr][fc];
+  let taken=state.board[tr][tc];
+
+  // 金蝉脱壳：皇/帅将被吃时先换位，再由攻击方吃掉替身。
+  if(taken?.royal && state.choice[taken.c]==='jinchan' && state.jinchanLeft[taken.c]>0){
+    const candidates=allPieces((p,r,c)=>!(r===tr&&c===tc) && !(p.t==='M'));
+    if(candidates.length){
+      const [sr,sc,swapPiece]=pick(candidates);
+      state.board[sr][sc]=taken;
+      state.board[tr][tc]=swapPiece;
+      state.jinchanLeft[taken.c]--;
+      addLog(`${CNAME[taken.c]}「金蝉脱壳」：将帅与 ${coord(sr,sc)} 棋子换位，剩余 ${state.jinchanLeft[taken.c]} 次。`);
+      taken=state.board[tr][tc];
+    }
+  }
+
+  const captured=taken?{...taken}:null;
+  state.board[tr][tc]=moving;
+  state.board[fr][fc]=null;
+  state.last={fr,fc,tr,tc};
+  addLog(`${CNAME[color]} ${PIECE_CHARS[color][moving.t]} ${coord(fr,fc)}→${coord(tr,tc)}${captured?'，吃 '+PIECE_CHARS[captured.c][captured.t]:''}`);
+
+  if(captured){
+    if(state.choice[captured.c]==='yuqin') markYuqin(captured.c,tr,tc);
+    if(state.choice[color]==='chenhuo') triggerChenhuo(color,captured,tr,tc);
+  }
+
+  if(state.choice[color]==='huangen' && moving.t==='K'){
+    syncKings(color,fr,fc,tr,tc);
+  }
+
+  triggerAfterMove(color,tr,tc);
+  state.firstTurn[color]=false;
+  checkRoyalDeaths();
+  if(state.winner||state.draw)return;
   finishNormalMove(color);
 }
 function finishNormalMove(color){
-  const n=opp(color);state.turn=n;
-  if(state.immune[n]){state.immune[n]=false;addLog(`${CNAME[n]} 的休门无敌在回合开始时结束。`)}
+  const n=opp(color);
+  state.turn=n;
+  resolvePendingBombs(n);
+  checkRoyalDeaths();
+  if(state.winner||state.draw)return;
   if(!hasMove(state.board,n)){
-    if(inCheck(state.board,n)){state.winner=color;addLog(`${CNAME[n]} 无合法应手，${CNAME[color]} 获胜！`)}else{state.draw=true;addLog('无子可动，和棋。')}
+    if(inCheck(state.board,n)){state.winner=color;addLog(`${CNAME[n]} 无合法应手，${CNAME[color]} 获胜！`)}
+    else{state.draw=true;addLog('无子可动，和棋。')}
   }
-}
-function skillAvailable(color,id){return state.turn===color&&!state.skillUsedThisTurn&&!state.skillsUsed[color].includes(id)&&!state.winner&&!state.draw}
-function useSkill(color,id){state.skillsUsed[color].push(id);state.skillUsedThisTurn=true;addLog(`${CNAME[color]} 发动「${SKILLS.find(x=>x.id===id).name}」！`)}
-function emptyCells(filter=()=>true){const xs=[];for(let r=0;r<10;r++)for(let c=0;c<9;c++)if(!state.board[r][c]&&filter(r,c))xs.push([r,c]);return xs}
-function pick(xs){return xs.length?xs[Math.floor(Math.random()*xs.length)]:null}
-function applySkill(a,color){
-  const id=a.id;if(!SKILLS.some(s=>s.id===id)||!skillAvailable(color,id))return; const b=state.board;
-  if(id==='summon'){
-    let cells=emptyCells((r)=>color==='r'?r>=5:r<=4);for(let i=0;i<3&&cells.length;i++){const at=pick(cells);b[at[0]][at[1]]={t:'P',c:color};cells=cells.filter(x=>x[0]!==at[0]||x[1]!==at[1])}useSkill(color,id);return;
-  }
-  if(id==='blast'){
-    const p=b[a.r]?.[a.c];if(!p||p.c===color||p.t==='K')return;b[a.r][a.c]=null;useSkill(color,id);addLog(`雷光落在 ${coord(a.r,a.c)}，${PIECE_CHARS[p.c][p.t]} 消失。`);return;
-  }
-  if(id==='teleport'){
-    const p=b[a.fr]?.[a.fc];if(!p||p.c!==color||p.t==='K'||b[a.tr]?.[a.tc])return;b[a.tr][a.tc]=p;b[a.fr][a.fc]=null;useSkill(color,id);addLog(`${PIECE_CHARS[color][p.t]} 瞬移 ${coord(a.fr,a.fc)}→${coord(a.tr,a.tc)}。`);return;
-  }
-  if(id==='mirror'){
-    const p=b[a.r]?.[a.c];if(!p||p.c!==color||p.t==='K')return;let tr=a.r,tc=8-a.c;if(b[tr][tc]){const at=pick(emptyCells());if(!at)return;[tr,tc]=at}b[tr][tc]={...p};useSkill(color,id);addLog(`${PIECE_CHARS[color][p.t]} 在 ${coord(tr,tc)} 映出分身。`);return;
-  }
-  if(id==='double'){state.extraMoves[color]++;useSkill(color,id);return}
-  if(id==='freeze'){state.skip[opp(color)]++;useSkill(color,id);return}
 }
 function chooseSkill(id,color){
   if(state.started||state.choice[color]||!SKILLS.some(x=>x.id===id))return;
-  state.choice[color]=id;addLog(`${CNAME[color]} 选择「${SKILLS.find(x=>x.id===id).name}」。`);
+  state.choice[color]=id;
+  addLog(`${CNAME[color]} 选择满级「${SKILLS.find(x=>x.id===id).name}」。`);
   if(state.choice.r&&state.choice.b){
-    state.started=true;addLog('双方大招确定，红方先行。');
-    applyOpeningSkill('r');if(!state.winner&&!state.draw)applyOpeningSkill('b');checkKingDeaths();
+    state.started=true;
+    addLog('双方大招确定，全部按满级参数启动。');
+    applyOpeningSkill('r');
+    applyOpeningSkill('b');
+    checkRoyalDeaths();
   }
 }
-function randShuffle(xs){for(let i=xs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[xs[i],xs[j]]=[xs[j],xs[i]]}return xs}
-function allPieces(filter=()=>true){const xs=[];for(let r=0;r<10;r++)for(let c=0;c<9;c++){const p=state.board[r][c];if(p&&filter(p,r,c))xs.push([r,c,p])}return xs}
-function checkKingDeaths(){
-  const kr=findKing(state.board,'r'),kb=findKing(state.board,'b');
-  if(!kr&&!kb){state.draw=true;addLog('双方将帅同时消失，和棋。')}
+function randShuffle(xs){
+  for(let i=xs.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));[xs[i],xs[j]]=[xs[j],xs[i]];
+  }
+  return xs;
+}
+function pick(xs){return xs.length?xs[Math.floor(Math.random()*xs.length)]:null}
+function allPieces(filter=()=>true){
+  const xs=[];
+  for(let r=0;r<10;r++)for(let c=0;c<9;c++){
+    const p=state.board[r][c];if(p&&filter(p,r,c))xs.push([r,c,p]);
+  }
+  return xs;
+}
+function emptyCells(){
+  const xs=[];for(let r=0;r<10;r++)for(let c=0;c<9;c++)if(!state.board[r][c])xs.push([r,c]);
+  return xs;
+}
+function spawn(color,type,count,center=null,royal=false){
+  let cells=emptyCells();
+  if(center){
+    const [cr,cc]=center;
+    cells.sort((a,b)=>(Math.abs(a[0]-cr)+Math.abs(a[1]-cc))-(Math.abs(b[0]-cr)+Math.abs(b[1]-cc)));
+  }else randShuffle(cells);
+  const n=Math.min(count,cells.length);
+  for(let i=0;i<n;i++){
+    const [r,c]=cells[i];
+    state.board[r][c]={t:type,c:color,royal:royal&&i===0};
+  }
+  return n;
+}
+function checkRoyalDeaths(){
+  const kr=findRoyal(state.board,'r'),kb=findRoyal(state.board,'b');
+  if(!kr&&!kb){state.draw=true;addLog('双方主将同时消失，和棋。')}
   else if(!kr){state.winner='b';addLog('红帅消失，黑方获胜！')}
   else if(!kb){state.winner='r';addLog('黑将消失，红方获胜！')}
 }
 function applyOpeningSkill(color){
-  const id=state.choice[color],enemy=opp(color);
-  if(id==='touliang'){
-    const xs=randShuffle(allPieces(p=>p.c===enemy&&p.t!=='K')).slice(0,5);
-    for(const [r,c] of xs)state.board[r][c]={t:'P',c:color};
-    addLog(`${CNAME[color]}「偷梁换柱」：${xs.length} 枚敌子变成己方兵。`);
-  }else if(id==='meiren'){
-    const xs=randShuffle(allPieces(p=>p.c===enemy&&p.t!=='K')).slice(0,5);
-    for(const [r,c,p] of xs){
-      const dir=p.c==='r'?-1:1,nr=r+2*dir;
-      if((p.c==='r'&&nr<=4)||(p.c==='b'&&nr>=5)){state.board[r][c]=null;continue}
-      if(inB(nr,c)&&!state.board[nr][c]){state.board[nr][c]=p;state.board[r][c]=null}
+  const id=state.choice[color];
+  if(id==='mama'){
+    let n=0;
+    for(const [r,c,p] of allPieces(p=>p.c===color&&p.t==='N')){
+      if(n>=2)break; state.board[r][c]={...p,t:'M'};n++;
     }
-    addLog(`${CNAME[color]}「美人计」发动：随机棋子被吸向楚河。`);
-  }else if(id==='four2'){
-    const cells=[];for(let r=0;r<10;r++)for(let c=0;c<9;c++)cells.push([r,c]);
-    const hits=randShuffle(cells).slice(0,8);for(const [r,c] of hits)state.board[r][c]=null;
-    addLog(`${CNAME[color]}「四个二」：8 个随机落点爆炸。`);
-  }else if(id==='wuzhong'){
-    const cells=randShuffle(emptyCells());
-    for(let i=0;i<6&&i<cells.length;i++){const [r,c]=cells[i];state.board[r][c]={t:'C',c:color}}
-    addLog(`${CNAME[color]}「无中生有」：凭空增加 6 门炮。`);
+    addLog(`${CNAME[color]}「妈妈计」：两匹马变成不可被吃的“妈”。`);
   }
-  checkKingDeaths();
+  if(id==='dragon'){
+    const n=spawn(color,'D',30);
+    addLog(`${CNAME[color]}「召唤神龙」：开局召唤 ${n} 枚龍。`);
+  }
 }
-function triggerFudi(color){
-  const enemy=opp(color);let xs=allPieces((p,r,c)=>p.c===enemy&&palace(enemy,r,c));xs=randShuffle(xs).slice(0,2);
-  for(const [r,c,p] of xs){state.board[r][c]=null;addLog(`「釜底抽薪」击杀九宫内 ${PIECE_CHARS[p.c][p.t]}。`)}
-  checkKingDeaths();
+function triggerFirstTurn(color){
+  if(!state.firstTurn[color])return;
+  const id=state.choice[color];
+  if(id==='wuzhong'){
+    const n=spawn(color,'C',LV);
+    addLog(`${CNAME[color]}「无中生有」：首回合生成 ${n} 门炮。`);
+  }else if(id==='huangen'){
+    const n=spawn(color,'K',LV);
+    addLog(`${CNAME[color]}「皇恩浩荡」：首回合增加 ${n} 枚将字棋。`);
+  }
 }
-function qimenGate(color,r,c){
-  const rr=color==='r'?r:9-r,cc=color==='r'?c:8-c;
-  const map={'7,3':'杜门','7,4':'景门','7,5':'死门','8,3':'伤门','8,5':'惊门','9,3':'生门','9,4':'休门','9,5':'开门'};
-  return map[rr+','+cc]||null;
+function triggerAfterMove(color,r,c){
+  triggerFirstTurn(color);
+  const id=state.choice[color];
+  if(id==='touliang')triggerTouliang(color);
+  else if(id==='meiren')triggerMeiren(color);
+  else if(id==='four2')triggerFour2(color);
+  else if(id==='caomu')triggerCaomu(color);
+  else if(id==='huhu')triggerHuhu(color,r,c);
 }
-function triggerQimen(color,r,c){
-  const gate=qimenGate(color,r,c);if(!gate)return;const enemy=opp(color);addLog(`${CNAME[color]} 奇门遁甲触发「${gate}」！`);
-  if(gate==='生门'){
-    const base=initialBoard();for(let i=0;i<10;i++)for(let j=0;j<9;j++)if(state.board[i][j]?.c===color)state.board[i][j]=null;
-    for(let i=0;i<10;i++)for(let j=0;j<9;j++)if(base[i][j]?.c===color)state.board[i][j]={...base[i][j]};
-  }else if(gate==='伤门'){
-    const xs=randShuffle(allPieces(p=>p.t!=='K')).slice(0,15);for(const [i,j] of xs)state.board[i][j]=null;
-  }else if(gate==='开门'){
-    let cells=[];for(let i=0;i<10;i++)for(let j=0;j<9;j++)if(!(state.board[i][j]?.c===color&&state.board[i][j]?.t==='K'))cells.push([i,j]);
-    cells=randShuffle(cells).slice(0,15);const ts=['P','A','B','N','R','C'];
-    for(const [i,j] of cells)state.board[i][j]={t:ts[Math.floor(Math.random()*ts.length)],c:color};
-  }else if(gate==='景门'){
-    const old=allPieces(p=>p.t!=='K'),ps=old.map(x=>x[2]);for(const [i,j] of old)state.board[i][j]=null;
-    let cells=[];for(let i=0;i<10;i++)for(let j=0;j<9;j++)if(!state.board[i][j])cells.push([i,j]);cells=randShuffle(cells).slice(0,ps.length);
-    ps.forEach((p,k)=>{const [i,j]=cells[k];state.board[i][j]=p});addLog('景门：除将帅外棋子位置被彻底打乱。');
-  }else if(gate==='惊门'){
-    const xs=allPieces(p=>p.c===enemy&&p.t!=='K'),dir=enemy==='r'?1:-1;xs.sort((a,b)=>dir>0?b[0]-a[0]:a[0]-b[0]);
-    for(const [i,j,p] of xs){const ni=i+dir;if(inB(ni,j)&&!state.board[ni][j]){state.board[ni][j]=p;state.board[i][j]=null}}
-  }else if(gate==='休门'){state.immune[color]=true}
-  else if(gate==='杜门'){state.hidden[color]=true}
-  else if(gate==='死门'){const victim=Math.random()<0.8?color:enemy,k=findKing(state.board,victim);if(k)state.board[k[0]][k[1]]=null}
-  checkKingDeaths();
+function triggerTouliang(color){
+  const enemy=opp(color);
+  const targets=randShuffle(allPieces(p=>p.c===enemy)).slice(0,LV);
+  for(const [r,c] of targets)state.board[r][c]={t:'P',c:color,royal:false};
+  addLog(`${CNAME[color]}「偷梁换柱」：${targets.length} 枚敌子被换成己方兵。`);
+}
+function triggerMeiren(color){
+  const enemy=opp(color);
+  const targets=randShuffle(allPieces(p=>p.c===enemy)).slice(0,LV);
+  let dead=0,moved=0;
+  const occupied=new Set();
+  for(const [r,c,p] of targets){
+    if(!state.board[r][c]||state.board[r][c]!==p)continue;
+    const dir=r<=4?1:-1, nr=r+2*dir;
+    const crosses=(r<=4&&nr>=5)||(r>=5&&nr<=4);
+    if(crosses){
+      state.board[r][c]=null;dead++;continue;
+    }
+    if(inB(nr,c)&&!state.board[nr][c]&&!occupied.has(nr+','+c)){
+      state.board[nr][c]=p;state.board[r][c]=null;occupied.add(nr+','+c);moved++;
+    }
+  }
+  addLog(`${CNAME[color]}「美人计」：魅惑 ${targets.length} 枚敌子，${dead} 枚跳河自毁。`);
+}
+function triggerFour2(color){
+  let cells=[];for(let r=0;r<10;r++)for(let c=0;c<9;c++)cells.push([r,c]);
+  // 满级“提高炸到将的概率”：优先把敌方主将纳入轰炸池，其余随机补到30点。
+  const enemy=opp(color),k=findRoyal(state.board,enemy),chosen=[];
+  if(k)chosen.push(k);
+  const rest=randShuffle(cells.filter(([r,c])=>!k||r!==k[0]||c!==k[1]));
+  while(chosen.length<LV&&rest.length)chosen.push(rest.pop());
+  let killed=0;
+  for(const [r,c] of chosen){if(state.board[r][c]){state.board[r][c]=null;killed++;}}
+  addLog(`${CNAME[color]}「四个二」：轰炸 ${chosen.length} 个点，命中 ${killed} 枚棋子。`);
+}
+function triggerCaomu(color){
+  // 公开实测记录满级单次最高约32枚；最高阶棋子为“车”。
+  const n=spawn(color,'R',32);
+  addLog(`${CNAME[color]}「草木皆兵」：满级被动生成 ${n} 辆车。`);
+}
+function triggerChenhuo(color,captured,r,c){
+  const n=spawn(color,captured.t,LV,[r,c]);
+  addLog(`${CNAME[color]}「趁火打劫」：在吃子点附近生成 ${n} 枚${PIECE_CHARS[color][captured.t]}。`);
+}
+function markYuqin(color,r,c){
+  const around=[];
+  for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){
+    if(!dr&&!dc)continue;const nr=r+dr,nc=c+dc;if(inB(nr,nc))around.push([nr,nc]);
+  }
+  const cells=randShuffle(around).slice(0,3);
+  state.pendingBombs[color].push({cells,delay:1});
+  addLog(`${CNAME[color]}「欲擒故纵」：留下 ${cells.length} 个爆炸标记。`);
+}
+function resolvePendingBombs(color){
+  const keep=[];
+  for(const pack of state.pendingBombs[color]){
+    pack.delay--;
+    if(pack.delay<=0){
+      let n=0;
+      for(const [r,c] of pack.cells){if(state.board[r][c]){state.board[r][c]=null;n++;}}
+      addLog(`${CNAME[color]}「欲擒故纵」标记引爆，摧毁 ${n} 枚棋子。`);
+    }else keep.push(pack);
+  }
+  state.pendingBombs[color]=keep;
+}
+function triggerHuhu(color,r,c){
+  let n=0;
+  for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){
+    if(!dr&&!dc)continue;const nr=r+dr,nc=c+dc;if(!inB(nr,nc))continue;
+    const p=state.board[nr][nc];
+    if(p&&p.c!==color&&p.t!=='M'){state.board[nr][nc]=null;n++;}
+  }
+  addLog(`${CNAME[color]}「虎虎生威」：猛击周围，摧毁 ${n} 枚敌子。`);
+}
+function syncKings(color,fr,fc,tr,tc){
+  const dr=tr-fr,dc=tc-fc;
+  const movers=allPieces((p,r,c)=>p.c===color&&p.t==='K'&&!(r===tr&&c===tc));
+  let moved=0;
+  // 先收集，避免链式覆盖。
+  const plans=[];
+  for(const [r,c,p] of movers){
+    const nr=r+dr,nc=c+dc;
+    if(inB(nr,nc)&&!state.board[nr][nc])plans.push([r,c,nr,nc,p]);
+  }
+  for(const [r,c,nr,nc,p] of plans){
+    if(state.board[r][c]===p&&!state.board[nr][nc]){
+      state.board[nr][nc]=p;state.board[r][c]=null;moved++;
+    }
+  }
+  addLog(`${CNAME[color]}「皇恩浩荡」：${moved} 枚将同步移动。`);
 }
 function broadcastState(){state.seq++;if(conn?.open)conn.send({type:'state',state})}
 
@@ -323,7 +485,16 @@ function renderBoard(){
     const r=flip?9-vr:vr,c=flip?8-vc:vc;const d=document.createElement('div');d.className='cell';if(vr===5)d.classList.add('river');
     if(selected&&selected[0]===r&&selected[1]===c)d.classList.add('sel');
     if(state.last&&((state.last.fr===r&&state.last.fc===c)||(state.last.tr===r&&state.last.tc===c)))d.classList.add('last');
-    d.dataset.r=r;d.dataset.c=c;const p=state.board[r][c];const concealed=p&&state.hidden[p.c]&&p.c!==myColor&&p.t!=='K';if(p&&!concealed){const e=document.createElement('div');e.className='piece '+(p.c==='r'?'red':'black');e.textContent=PIECE_CHARS[p.c][p.t];d.appendChild(e)}
+    d.dataset.r=r;d.dataset.c=c;
+    const marked=[...state.pendingBombs.r,...state.pendingBombs.b].some(pack=>pack.cells.some(x=>x[0]===r&&x[1]===c));
+    if(marked)d.classList.add('mark');
+    const p=state.board[r][c];
+    if(p){
+      const e=document.createElement('div');
+      e.className='piece '+(p.c==='r'?'red':'black');
+      e.textContent=PIECE_CHARS[p.c][p.t];
+      d.appendChild(e);
+    }
     d.onclick=()=>cellClick(r,c);boardEl.appendChild(d);
   }
 }
@@ -341,7 +512,7 @@ function renderSkills(){
     b.innerHTML=`<b>${esc(sk.name)}${mine?' ✓':''}</b><small>${esc(sk.desc)}</small>`;b.onclick=()=>activateSkill(sk.id);wrap.appendChild(b);
   }
   const my=state.choice[myColor],op=state.choice[opp(myColor)];
-  $('#skillHint').textContent=my?`你选择：${SKILLS.find(x=>x.id===my).name}；${op?'对手：'+SKILLS.find(x=>x.id===op).name:'等待对手选择…'}`:'选择一个大招。双方各选一个；选定后本局锁定。';
+  $('#skillHint').textContent=my?`你选择：${SKILLS.find(x=>x.id===my).name} Lv.30；${op?'对手：'+SKILLS.find(x=>x.id===op).name:'等待对手选择…'}`:'选择一个满级大招。双方各选一个；选定后本局锁定。';
 }
 function activateSkill(id){if(state.choice[myColor]||state.started)return;sendAction({type:'choose',id})}
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
