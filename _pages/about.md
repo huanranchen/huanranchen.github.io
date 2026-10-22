@@ -51,7 +51,7 @@ To me, the ultimate compliment is simply: “Your work is interesting.”
 
 <div class="selected-work-grid">
   <article class="selected-work-item">
-    <div class="selected-work-meta">PREPRINT · 2026</div>
+    <div class="selected-work-meta">NEURIPS · 2026</div>
     <h3>Nexus: Same Pretraining Loss, Better Downstream Generalization via Common Minima</h3>
     <p>Models with indistinguishable pretraining loss can generalize very differently; Nexus follows the exact same loss curve while substantially improving downstream performance by steering optimization toward common minima.</p>
     <div class="selected-work-links"><a href="https://arxiv.org/abs/2604.09258">Paper</a><a href="https://github.com/huanranchen/NexusPretraining">Code</a><a href="https://www.bilibili.com/video/BV15c416WEMf/">Video</a></div>
@@ -81,7 +81,7 @@ To me, the ultimate compliment is simply: “Your work is interesting.”
     <div class="selected-work-links"><a href="https://arxiv.org/abs/2402.02316">Paper</a><a href="https://zhuanlan.zhihu.com/p/12592746504">Blog</a></div>
   </article>
   <article class="selected-work-item">
-    <div class="selected-work-meta">SAFEGENAI @ NEURIPS · 2024</div>
+    <div class="selected-work-meta">TMLR · 2026</div>
     <h3>Towards the Worst-case Robustness of Large Language Models</h3>
     <p>Under strict white-box evaluation, existing LLM defenses—including adversarial training—fall to 0% robustness; our universal certificate reaches radius 2.00 against a Bayesian ceiling of 2.10.</p>
     <div class="selected-work-links"><a href="https://arxiv.org/abs/2501.19040">Paper</a><a href="https://zhuanlan.zhihu.com/p/21266930786">Blog</a></div>
@@ -128,7 +128,7 @@ This optimization perspective produces consistent results across several setting
 **1. LLM Pre-training:** It achieves the **exact same pretraining loss curve** as the baseline, but delivers **significantly better downstream task generalization**.
 #### Nexus: Same Pretraining Loss, Better Downstream Generalization via Common Minima
 **Huanran Chen**, Huaqing Zhang, Xiao Li, Yinpeng Dong, Ke Shen, Jun Zhu
-- [Paper](https://arxiv.org/abs/2604.09258) · [Video](https://www.bilibili.com/video/BV15c416WEMf/)
+- [NeurIPS 2026](https://arxiv.org/abs/2604.09258) · [Video](https://www.bilibili.com/video/BV15c416WEMf/)
 
 **2. Black-box Transfer Attacks:** It achieves much higher attack success rates than baselines. In this adversarial setting, models always trivially achieve **0 training loss**, meaning optimization speed is irrelevant—***generalization* is all that matters**.
 #### Rethinking Model Ensemble in Transfer-based Adversarial Attacks
@@ -226,7 +226,7 @@ Later, I realized this theoretical framework wasn't limited to continuous image 
 - **Symmetric Lemma:** Introduced a symmetric lemma to analyze the trading graph, enabling elegant proofs for properties like the relationship between certified robustness and vocabulary size.
 - **Results:** Achieved a certified radius of 2.00 in $\ell_2$ (against a Bayesian upper bound of 2.10) and 6.57 in the suffix setting (where empirical research typically focuses on a suffix length of 20).
 
-- [SafeGenAI @ NeurIPS 2024](https://arxiv.org/abs/2501.19040) · [Blog](https://zhuanlan.zhihu.com/p/21266930786) · [Video](https://www.bilibili.com/video/BV1WhV2zRE2m/)
+- [TMLR 2026](https://arxiv.org/abs/2501.19040) · [Blog](https://zhuanlan.zhihu.com/p/21266930786) · [Video](https://www.bilibili.com/video/BV1WhV2zRE2m/)
 
 </details>
 
