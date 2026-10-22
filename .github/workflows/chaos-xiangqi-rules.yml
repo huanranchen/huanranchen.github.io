@@ -1,0 +1,25 @@
+name: Chaos Xiangqi rules
+
+on:
+  push:
+    paths:
+      - games/chaos-xiangqi/**
+      - .github/workflows/chaos-xiangqi-rules.yml
+  pull_request:
+    paths:
+      - games/chaos-xiangqi/**
+      - .github/workflows/chaos-xiangqi-rules.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test games/chaos-xiangqi/rules.test.cjs

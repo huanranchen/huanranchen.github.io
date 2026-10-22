@@ -61,9 +61,11 @@
     </div>
   </section>
 </div>
+<script src="./rules.js"></script>
 <script>
 (() => {
 'use strict';
+const Rules=window.ChaosXiangqiRules;
 const $=s=>document.querySelector(s);
 const lobby=$('#lobby'), game=$('#game'), boardEl=$('#board'), statusEl=$('#lobbyStatus');
 let peer=null, conn=null, role=null, myColor=null, state=null, selected=null;
@@ -129,7 +131,10 @@ function wireConn(asHost){
   conn.on('data',msg=>{
     if(!msg||typeof msg!=='object')return;
     if(role==='host' && msg.type==='action') hostHandle(msg.action,'b');
-    if(role==='guest' && msg.type==='state'){state=msg.state;showGame();render()}
+    if(role==='guest' && msg.type==='state'){
+      const next=Rules.receiveHostState(state,msg.state);
+      if(next!==state){state=next;showGame();render()}
+    }
     if(role==='host' && msg.type==='hello') broadcastState();
   });
   conn.on('close',()=>{$('#banner').textContent='好友已断开连接';});
@@ -229,31 +234,32 @@ function sendAction(action){
   if(role==='host')hostHandle(action,'r'); else if(conn?.open)conn.send({type:'action',action});
 }
 function hostHandle(a,color){
-  if(!state)return;
-  if(a.type==='restart'){state=initialState();broadcastState();render();return}
-  if(a.type==='choose'){chooseSkill(a.id,color);broadcastState();render();return}
-  if(!state.started||state.winner||state.draw||state.turn!==color)return;
-  if(a.type==='move')applyMove(a,color);
+  if(!Rules.hostAcceptsAction(state,a,color))return;
+  if(a.type==='restart'){
+    const seq=state.seq;
+    state=initialState();state.seq=seq;
+    broadcastState();render();return;
+  }
+  if(a.type==='choose'){if(!chooseSkill(a.id,color))return;broadcastState();render();return}
+  if(!applyMove(a,color))return;
   broadcastState();render();
 }
 function addLog(s){state.log.push(s);if(state.log.length>80)state.log.shift()}
 function applyMove(a,color){
   const {fr,fc,tr,tc}=a;
-  if(!isLegal(state.board,fr,fc,tr,tc,color))return;
+  if(!isLegal(state.board,fr,fc,tr,tc,color))return false;
 
   let moving=state.board[fr][fc];
   let taken=state.board[tr][tc];
 
   // 金蝉脱壳：皇/帅将被吃时先换位，再由攻击方吃掉替身。
   if(taken?.royal && state.choice[taken.c]==='jinchan' && state.jinchanLeft[taken.c]>0){
-    const candidates=allPieces((p,r,c)=>!(r===tr&&c===tc) && !(p.t==='M'));
-    if(candidates.length){
-      const [sr,sc,swapPiece]=pick(candidates);
-      state.board[sr][sc]=taken;
-      state.board[tr][tc]=swapPiece;
-      state.jinchanLeft[taken.c]--;
-      addLog(`${CNAME[taken.c]}「金蝉脱壳」：将帅与 ${coord(sr,sc)} 棋子换位，剩余 ${state.jinchanLeft[taken.c]} 次。`);
-      taken=state.board[tr][tc];
+    const result=Rules.escapeRoyal(state.board,[fr,fc],[tr,tc],state.jinchanLeft[taken.c]);
+    if(result.swappedAt){
+      state.board=result.board;
+      state.jinchanLeft[taken.c]=result.remaining;
+      addLog(`${CNAME[taken.c]}「金蝉脱壳」：将帅与 ${coord(...result.swappedAt)} 棋子换位，剩余 ${result.remaining} 次。`);
+      taken=result.captured;
     }
   }
 
@@ -275,22 +281,24 @@ function applyMove(a,color){
   triggerAfterMove(color,tr,tc);
   state.firstTurn[color]=false;
   checkRoyalDeaths();
-  if(state.winner||state.draw)return;
+  if(state.winner||state.draw)return true;
   finishNormalMove(color);
+  return true;
 }
 function finishNormalMove(color){
-  const n=opp(color);
-  state.turn=n;
-  resolvePendingBombs(n);
+  // 标记在受害方完成下一步后才引爆，留出一个回合躲避。
+  resolvePendingBombs(color);
   checkRoyalDeaths();
   if(state.winner||state.draw)return;
+  const n=opp(color);
+  state.turn=n;
   if(!hasMove(state.board,n)){
     if(inCheck(state.board,n)){state.winner=color;addLog(`${CNAME[n]} 无合法应手，${CNAME[color]} 获胜！`)}
     else{state.draw=true;addLog('无子可动，和棋。')}
   }
 }
 function chooseSkill(id,color){
-  if(state.started||state.choice[color]||!SKILLS.some(x=>x.id===id))return;
+  if(state.started||state.choice[color]||!SKILLS.some(x=>x.id===id))return false;
   state.choice[color]=id;
   addLog(`${CNAME[color]} 选择满级「${SKILLS.find(x=>x.id===id).name}」。`);
   if(state.choice.r&&state.choice.b){
@@ -300,6 +308,7 @@ function chooseSkill(id,color){
     applyOpeningSkill('b');
     checkRoyalDeaths();
   }
+  return true;
 }
 function randShuffle(xs){
   for(let i=xs.length-1;i>0;i--){
@@ -320,17 +329,9 @@ function emptyCells(){
   return xs;
 }
 function spawn(color,type,count,center=null,royal=false){
-  let cells=emptyCells();
-  if(center){
-    const [cr,cc]=center;
-    cells.sort((a,b)=>(Math.abs(a[0]-cr)+Math.abs(a[1]-cc))-(Math.abs(b[0]-cr)+Math.abs(b[1]-cc)));
-  }else randShuffle(cells);
-  const n=Math.min(count,cells.length);
-  for(let i=0;i<n;i++){
-    const [r,c]=cells[i];
-    state.board[r][c]={t:type,c:color,royal:royal&&i===0};
-  }
-  return n;
+  const result=Rules.spawn(state.board,color,type,count,center,royal);
+  state.board=result.board;
+  return result.count;
 }
 function checkRoyalDeaths(){
   const kr=findRoyal(state.board,'r'),kb=findRoyal(state.board,'b');
@@ -397,14 +398,9 @@ function triggerMeiren(color){
   addLog(`${CNAME[color]}「美人计」：魅惑 ${targets.length} 枚敌子，${dead} 枚跳河自毁。`);
 }
 function triggerFour2(color){
-  const cells=[];
-  for(let r=0;r<10;r++)for(let c=0;c<9;c++)cells.push([r,c]);
-  const chosen=randShuffle(cells).slice(0,LV);
-  let killed=0;
-  for(const [r,c] of chosen){
-    if(state.board[r][c]){state.board[r][c]=null;killed++;}
-  }
-  addLog(`${CNAME[color]}「四个二」：随机轰炸 ${chosen.length} 个格子，命中 ${killed} 枚棋子。`);
+  const result=Rules.fourTwos(state.board);
+  state.board=result.board;
+  addLog(`${CNAME[color]}「四个二」：随机轰炸 ${result.chosen.length} 个格子，命中 ${result.killed} 枚棋子。`);
 }
 function triggerCaomu(color){
   // 公开实测记录满级单次最高约32枚；最高阶棋子为“车”。
@@ -416,25 +412,15 @@ function triggerChenhuo(color,captured,r,c){
   addLog(`${CNAME[color]}「趁火打劫」：在吃子点附近生成 ${n} 枚${PIECE_CHARS[color][captured.t]}。`);
 }
 function markYuqin(color,r,c){
-  const around=[];
-  for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){
-    if(!dr&&!dc)continue;const nr=r+dr,nc=c+dc;if(inB(nr,nc))around.push([nr,nc]);
-  }
-  const cells=randShuffle(around).slice(0,3);
+  const cells=Rules.bombMarks(r,c);
   state.pendingBombs[color].push({cells,delay:1});
   addLog(`${CNAME[color]}「欲擒故纵」：留下 ${cells.length} 个爆炸标记。`);
 }
 function resolvePendingBombs(color){
-  const keep=[];
-  for(const pack of state.pendingBombs[color]){
-    pack.delay--;
-    if(pack.delay<=0){
-      let n=0;
-      for(const [r,c] of pack.cells){if(state.board[r][c]){state.board[r][c]=null;n++;}}
-      addLog(`${CNAME[color]}「欲擒故纵」标记引爆，摧毁 ${n} 枚棋子。`);
-    }else keep.push(pack);
-  }
-  state.pendingBombs[color]=keep;
+  const result=Rules.resolveBombs(state.board,state.pendingBombs[color]);
+  state.board=result.board;
+  state.pendingBombs[color]=result.packs;
+  if(result.exploded)addLog(`${CNAME[color]}「欲擒故纵」标记引爆，摧毁 ${result.killed} 枚棋子。`);
 }
 function triggerHuhu(color,r,c){
   let n=0;
@@ -446,21 +432,9 @@ function triggerHuhu(color,r,c){
   addLog(`${CNAME[color]}「虎虎生威」：猛击周围，摧毁 ${n} 枚敌子。`);
 }
 function syncKings(color,fr,fc,tr,tc){
-  const dr=tr-fr,dc=tc-fc;
-  const movers=allPieces((p,r,c)=>p.c===color&&p.t==='K'&&!(r===tr&&c===tc));
-  let moved=0;
-  // 先收集，避免链式覆盖。
-  const plans=[];
-  for(const [r,c,p] of movers){
-    const nr=r+dr,nc=c+dc;
-    if(inB(nr,nc)&&!state.board[nr][nc])plans.push([r,c,nr,nc,p]);
-  }
-  for(const [r,c,nr,nc,p] of plans){
-    if(state.board[r][c]===p&&!state.board[nr][nc]){
-      state.board[nr][nc]=p;state.board[r][c]=null;moved++;
-    }
-  }
-  addLog(`${CNAME[color]}「皇恩浩荡」：${moved} 枚将同步移动。`);
+  const result=Rules.syncKings(state.board,color,[fr,fc],[tr,tc]);
+  state.board=result.board;
+  addLog(`${CNAME[color]}「皇恩浩荡」：${result.moved} 枚将同步移动。`);
 }
 function broadcastState(){state.seq++;if(conn?.open)conn.send({type:'state',state})}
 
